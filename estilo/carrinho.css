@@ -1,0 +1,12 @@
+ body { font-family: Arial, sans-serif; padding: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; font-size: 1.2em; }
+        #cart { max-width: 900px; margin: auto; }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .cart-item { display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .cart-item img { border-radius: 4px; margin-right: 15px; }
+        .cart-item .info { flex-grow: 1; }
+        #cart-summary { text-align: right; margin-top: 20px; }
+        #cart-total { font-size: 1.5em; font-weight: bold; }
+        #checkout-btn { background-color: #28a745; color: white; border: none; padding: 12px 20px; font-size: 1.2em; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        #checkout-btn:hover { background-color: #218838; }

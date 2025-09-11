@@ -1,0 +1,11 @@
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; font-size: 1.2em; }
+        #products { max-width: 900px; margin: auto; }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .product-item { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
+        .product-item img { border-radius: 4px; margin-right: 15px; }
+        .product-item .info { flex-grow: 1; }
+        .product-item .price { font-weight: bold; }
+        button { background-color: #007bff; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
