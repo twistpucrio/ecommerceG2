@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja </title>
-    <script src="/javaScript/logica.js"></script> 
-    <link rel="stylesheet" href="estilo/style.css">
+    <script src="/javaScript/logica.js"></script>
+    <script src="javaScript/cadrastrologica.js"></script>
+    <link rel="stylesheet" href="estilo/cadastro.css">
 </head>
 <body>
     <header> 
@@ -14,7 +15,12 @@
     
     <nav></nav>
 
-    <section> </section>
+    <section>
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="email" name="email" id="email" placeholder="Email">
+    <input type="password" name="senha" id="senha" placeholder="Senha">
+    <button onclick="cadastrar()">Cadastrar</button>    
+    </section>
 
 
     <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila</footer>
