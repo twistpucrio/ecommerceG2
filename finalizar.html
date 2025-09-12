@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <script src="javaScript/logica.js"></script> 
+    <script src="javaScript/carrinhologica.js"></script>
+</head>
+<body>
+    <div id="container"> 
+        <header id="titulo"> 
+            <h1> Loja </h1>     
+        </header> 
+        <div id="cadrastro" hidden> </div>
+        <section id="main"> 
+        <!--<div id="revisao do pedido"> 
+                <h2> Revisão do pedido: </h2>
+                <div id="cart">
+                <div id="cart-items-container"></div>
+                <div id="cart-summary"></div>
+                <div id="cart-total">Total: $0.00</div>
+                </div> 
+            </div>--> 
+                <a href="carrinho.html"> Voltar para o carrinho </a>
+            
+            <h2> Para finalizar seu pedido preencha as seguientes informações:  </h2>
+            <fieldset> 
+                <legend> Informações de pagamento: </legend>
+                    <label for="genero"> Selecione forma de pagamento: </label>
+                    <select> 
+                            <option value="RJ"> Cartão de Credito </option>
+                            <option value="SP"> Cartão de Debito  </option>
+                            <option value="MG"> PIX </option>
+                            <option value="ES"> Boleto </option>
+                    </select>
+                    <br/> <br/>
+                    <label for="cpf"> CPF: </label>
+                    <input type="text" name="txtCpf" id="txtCpf" size="11" autofocus/>
+                    <br/><br/> 
+                    <label for="nome"> Nome do titular: </label>
+                    <input type="text" name="txtNome" id="txtNome" autofocus/>    
+                    <br/><br/> 
+                    <label for="validade"> Validade: </label>
+                    <input type="date" name="txtValidade" id="txtValidade" size="5" autofocus/>
+                    <br/><br/>
+                </fieldset> 
+                <fieldset> 
+                    <legend> Endereço: </legend>
+                        <label for="cep"> Cep: </label>
+                        <input type="text" name="txtCep" id="txtCep" autofocus/>
+                        <br/> <br/> 
+                        <label for="cidade"> Cidade: </label>
+                        <input type="text" name="txtCid" id="txtCid" autofocus/> 
+                        <br/><br/> 
+                        <label for="estado"> Estado: </label>
+                        <select> 
+                            <option value="RJ"> RJ </option>
+                            <option value="SP"> SP </option>
+                            <option value="MG"> MG </option>
+                            <option value="ES"> ES </option>
+                        </select>
+                        <br/> <br/> 
+                        <label for="logradoro"> Logradoro </label>
+                        <input type="text" name="txtLog" id="txtLog" autofocus/>
+                        <br/><br/> 
+                        <label for="numero"> Numero: </label>
+                        <input type="text" name="txtNum" id="txtNum" autofocus/> 
+                        <br/><br/> 
+                        <label for="complemento"> Complemento:</label>
+                        <input type="text" name="txtComp" id="txtComp" autofocus/> 
+                        <br/><br/> 
+                </fieldset>
+                <br/> <br/> 
+                <input id="finalizando" type="submit" value="Salvar" 
+                onclick="alert('Pedido fianlizado com sucesso! Obrigada por comprar conosco!')"> 
+            </section>
+        </br> 
+        </br> 
+        <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila</footer>
+    </div>
+</body>
+</html>
