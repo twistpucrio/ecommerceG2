@@ -8,5 +8,5 @@
         .cart-item .info { flex-grow: 1; }
         #cart-summary { text-align: right; margin-top: 20px; }
         #cart-total { font-size: 1.5em; font-weight: bold; }
-        #checkout-btn { background-color: #28a745; color: white; border: none; padding: 12px 20px; font-size: 1.2em; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        #checkout-btn { background-color: #28a745; color: white; border: none; text-decoration: none; padding: 12px 20px; font-size: 1.2em; border-radius: 5px; cursor: pointer; margin-top: 10px; }
         #checkout-btn:hover { background-color: #218838; }

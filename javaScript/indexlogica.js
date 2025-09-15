@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const barraDePesquisa = document.getElementById("pesquisa");
         const products = g2.listProducts();
 
-        function exibirProdutos(filtro = '') {
+        function exibirProdutos(filtroBusca = '') {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
-            const termo = filtro.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
+            const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
 
             //filtrando os produtos vendo se o nome do produto inclui o que foi escrito na barra de pesquisa
             const produtosFiltrados = products.filter(product =>
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    // para adicionar itens no carrinho pelo home
     productListEl.addEventListener('click', (event) => {
         if (event.target.tagName === 'BUTTON' && event.target.dataset.productId) {
             const productId = parseInt(event.target.dataset.productId, 10);
@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`${g2.listProducts().find(p => p.id === productId).name} added to cart!`);
         }
     });
+
 
     renderProducts();
 });
