@@ -1,5 +1,5 @@
 
-let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123"}]
+let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123", "id": "0"}]
 localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 
@@ -8,7 +8,6 @@ function cadastrar(){
     let nome = document.getElementById("nomeCadastro").value;
     let email = document.getElementById("emailCadastro").value;
     let senha = document.getElementById("senhaCadastro").value;
-
 
     // verifica se algum está vazio
     if (!nome||!email||!senha){
@@ -28,8 +27,12 @@ function cadastrar(){
         return;
     }
 
+    // cria um novo id pro usuario
+    let id = usuarios.length
+
+
     // adiciona novo usuario no banco da dados
-    usuarios.push({nome, email, senha});
+    usuarios.push({nome, email, senha, id});
     localStorage.setItem("usuarios",JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
@@ -103,4 +106,9 @@ function logout(){
         alert(usuarioLogado.nome + ", você saiu da sua conta!");
         localStorage.removeItem("usuarioLogado");
     }
+}
+
+
+function atualizarCadastro(){
+    
 }
