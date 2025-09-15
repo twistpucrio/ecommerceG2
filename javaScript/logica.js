@@ -1,31 +1,6 @@
 class EcommerceG2 {
   constructor() {
-    this.products = [
-      {
-        id: 1,
-        name: 'Stylish Sunglasses',
-        price: 24.99,
-        image: 'https://via.placeholder.com/300x300.png?text=Sunglasses'
-      },
-      {
-        id: 2,
-        name: 'Leather Wallet',
-        price: 39.99,
-        image: 'https://via.placeholder.com/300x300.png?text=Wallet'
-      },
-      {
-        id: 3,
-        name: 'Classic Watch',
-        price: 149.99,
-        image: 'https://via.placeholder.com/300x300.png?text=Watch'
-      },
-      {
-        id: 4,
-        name: 'Comfortable Backpack',
-        price: 59.99,
-        image: 'https://via.placeholder.com/300x300.png?text=Backpack'
-      }
-    ];
+    this.products = this.listProducts()
     // Load cart from localStorage or initialize as empty array
     this.cart = this._loadCart();
   }
@@ -48,8 +23,13 @@ class EcommerceG2 {
     }
   }
 
+  loadProducts() {
+    return fetch('../json/prod.json')
+  }
+
+
   listProducts() {
-    return this.products;
+    return this.loadProducts();
   }
 
   addToCart(productId) {
