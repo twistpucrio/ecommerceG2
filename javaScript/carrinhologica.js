@@ -1,69 +1,94 @@
 document.addEventListener('DOMContentLoaded', () => {
-            const g2 = new EcommerceG2();
-            const cartItemsContainer = document.getElementById('cart-items-container');
-            const cartTotalEl = document.getElementById('cart-total');
-            const checkoutBtn = document.getElementById('checkout-btn');
-            const clearCartBtn = document.getElementById("clearcart-btn");
-            let removeItemBtn = document.getElementsByClassName('remover');
-            
+    // chama dos campos 
+    const g2 = new EcommerceG2();
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartItemsAdd = document.getElementById('cart-items-add');
+    const cartTotalEl = document.getElementById('cart-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const clearCartBtn = document.getElementById("clearcart-btn");
+    //let removeItemBtn = document.getElementsByClassName('remover');
 
-            function renderCart() {
-                const cart = g2.getCart();
-                const allProducts = g2.listProducts();
-                
-                const cartItemDetails = cart.products.map(productId => {
-                    return allProducts.find(p => p.id === productId);
-                }).filter(p => p); // Filter out undefined if a product is not found
 
-                if (cartItemDetails.length === 0) {
-                    cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
-                    checkoutBtn.style.display = 'none'; // Hide checkout if cart is empty
-                } else {
-                    cartItemsContainer.innerHTML = '';
-                    cartItemDetails.forEach(item => {
-                        const itemEl = document.createElement('div');
-                        itemEl.className = 'cart-item';
-                        itemEl.innerHTML = `
+    function renderCart() {
+        const cart = g2.getCart();
+        const allProducts = g2.listProducts();
+
+        const cartItemDetails = cart.products.map(productId => {
+            return allProducts.find(p => p.id === productId);
+        }).filter(p => p); // Pega os detalhes dos produtos visto que o carrinho so pega o id
+        if (cartItemDetails.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
+            checkoutBtn.style.display = 'none'; // Se o carrinho estiver vazio, ele esconde o checkout button
+
+        } else {// caso contrario, ele renderiza os itens do carrinho 
+            cartItemsContainer.innerHTML = '';
+            //cartItemsAdd.innerHTML = '';
+            cartItemDetails.forEach(item => {
+                const itemEl = document.createElement('div');
+                const itemAdd = document.createElement('div');
+                itemEl.className = 'cart-item';
+                itemAdd.className = 'cart-add'
+                itemEl.innerHTML = `
                             <img src="${item.image}" alt="${item.name}" width="60" height="60">
                             <div class="info">
                                 <h4>${item.name}</h4>
                                 <div>$${item.price.toFixed(2)}</div>
                             </div>
-                            <button class="remover" data-product-id="${item.id}">
+
+                            <button class="remover" data-remove-id = "${item.id}">
                                 Remover
                             </button>
 
+                            <button class="adicionar" data-add-id = "${item.id}">
+                                Adicionar
+                            </button>
                         `;
-                        cartItemsContainer.appendChild(itemEl);
-                    });
-                    checkoutBtn.style.display = 'block';
-                }
+                //itemAdd.innerHTML = `
+                            
+                //`;
+                cartItemsContainer.appendChild(itemEl);
+               // cartItemsAdd.appendChild(itemAdd);
+            });
+            checkoutBtn.style.display = 'block';// aparece como um bloco
+        }
 
-                cartTotalEl.textContent = `Total: $${cart.total.toFixed(2)}`;
+        cartTotalEl.textContent = `Total: $${cart.total.toFixed(2)}`;//total do carrinho com 2 casas decimais
+    }
+
+    checkoutBtn.addEventListener('click', () => {
+        const order = g2.checkout();
+        if (order.success) {
+            //alert(`Checkout successful! Your order ID is ${order.orderId}. Total: $${order.total.toFixed(2)}`);
+            renderCart(); // Re-render to show the empty cart
+        } else {
+            alert('Could not process checkout. Your cart might be empty.');
+        }
+    });
+
+    // para limpar o carinho por completo. Da um clear no carrinho todo e renderiza ele
+    clearCartBtn.addEventListener("click", () => {
+        g2.clearCart();
+        renderCart();
+    });
+
+
+    cartItemsContainer.addEventListener('click', (event) => {
+        console.log(event.target.dataset)
+        if (event.target.tagName === 'BUTTON') {
+            // remove um item especifico do carrinho. Se o clique for num botão que tem data-remove-id, pega o ID e remove esse item do carrinho.
+            if(event.target.dataset.removeId){
+                const productId = parseInt(event.target.dataset.removeId, 10);
+                g2.removeItemFromCart(productId);
             }
 
-            checkoutBtn.addEventListener('click', () => {
-                const order = g2.checkout();
-                if (order.success) {
-                    //alert(`Checkout successful! Your order ID is ${order.orderId}. Total: $${order.total.toFixed(2)}`);
-                    renderCart(); // Re-render to show the empty cart
-               } else {
-                    alert('Could not process checkout. Your cart might be empty.');
-                }
-            });
-            clearCartBtn.addEventListener("click",() =>{
-                g2.clearCart();
-                renderCart();
-            });
-            cartItemsContainer.addEventListener('click', (event) => {
-                console.log(event.target.dataset)
-                if (event.target.tagName=== 'BUTTON' && event.target.dataset.productId) {
-                    const productId = parseInt(event.target.dataset.productId, 10);
-                    g2.removeItemFromCart(productId);
-                    renderCart();
-                    
-                }
-            });
-
+            // adiciona um item especifico do carrinho. Se o clique for num botão que tem data-add-id, pega o ID e adiciona esse item do carrinho.
+            else if (event.target.dataset.addId) {
+                const productId = parseInt(event.target.dataset.addId, 10);
+                g2.addToCart(productId);
+            }
             renderCart();
-        });
+        }
+    });
+
+    renderCart();
+});
