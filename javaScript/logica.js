@@ -1,6 +1,5 @@
 class EcommerceG2 {
   constructor() {
-    this.products = this.listProducts()
     // Load cart from localStorage or initialize as empty array
     this.cart = this._loadCart();
   }
@@ -23,8 +22,19 @@ class EcommerceG2 {
     }
   }
 
-  loadProducts() {
-    return fetch('../json/prod.json')
+  async loadProducts() {
+    try {
+      const response = await fetch('../json/prod.json');
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error(error.message);
+      return [];
+    }
   }
 
 
@@ -32,17 +42,21 @@ class EcommerceG2 {
     return this.loadProducts();
   }
 
-  addToCart(productId) {
-    const product = this.products.find(p => p.id === productId);
-    if (product) {
-      this.cart.push(productId);
-      this._saveCart(); // Save cart after modification
-    }
+  async addToCart(productId) {
+    console.log(productId)
+    const products = await this.listProducts();
+    products.velas.map(product => {
+         if (product.id === productId){
+          this.cart.push(productId);
+          this._saveCart(); // Save cart after modification
+         }
+      });
   }
 
-  getCart() {
+  async getCart() {
+    const products = await this.loadProducts();
     const total = this.cart.reduce((acc, productId) => {
-      const product = this.products.find(p => p.id === productId);
+      const product = products.find(p => p.id === productId);
       return acc + (product ? product.price : 0);
     }, 0);
 
@@ -91,5 +105,3 @@ if (typeof window !== 'undefined') {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = EcommerceG2;
 }
-
-
