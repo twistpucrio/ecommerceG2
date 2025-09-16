@@ -1,13 +1,16 @@
 
-let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123", "id": "0"}]
+let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123", "id": "0", "logradoro": "PUC-Rio", "Numero": "123", "Complemento": "Leme" }]
 localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 
 function cadastrar(){
     // pega dados escritos nos campos
-    let nome = document.getElementById("nomeCadastro").value;
-    let email = document.getElementById("emailCadastro").value;
+    let nome = document.getElementById("nomeCadastro").value.trim();
+    let email = document.getElementById("emailCadastro").value.trim().toLowerCase();
     let senha = document.getElementById("senhaCadastro").value;
+    let logradoro = document.getElementById("logradoroCadastro").value;
+    let numero = document.getElementById("numeroCadastro").value;
+    let complemento = document.getElementById("complementoCadastro").value;
 
     // verifica se algum está vazio
     if (!nome||!email||!senha){
@@ -32,7 +35,7 @@ function cadastrar(){
 
 
     // adiciona novo usuario no banco da dados
-    usuarios.push({nome, email, senha, id});
+    usuarios.push({nome, email, senha, id, logradoro, numero, complemento});
     localStorage.setItem("usuarios",JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
@@ -110,5 +113,44 @@ function logout(){
 
 
 function atualizarCadastro(){
-    
+    // pega informações sobre usuarios no banco de dados
+    let usuario = JSON.parse(localStorage.getItem("usuarios"));
+    let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    // pega informações sobre a troca de dados na pagina
+    let nomeAtualiza = document.getElementById("nomeAtualiza").value.trim();
+    let emailAtualiza = document.getElementById("emailAtualiza").value.trim().toLowerCase();
+    let senhaAtualiza = document.getElementById("senhaAtualiza").value;
+    let logradoroAtualiza = document.getElementById("logradoroAtualiza").value;
+    let numeroAtualiza = document.getElementById("numeroAtualiza").value;
+    let complementoAtualiza = document.getElementById("complementoAtualiza").value;
+
+
+
+    // atualiza se o campo estiver preenchido
+
+    if (nomeAtualiza){
+        usuarioLogado.nome = nomeAtualiza;
+    }
+    if (emailAtualiza){
+        usuarioLogado.email = emailAtualiza;
+    }
+    if (senhaAtualiza){
+        usuarioLogado.senha = senhaAtualiza;
+    }
+    if (logradoroAtualiza){
+        usuarioLogado.logradoro = logradoroAtualiza;
+    }
+    if (numeroAtualiza){
+        usuarioLogado.numero = numeroAtualiza;
+    }
+    if (complementoAtualiza){
+        usuarioLogado.complemento = complementoAtualiza;
+    }
+
+
+
+
+
+
 }
