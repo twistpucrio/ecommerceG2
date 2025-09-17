@@ -1,11 +1,72 @@
-        body { font-family: Arial, sans-serif; padding: 20px; }
+        @font-face {
+                font-family: fonteTitulo; 
+                src:url(../fonts/Inspiration/Inspiration-Regular.ttf) ; 
+        }
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+         margin: 0;
+        padding: 0;
+        }
+
         nav { margin-bottom: 20px; }
+
         nav a { margin-right: 15px; font-size: 1.2em; }
+
         #products { max-width: 900px; margin: auto; }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+
+        .titulo{
+                 background-color: #E8E3DD;
+        }
+
+        h1 {
+                 padding: 0.2em;
+                 font-family: fonteTitulo;
+                 font-size: 8em;
+                 text-align: center;
+                 background-color: #E8E3DD;
+        }
+
+        .segundo-cabeçalho{
+                background-color: #E2DDD4;
+                height:5.5em;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+        }
+
+      .pesquisa {
+        background-image: url('../img/lupa.png'); /* fix the path */
+        background-position: right 0.5em center;
+        background-repeat: no-repeat;
+        background-size: 1em;
+
+        padding-left: 2em;
+        border-radius: 0.6em;
+        padding: 0.8em;
+        width: 35em;
+
+        border: none; /* remove default white/gray border */
+        outline: none; /* optional: removes blue outline on focus */
+        background-color: #fff; /* or match your background */
+        }
+
+
+
         .product-item { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
+
         .product-item img { border-radius: 4px; margin-right: 15px; }
+
         .product-item .info { flex-grow: 1; }
+
         .product-item .price { font-weight: bold; }
+
         button { background-color: #007bff; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
+
         button:hover { background-color: #0056b3; }
