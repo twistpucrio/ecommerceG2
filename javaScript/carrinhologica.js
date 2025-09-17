@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div>$${item.price.toFixed(2)}</div>
                             </div>
 
+                            <input type="number" id="quantidade" min="1" max="100"  data-add-id = "${item.id}" placeholder = "Quantidade" ="10"/>
+
                             <button class="remover" data-remove-id = "${item.id}">
                                 Remover
                             </button>
 
-                            <button class="adicionar" data-add-id = "${item.id}">
-                                Adicionar
-                            </button>
+                            
                         `;
                 //itemAdd.innerHTML = `
                             
