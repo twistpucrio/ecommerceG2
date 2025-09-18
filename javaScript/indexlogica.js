@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const termo = filtro.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
 
             console.log(products);
-
-            console.log(products["velas"]);
             //filtrando os produtos vendo se o nome do produto inclui o que foi escrito na barra de pesquisa
             const produtosFiltrados = products["velas"].filter(vela =>
                 vela.nome.toLowerCase().includes(termo)

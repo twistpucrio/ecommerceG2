@@ -7,15 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
             let removeItemBtn = document.getElementsByClassName('remover');
             
 
-            function renderCart() {
-                const cart = g2.getCart();
-                const allProducts = g2.listProducts();
+            async function renderCart() {
+                let cart = await g2.getCart();
+                const allProducts = await g2.listProducts(); // Load all products to get details
+                console.log(allProducts)
+                console.log(cart);
+                // Map cart product IDs to product details
                 
                 const cartItemDetails = cart.products.map(productId => {
-                    return allProducts.find(p => p.id === productId);
+                    return allProducts["velas"].find(p => p.id == productId);
                 }).filter(p => p); // Filter out undefined if a product is not found
 
-                if (cartItemDetails.length === 0) {
+                if (cartItemDetails.length == 0) {
                     cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
                     checkoutBtn.style.display = 'none'; // Hide checkout if cart is empty
                 } else {
@@ -24,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const itemEl = document.createElement('div');
                         itemEl.className = 'cart-item';
                         itemEl.innerHTML = `
-                            <img src="${item.image}" alt="${item.name}" width="60" height="60">
+                            <img src="${item.imagem}" alt="${item.nome}" width="60" height="60">
                             <div class="info">
-                                <h4>${item.name}</h4>
-                                <div>$${item.price.toFixed(2)}</div>
+                                <h4>${item.nome}</h4>
+                                <div>$${item.preco.toFixed(2)}</div>
                             </div>
                             <button class="remover" data-product-id="${item.id}">
                                 Remover
