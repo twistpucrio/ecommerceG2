@@ -15,11 +15,25 @@
     
     <nav></nav>
 
+    <a href="atualiza.html">Atualiza</a>
     <section>
-    <input type="text" id="nome" placeholder="Nome">
-    <input type="email" name="email" id="email" placeholder="Email">
-    <input type="password" name="senha" id="senha" placeholder="Senha">
-    <button onclick="cadastrar()">Cadastrar</button>    
+        <input type="email" name="email" id="emailLogin" placeholder="Email">
+        <input type="password" name="senha" id="senhaLogin" placeholder="Senha">
+    <button onclick="login()">Login</button>
+    </section>
+
+
+    </br>
+    <section>
+        <input type="text" id="nomeCadastro" placeholder="*Nome">
+        <input type="email" name="email" id="emailCadastro" placeholder="*Email">
+        <input type="password" name="senha" id="senhaCadastro" placeholder="*Senha">
+        <input type="text" id="logradoroCadastro" placeholder="Logradoro">
+        <input type="text" id="numeroCadastro" placeholder="Numero">
+        <input type="text" id="complementoCadastro" placeholder="Complemento">
+        <button onclick="cadastrar()">Cadastrar</button>
+        </br>
+        <button onclick="logout()">Logout</button>  
     </section>
 
 
