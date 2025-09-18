@@ -12,36 +12,45 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCart() {
         const cart = g2.getCart();
         const allProducts = g2.listProducts();
+        const items = cart.products.reduce((map, productId) => {
+            const item = map.get(productId) || {
+                details: allProducts.find(p => p.id === productId), 
+                amount: 0,
+            };
+            item.amount += 1;
+            map.set(productId, item);
+            return map;
+        }, new Map());
+        console.log(items);
 
-        const cartItemDetails = cart.products.map(productId => {
+        
+
+        /*const cartItemDetails = cart.products.map(productId => {
             return allProducts.find(p => p.id === productId);
-        }).filter(p => p); // Pega os detalhes dos produtos visto que o carrinho so pega o id
-        if (cartItemDetails.length === 0) {
+        }).filter(p => p); // Pega os detalhes dos produtos visto que o carrinho so pega o id*/
+        if (items.length === 0) {
             cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
             checkoutBtn.style.display = 'none'; // Se o carrinho estiver vazio, ele esconde o checkout button
 
         } else {// caso contrario, ele renderiza os itens do carrinho 
             cartItemsContainer.innerHTML = '';
             //cartItemsAdd.innerHTML = '';
-            cartItemDetails.forEach(item => {
+            [...items.keys()].sort().forEach((id) => {
+                const item = items.get(id);
                 const itemEl = document.createElement('div');
                 const itemAdd = document.createElement('div');
                 itemEl.className = 'cart-item';
                 itemAdd.className = 'cart-add'
                 itemEl.innerHTML = `
-                            <img src="${item.image}" alt="${item.name}" width="60" height="60">
+                            <img src="${item.details.image}" alt="${item.details.name}" width="60" height="60">
                             <div class="info">
-                                <h4>${item.name}</h4>
-                                <div>$${item.price.toFixed(2)}</div>
+                                <h4>${item.details.name}</h4>
+                                <div>$${item.details.price.toFixed(2)}</div>
                             </div>
+                            <input type="text" id="qtd" readonly value ="${item.amount}"> 
+                            <button class="remover" data-remove-id = "${id}">-</button>
 
-                            <button class="remover" data-remove-id = "${item.id}">
-                                Remover
-                            </button>
-
-                            <button class="adicionar" data-add-id = "${item.id}">
-                                Adicionar
-                            </button>
+                            <button class="adicionar" data-add-id = "${id}">+</button>
                         `;
                 //itemAdd.innerHTML = `
                             
