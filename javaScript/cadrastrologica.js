@@ -1,6 +1,28 @@
 
-let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123", "id": "0", "logradoro": "PUC-Rio", "Numero": "123", "Complemento": "Leme" }]
-localStorage.setItem("usuarios",JSON.stringify(usuarios));
+
+// cria primeiro usuario
+let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123", "id": "0", "logradoro": "PUC-Rio", "numero": "123", "complemento": "Leme" }]
+
+// coloca o primeiro usuuario no localStorage se não houver nada lá, fazemos isso pra não apagar os usuarios ao mudar de página
+let verificaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
+if (verificaUsuarios === null){
+    localStorage.setItem("usuarios",JSON.stringify(usuarios));
+}
+
+
+// essa função retorna verdadeiro se houver algum usuario com login feito atualmente
+function verificaLogado(){
+    const verificaLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (verificaLogado === null){
+        return false;
+    }
+
+    else{
+        return true;
+    }
+}
+
 
 
 function cadastrar(){
@@ -70,7 +92,7 @@ function login(){
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
 
-    // verifica se usuario está no banco de dados
+    // verifica se usuario está no banco de dados e qual é o usuario
     const usuario = usuarios.find(user => user.email === email);
 
     // se o usuario já existe, fecha a função
@@ -114,43 +136,52 @@ function logout(){
 
 function atualizarCadastro(){
     // pega informações sobre usuarios no banco de dados
-    let usuario = JSON.parse(localStorage.getItem("usuarios"));
+    let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     // pega informações sobre a troca de dados na pagina
     let nomeAtualiza = document.getElementById("nomeAtualiza").value.trim();
-    let emailAtualiza = document.getElementById("emailAtualiza").value.trim().toLowerCase();
     let senhaAtualiza = document.getElementById("senhaAtualiza").value;
     let logradoroAtualiza = document.getElementById("logradoroAtualiza").value;
     let numeroAtualiza = document.getElementById("numeroAtualiza").value;
     let complementoAtualiza = document.getElementById("complementoAtualiza").value;
 
 
-
-    // atualiza se o campo estiver preenchido
+    // atualiza se o campo estiver preenchido, colocando na variavel local
 
     if (nomeAtualiza){
+        console.log(nomeAtualiza);
         usuarioLogado.nome = nomeAtualiza;
-    }
-    if (emailAtualiza){
-        usuarioLogado.email = emailAtualiza;
     }
     if (senhaAtualiza){
         usuarioLogado.senha = senhaAtualiza;
+        console.log(senhaAtualiza);
     }
     if (logradoroAtualiza){
         usuarioLogado.logradoro = logradoroAtualiza;
+        console.log(logradoroAtualiza);
     }
     if (numeroAtualiza){
+        console.log(numeroAtualiza);
         usuarioLogado.numero = numeroAtualiza;
     }
     if (complementoAtualiza){
+        console.log(complementoAtualiza);
         usuarioLogado.complemento = complementoAtualiza;
     }
 
+    // pega a variavel local usuarioLogado e envia para o localStorage
+    localStorage.setItem("usuarioLogado",JSON.stringify(usuarioLogado));
 
 
+    // encontra o index do usuarioLogado na lista de usuarios e retorna o index, após isso, modifica a array usuarios a partir do usuariologado
+    const index = usuarios.findIndex(user => user.id === usuarioLogado.id);
+    usuarios[index] = usuarioLogado;
 
+    // envia as modificações da array usuarios para o localStorage
+    localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
-
+ 
 }
+
+
