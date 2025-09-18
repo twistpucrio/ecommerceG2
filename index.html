@@ -10,8 +10,11 @@
 </head>
 <body> 
     <header id="titulo"> 
-        <h1> Loja </h1>
+        <h1> L'Atelier Bougioni </h1>
     </header>
+    <div class="segundo-cabeçalho">
+        <input id="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
+    </div>
     <nav id="menu">
         <a href="carrinho.html">Carrinho</a>
         <input id="pesquisa" class="pesquisa" type="search">
@@ -19,7 +22,7 @@
     <section id="main"> 
     <div id="products">
         <h1>Nossos produtos: </h1>
-        <div id="product-list"></div>
+        <div id="product-list">{{products.velas}}</div>
     </div>
     </section>
     <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila</footer>
