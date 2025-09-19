@@ -2,18 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const g2 = new EcommerceG2();
     const productListEl = document.getElementById('product-list');//lista de produtos no html
 
-    function renderProducts() {
+    async function renderProducts() {
         const barraDePesquisa = document.getElementById("pesquisa");
-        const products = g2.listProducts();
+        const products = await g2.listProducts();
 
         function exibirProdutos(filtroBusca = '') {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
             const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
 
+            console.log(products);
             //filtrando os produtos vendo se o nome do produto inclui o que foi escrito na barra de pesquisa
-            const produtosFiltrados = products.filter(product =>
-                product.name.toLowerCase().includes(termo)
+            const produtosFiltrados = products["velas"].filter(vela =>
+                vela.nome.toLowerCase().includes(termo)
             );
 
             // se o tamanho dos produtos filtrados for igual  zero, ou seja, se não houver produtos que incluam o que foi pesquisado
@@ -30,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemEl = document.createElement('div');//cria uma div com classe para adicionar os produtos filtrados
                 itemEl.className = 'product-item';
                 itemEl.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}" width="80" height="80">
+                    <img src="${product.image}" alt="${product.nome}" width="80" height="80">
                     <div class="info">
-                        <h3>${product.name}</h3>
-                        <div class="price">$${product.price.toFixed(2)}</div>
+                        <h3>${product.nome}</h3>
+                        <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <button data-product-id="${product.id}">Add to Cart</button>
                 `;
@@ -55,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.tagName === 'BUTTON' && event.target.dataset.productId) {
             const productId = parseInt(event.target.dataset.productId, 10);
             g2.addToCart(productId);
-            alert(`${g2.listProducts().find(p => p.id === productId).name} added to cart!`);
+            alert('Product added to cart!');
+
         }
     });
 

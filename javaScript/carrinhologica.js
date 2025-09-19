@@ -9,39 +9,78 @@ document.addEventListener('DOMContentLoaded', () => {
     //let removeItemBtn = document.getElementsByClassName('remover');
 
 
+            async function renderCart() {
+                let cart = await g2.getCart();
+                const allProducts = await g2.listProducts(); // Load all products to get details
+                console.log(allProducts)
+                console.log(cart);
+                // Map cart product IDs to product details
+                
+                const cartItemDetails = cart.products.map(productId => {
+                    return allProducts["velas"].find(p => p.id == productId);
+                }).filter(p => p); // Filter out undefined if a product is not found
+
+                if (cartItemDetails.length == 0) {
+                    cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
+                    checkoutBtn.style.display = 'none'; // Hide checkout if cart is empty
+                } else {
+                    cartItemsContainer.innerHTML = '';
+                    cartItemDetails.forEach(item => {
+                        const itemEl = document.createElement('div');
+                        itemEl.className = 'cart-item';
+                        itemEl.innerHTML = `
+                            <img src="${item.imagem}" alt="${item.nome}" width="60" height="60">
+=======
+
     function renderCart() {
         const cart = g2.getCart();
         const allProducts = g2.listProducts();
+        const items = cart.products.reduce((map, productId) => {
+            const item = map.get(productId) || {
+                details: allProducts.find(p => p.id === productId), 
+                amount: 0,
+            };
+            item.amount += 1;
+            map.set(productId, item);
+            return map;
+        }, new Map());
+        console.log(items);
 
-        const cartItemDetails = cart.products.map(productId => {
+        
+
+        /*const cartItemDetails = cart.products.map(productId => {
             return allProducts.find(p => p.id === productId);
-        }).filter(p => p); // Pega os detalhes dos produtos visto que o carrinho so pega o id
-        if (cartItemDetails.length === 0) {
+        }).filter(p => p); // Pega os detalhes dos produtos visto que o carrinho so pega o id*/
+        if (items.length === 0) {
             cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
             checkoutBtn.style.display = 'none'; // Se o carrinho estiver vazio, ele esconde o checkout button
 
         } else {// caso contrario, ele renderiza os itens do carrinho 
             cartItemsContainer.innerHTML = '';
             //cartItemsAdd.innerHTML = '';
-            cartItemDetails.forEach(item => {
+            [...items.keys()].sort().forEach((id) => {
+                const item = items.get(id);
                 const itemEl = document.createElement('div');
                 const itemAdd = document.createElement('div');
                 itemEl.className = 'cart-item';
                 itemAdd.className = 'cart-add'
                 itemEl.innerHTML = `
-                            <img src="${item.image}" alt="${item.name}" width="60" height="60">
-                            <div class="info">
-                                <h4>${item.name}</h4>
-                                <div>$${item.price.toFixed(2)}</div>
-                            </div>
+                                  <img src="${item.details.image}" alt="${item.details.name}" width="60" height="60">
+                                  <div class="info">
+                                      <h4>${item.details.name}</h4>
+                                      <div>$${item.details.price.toFixed(2)}</div>
 
-                            <button class="remover" data-remove-id = "${item.id}">
-                                Remover
-                            </button>
+                                  <img src="${item.image}" alt="${item.name}" width="60" height="60">
 
-                            <button class="adicionar" data-add-id = "${item.id}">
-                                Adicionar
-                            </button>
+                                  <div class="info">
+                                      <h4>${item.nome}</h4>
+                                      <div>$${item.preco.toFixed(2)}</div>
+                                  </div>
+                      
+                                  <input type="text" id="qtd" readonly value ="${item.amount}"> 
+                                  <button class="adicionar" data-add-id = "${id}">+</button>
+                                  <button class="remover" data-remove-id = "${id}">-</button>
+
                         `;
                 //itemAdd.innerHTML = `
                             
