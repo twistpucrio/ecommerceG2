@@ -184,4 +184,30 @@ function atualizarCadastro(){
  
 }
 
+function iconeCadastro(){
+    let verificaSeLogado = verificaLogado();
 
+    if (verificaSeLogado === true){
+        window.location.href = 'atualiza.html';
+    }
+    
+    else{
+     window.location.href = 'cadastro.html';
+    }
+   
+
+}
+
+function iconeFavoritos(){
+    let verificaSeLogado = verificaLogado();
+
+    if (verificaSeLogado === true){
+        window.location.href = 'favoritos.html';
+    }
+    
+    else{
+     window.location.href = 'cadastro.html';
+    }
+   
+
+}
