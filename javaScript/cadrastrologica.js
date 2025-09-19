@@ -67,6 +67,8 @@ function cadastrar(){
     document.getElementById("email").value="";
     document.getElementById("senha").value="";
 
+    window.location.href = 'index.html';
+
 }
 
 function login(){
@@ -108,6 +110,7 @@ function login(){
     if (verificaInformações){
         alert("Boas vindas, "+ usuario.nome +"!");
         localStorage.setItem("usuarioLogado",JSON.stringify(usuario));
+        window.location.href = 'index.html';
     }
     else{
         alert("Senha errada, tente novamente");
@@ -130,6 +133,7 @@ function logout(){
     else{
         alert(usuarioLogado.nome + ", você saiu da sua conta!");
         localStorage.removeItem("usuarioLogado");
+        window.location.href = 'index.html';
     }
 }
 
