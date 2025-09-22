@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //let removeItemBtn = document.getElementsByClassName('remover');
 
 
-            async function renderCart() {
+           /* async function renderCart() {
                 let cart = await g2.getCart();
                 const allProducts = await g2.listProducts(); // Load all products to get details
                 console.log(allProducts)
@@ -29,12 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         const itemEl = document.createElement('div');
                         itemEl.className = 'cart-item';
                         itemEl.innerHTML = `
-                            <img src="${item.imagem}" alt="${item.nome}" width="60" height="60">
-=======
+                            <img src="${item.imagem}" alt="${item.nome}" width="60" height="60">`;
+    
+        }
 
-    function renderCart() {
-        const cart = g2.getCart();
-        const allProducts = g2.listProducts();
+        cartTotalEl.textContent = `Total: $${cart.total.toFixed(2)}`;//total do carrinho com 2 casas decimais
+});*/
+
+  function renderCart() {
+        const cart =  g2.getCart();
+        const allProducts =  g2.listProducts();
         const items = cart.products.reduce((map, productId) => {
             const item = map.get(productId) || {
                 details: allProducts.find(p => p.id === productId), 
@@ -45,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return map;
         }, new Map());
         console.log(items);
+    }
 
         
 
@@ -90,9 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             checkoutBtn.style.display = 'block';// aparece como um bloco
         }
-
-        cartTotalEl.textContent = `Total: $${cart.total.toFixed(2)}`;//total do carrinho com 2 casas decimais
-    }
+    
 
     checkoutBtn.addEventListener('click', () => {
         const order = g2.checkout();
