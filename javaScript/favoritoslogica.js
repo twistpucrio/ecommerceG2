@@ -3,6 +3,10 @@
 
 
 
+
+
+
+
 function adicionarFavoritos(produtoID) {
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
@@ -19,7 +23,7 @@ function adicionarFavoritos(produtoID) {
 
     // Verifica se existe se o ID do produto já está no array e roda a função de remoção caso esteja
     if (usuarioLogado.favoritos.includes(produtoID)) {
-    removerFavorito(produtoID);
+    removerFavoritos(produtoID);
     return;
     }
 
@@ -40,15 +44,12 @@ function adicionarFavoritos(produtoID) {
 
 
 
-
-
-
 function removerFavoritos(produtoID){
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     const indexFavorito = usuarioLogado.favoritos.indexOf(produtoID);
-
+    
     // remove o produto
     usuarioLogado.favoritos.splice(indexFavorito, 1);
 
@@ -65,20 +66,15 @@ function removerFavoritos(produtoID){
 
 
 
+
 function limparFavoritos(){
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-    let confirmacao = confirm("Tem certeza que deseja excluir sua lista de favoritos?");
-    
-    // se o usuario apertar em cancelar, a função acaba
-    if (!confirmacao){
-        return;
-    }
 
     if (!usuarioLogado) {
-    alert("Nenhum usuário logado, por favor faça login e tente novamente");
-    return;
+        alert("Nenhum usuário logado, por favor faça login e tente novamente");
+        return;
     }
 
     // verifica se o usuario não tem favoritos na array ou se o tamanho é 0, se algum desses for verdade a função acaba
@@ -86,8 +82,15 @@ function limparFavoritos(){
         alert("Você não tem favoritos para deletar.");
         return;
     }
-    
-    // remove o array favoritos
+
+    let confirmacao = confirm("Tem certeza que deseja excluir sua lista de favoritos?");
+    // se o usuario apertar em cancelar, a função acaba
+    if (!confirmacao){
+        return;
+    }
+
+
+    // remove o array favoritos do localStorage
     delete usuarioLogado.favoritos;
 
     // encontra o index do usuarioLogado na lista de usuarios e retorna o index, após isso, modifica a array usuarios a partir do usuariologado
