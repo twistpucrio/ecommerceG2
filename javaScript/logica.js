@@ -21,6 +21,7 @@ class EcommerceG2 {
 
 
   listProducts() {
+    
     return this.products;
   }
 
