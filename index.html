@@ -6,26 +6,38 @@
     <title>Loja </title>
     <script src="/javaScript/logica.js"></script> 
     <script src="javaScript/indexlogica.js"></script>
+    <script src="javaScript/cadrastrologica.js"></script>
     <link rel="stylesheet" href="estilo/home.css">
 </head>
 <body> 
     <header id="titulo"> 
-        <h1> L'Atelier Bougioni </h1>
+            <h1><a href="index.html">L'Atelier Bougioni</a></h1>
     </header>
     <div class="segundo-cabeçalho">
         <input id="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
+        <a href="carrinho.html" class="carrinhoFoto">
+            <img src="img/carrinho.png">
+        </a>
+        <input class="favoritosFoto"  type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
+        <input class="cadastroFoto"  type="image" src="img/cadastro.png" onclick="iconeCadastro()">
+        <img class="vermaisFoto" src="img/vermais.png" >
     </div>
-    <nav id="menu">
-        <a href="carrinho.html">Carrinho</a>
-        <input id="pesquisa" class="pesquisa" type="search">
-    </nav>
-    <section id="main"> 
+    <div class="banners">
+        <img class="banner1" src="img/image.png">
+    </div>
+    </div>
+    <h2> Escolha por categoria </h2>
+    <div class="categorias">
+        <img class="temas" src="img/velas.png">
+        <img class=temas src="img/velasemlata.png">
+        <img class="temas" src="img/velasemvidro.png">
+        <img class="temas" src="img/oleosessenciais.png">
+        <img class="temas" src="img/incenso.png">
+    </div>
+    <section id="main">
     <div id="products">
-        <h1>Nossos produtos: </h1>
         <div id="product-list"></div>
     </div>
-    </section>
-    <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila</footer>
-    
+</section>
 </body>
 </html>

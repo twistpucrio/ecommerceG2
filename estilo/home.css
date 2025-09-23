@@ -3,6 +3,12 @@
                 src:url(../fonts/Inspiration/Inspiration-Regular.ttf) ; 
         }
 
+        @font-face {
+                font-family: fonteh2;
+                src:url(../fonts/Inspiration/SUSE_Mono/SUSEMono-Italic-VariableFont_wght.ttf) ;
+        }
+
+
         * {
         margin: 0;
         padding: 0;
@@ -32,6 +38,19 @@
                  background-color: #E8E3DD;
         }
 
+        h2 {
+                padding: 0.2em;
+                font-family: fonteh2;
+                font-size: 2.5em;
+                text-align: center;
+                background-color: #E2DDD4;
+        }
+
+        h1 a:active, h1 a:visited, h1 a:hover, h1 a:link {
+                color:inherit;
+                text-decoration: none;
+        }
+
         .segundo-cabeçalho{
                 background-color: #E2DDD4;
                 height:5.5em;
@@ -39,25 +58,81 @@
                 align-items: center;
                 justify-content: center;
                 display: flex;
+                position: relative;
         }
 
       .pesquisa {
-        background-image: url('../img/lupa.png'); /* fix the path */
-        background-position: right 0.5em center;
-        background-repeat: no-repeat;
-        background-size: 1em;
-
-        padding-left: 2em;
-        border-radius: 0.6em;
-        padding: 0.8em;
-        width: 35em;
-
-        border: none; /* remove default white/gray border */
-        outline: none; /* optional: removes blue outline on focus */
-        background-color: #fff; /* or match your background */
+                background-image: url('../img/lupa.png'); /* fix the path */
+                background-position: right 0.5em center;
+                background-repeat: no-repeat;
+                background-size: 1em;
+                padding-left: 2em;
+                border-radius: 0.6em;
+                padding: 0.8em;
+                width: 35em;
+                border: none; /* remove default white/gray border */
+                outline: none; /* optional: removes blue outline on focus */
+                background-color: #fff; /* or match your background */
+                margin: auto;
+                font-size: 1em;
         }
 
+        .carrinhoFoto {
+                width: 3em;
+                height: 3em;
+                position: absolute;
+                right: 10em;
+        }
 
+        .favoritosFoto {
+                width: 3.5em;
+                height: 3.5em;
+                position: absolute;
+                right: 6.7em;
+        }
+
+        .cadastroFoto {
+                width: 3.5em;
+                height: 3.5em;
+                position: absolute;
+                right: 2em;
+        }
+
+        .vermaisFoto{
+                width: 2.8em;
+                height: 2.8em;
+                position: absolute;
+                left: 2em;
+        }
+
+        .banners {
+                height: 28em;
+                background-color: #E8E3DD;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+
+        .banner1 {
+                max-height: 100%;
+                max-width: 100%;
+                height: auto;
+                width: auto;
+        }
+
+        .categorias {
+                display:flex;
+                justify-content: center;
+                background-color: #E8E3DD;
+                
+        }
+
+        .temas {
+                display:flex;
+                justify-content: center;
+                padding: 1em;
+                margin: 0 1em;
+        }
 
         .product-item { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
 
