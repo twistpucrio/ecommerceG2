@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja </title>
-    <script src="/javaScript/logica.js"></script> 
-    <script src="javaScript/indexlogica.js"></script>
-    <script src="javaScript/cadrastrologica.js"></script>
-    <link rel="stylesheet" href="estilo/home.css">
-</head>
-<body> 
+    <!DOCTYPE html>
+    <html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loja </title>
+        <script src="/javaScript/logica.js"></script> 
+        <script src="javaScript/indexlogica.js"></script>
+        <script src="javaScript/cadrastrologica.js"></script>
+        <link rel="stylesheet" href="estilo/home.css">
+    </head>
+    <body> 
+    <input type="checkbox" id="menu-toggle" hidden>
     <header id="titulo"> 
             <h1><a href="index.html">L'Atelier Bougioni</a></h1>
     </header>
@@ -20,21 +21,53 @@
         </a>
         <input class="favoritosFoto"  type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
         <input class="cadastroFoto"  type="image" src="img/cadastro.png" onclick="iconeCadastro()">
-        <img class="vermaisFoto" src="img/vermais.png" >
+        <label for="menu-toggle" class=vermaisFoto>
+            <img src="img/vermais.png" alt="Abrir Menu">
+        </label>
     </div>
+    <aside class="side-menu">
+        <nav>
+            <ul>
+                <li><a href="#">Ver Todos</a></li>
+                <li><a href="#">Velas</a></li>
+                <li><a href="#">Incensos</a></li>  
+                <li><a href="#">Óleos Essenciais</a></li>
+                <li><a href="#">Meias</a></li>
+                <li><a href="#">Sobre a Empresa</a></li>
+            </ul>
+        </nav>
+    </aside>
     <div class="banners">
         <img class="banner1" src="img/image.png">
     </div>
     </div>
     <h2> Escolha por categoria </h2>
+    <div class="espaço"></div>
     <div class="categorias">
-        <img class="temas" src="img/velas.png">
-        <img class=temas src="img/oleosessenciais.png">
-        <img class="temas" src="img/velasemlata.png">
-        <img class="temas" src="img/velasemvidro.png">
-        <img class="temas" src="img/incenso.png">
+    <div class="categoria-item">
+        <img class="temas" src="img/umidificador.png">
+        <p>Umidificadores</p>
     </div>
-    <section id="main">
+    <div class="categoria-item">
+        <img class="temas" src="img/velasemlata.png">
+        <p>Velas em Lata</p>
+    </div>
+    <div class="categoria-item">
+        <img class="temas" src="img/oleosessenciais.png">
+        <p>Óleos Essenciais</p>
+    </div>
+    <div class="categoria-item">
+        <img class="temas" src="img/velasemvidro.png">
+        <p>Velas em Vidro</p>
+    </div>
+    <div class="categoria-item">
+        <img class="temas" src="img/incenso.png">
+        <p>Incensos</p>
+    </div>
+    </div>
+    <div class="espaço"></div>
+    <h2> Favoritos do Atelier </h2>
+    <section class="produtos" id="main">
     <div id="products">
         <div id="product-list"></div>
     </div>
