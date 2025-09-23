@@ -1,7 +1,7 @@
 
 
 // cria primeiro usuario
-let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123", "id": "0", "logradoro": "PUC-Rio", "numero": "123", "complemento": "Leme" }]
+let usuarios = [{"nome":"Elena","email":"elena@gmail.com","senha":"teste123", "id": "0", "estado": "MG", "logradoro": "PUC-Rio", "numero": "123", "complemento": "Leme" }]
 
 // coloca o primeiro usuuario no localStorage se não houver nada lá, fazemos isso pra não apagar os usuarios ao mudar de página
 let verificaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
@@ -30,6 +30,12 @@ function cadastrar(){
     let nome = document.getElementById("nomeCadastro").value.trim();
     let email = document.getElementById("emailCadastro").value.trim().toLowerCase();
     let senha = document.getElementById("senhaCadastro").value;
+
+    let cep = document.getElementById("cepCadastro").value;
+    let cidade = document.getElementById("cidadeCadastro").value;
+    let estado = document.getElementById("estadoCadastro").value;
+
+
     let logradoro = document.getElementById("logradoroCadastro").value;
     let numero = document.getElementById("numeroCadastro").value;
     let complemento = document.getElementById("complementoCadastro").value;
@@ -57,7 +63,7 @@ function cadastrar(){
 
 
     // adiciona novo usuario no banco da dados
-    usuarios.push({nome, email, senha, id, logradoro, numero, complemento});
+    usuarios.push({nome, email, senha, id, cep, cidade, estado, logradoro, numero, complemento});
     localStorage.setItem("usuarios",JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
@@ -146,6 +152,11 @@ function atualizarCadastro(){
     // pega informações sobre a troca de dados na pagina
     let nomeAtualiza = document.getElementById("nomeAtualiza").value.trim();
     let senhaAtualiza = document.getElementById("senhaAtualiza").value;
+
+    let cepAtualiza = document.getElementById("cepAtualiza").value;
+    let cidadeAtualiza = document.getElementById("cidadeAtualiza").value;
+    let estadoAtualiza = document.getElementById("estadoAtualiza").value;
+
     let logradoroAtualiza = document.getElementById("logradoroAtualiza").value;
     let numeroAtualiza = document.getElementById("numeroAtualiza").value;
     let complementoAtualiza = document.getElementById("complementoAtualiza").value;
@@ -161,6 +172,22 @@ function atualizarCadastro(){
         usuarioLogado.senha = senhaAtualiza;
         console.log(senhaAtualiza);
     }
+
+
+    if (cepAtualiza){
+    usuarioLogado.logradoro = cepAtualiza;
+    console.log(cepAtualiza);
+    }
+    if (cidadeAtualiza){
+    usuarioLogado.cidade = cidadeAtualiza;
+    console.log(cidadeAtualiza);
+    }
+    if (estadoAtualiza){
+    usuarioLogado.estado = estadoAtualiza;
+    console.log(estadoAtualiza);
+    }
+
+
     if (logradoroAtualiza){
         usuarioLogado.logradoro = logradoroAtualiza;
         console.log(logradoroAtualiza);
@@ -184,7 +211,7 @@ function atualizarCadastro(){
 
     // envia as modificações da array usuarios para o localStorage
     localStorage.setItem("usuarios",JSON.stringify(usuarios));
-
+    alert("Seus dados foram atualizados")
  
 }
 
@@ -227,3 +254,5 @@ function botaoFinalizar(){
     }
 
 }
+
+
