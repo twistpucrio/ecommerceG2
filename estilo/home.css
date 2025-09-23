@@ -3,6 +3,12 @@
                 src:url(../fonts/Inspiration/Inspiration-Regular.ttf) ; 
         }
 
+        @font-face {
+                font-family: fonteh2;
+                src:url(../fonts/Inspiration/SUSE_Mono/SUSEMono-Italic-VariableFont_wght.ttf) ;
+        }
+
+
         * {
         margin: 0;
         padding: 0;
@@ -34,10 +40,10 @@
 
         h2 {
                 padding: 0.2em;
-                font-family: comic sans-serif;
+                font-family: fonteh2;
                 font-size: 2.5em;
                 text-align: center;
-                background-color: #E8E3DD;
+                background-color: #E2DDD4;
         }
 
         h1 a:active, h1 a:visited, h1 a:hover, h1 a:link {
@@ -99,15 +105,33 @@
                 left: 2em;
         }
 
-        .banners{
-                height:24em;
-                background-color: #E2DDD4;
-        
+        .banners {
+                height: 28em;
+                background-color: #E8E3DD;
+                display: flex;
+                justify-content: center;
+                align-items: center;
         }
 
-        .banner1{
-                height:22em;
-                width:120em;
+        .banner1 {
+                max-height: 100%;
+                max-width: 100%;
+                height: auto;
+                width: auto;
+        }
+
+        .categorias {
+                display:flex;
+                justify-content: center;
+                background-color: #E8E3DD;
+                
+        }
+
+        .temas {
+                display:flex;
+                justify-content: center;
+                padding: 1em;
+                margin: 0 1em;
         }
 
         .product-item { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
