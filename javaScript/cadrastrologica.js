@@ -215,3 +215,15 @@ function iconeFavoritos(){
    
 
 }
+
+function botaoFinalizar(){
+    let verificaSeLogado = verificaLogado();
+
+    if (verificaSeLogado === true){
+        window.location.href = 'finalizar.html';
+    }
+    else{
+     window.location.href = 'cadastro.html';
+    }
+
+}
