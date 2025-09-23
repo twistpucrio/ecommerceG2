@@ -8,93 +8,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearCartBtn = document.getElementById("clearcart-btn");
     //let removeItemBtn = document.getElementsByClassName('remover');
 
+    async function renderCart() {
+    let cart = await g2.getCart(); // pega o carrinho
+    const allProducts = await g2.listProducts(); // pega todos os produtos disponíveis
 
-           /* async function renderCart() {
-                let cart = await g2.getCart();
-                const allProducts = await g2.listProducts(); // Load all products to get details
-                console.log(allProducts)
-                console.log(cart);
-                // Map cart product IDs to product details
-                
-                const cartItemDetails = cart.products.map(productId => {
-                    return allProducts["velas"].find(p => p.id == productId);
-                }).filter(p => p); // Filter out undefined if a product is not found
+    // Mapeia o carrinho para um Map que acumula quantidades
+    const items = cart.products.reduce((map, productId) => {
+        // Procura o produto em todas as categorias do JSON
+        const product = Object.values(allProducts)
+            .flat()
+            .find(p => p.id === productId);
 
-                if (cartItemDetails.length == 0) {
-                    cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
-                    checkoutBtn.style.display = 'none'; // Hide checkout if cart is empty
-                } else {
-                    cartItemsContainer.innerHTML = '';
-                    cartItemDetails.forEach(item => {
-                        const itemEl = document.createElement('div');
-                        itemEl.className = 'cart-item';
-                        itemEl.innerHTML = `
-                            <img src="${item.imagem}" alt="${item.nome}" width="60" height="60">`;
-    
-        }
-
-        cartTotalEl.textContent = `Total: $${cart.total.toFixed(2)}`;//total do carrinho com 2 casas decimais
-});*/
-
-  function renderCart() {
-        const cart =  g2.getCart();
-        const allProducts =  g2.listProducts();
-        const items = cart.products.reduce((map, productId) => {
-            const item = map.get(productId) || {
-                details: allProducts.find(p => p.id === productId), 
-                amount: 0,
-            };
-            item.amount += 1;
+        if (product) {
+            const item = map.get(productId) || { details: product, amount: 0 };
+            item.amount += 1; // soma a quantidade
             map.set(productId, item);
-            return map;
-        }, new Map());
-        console.log(items);
+        }
+        return map;
+    }, new Map());
+
+    // Se carrinho estiver vazio
+    if (items.size === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
+        checkoutBtn.style.display = 'none';
+    } else {
+        cartItemsContainer.innerHTML = '';
+
+        [...items.keys()].sort().forEach((id) => {
+            const item = items.get(id);
+            const itemEl = document.createElement('div');
+            itemEl.className = 'cart-item';
+
+            itemEl.innerHTML = `
+                <img src="${item.details.imagem}" alt="${item.details.nome}" width="60" height="60">
+                <div class="info">
+                    <h4>${item.details.nome}</h4>
+                    <div>$${item.details.preco.toFixed(2)}</div>
+                </div>
+                
+                <input type="text" id="qtd-${id}" readonly value="${item.amount}">
+                <button class="adicionar" data-add-id="${id}">+</button>
+                <button class="remover" data-remove-id="${id}">-</button>
+            `;
+
+            cartItemsContainer.appendChild(itemEl);
+        });
+
+        checkoutBtn.style.display = 'block';
     }
 
-        
+    // Atualiza o total baseado nas quantidades
+    const total = [...items.values()]
+        .reduce((sum, item) => sum + item.details.preco * item.amount, 0);
 
-        /*const cartItemDetails = cart.products.map(productId => {
-            return allProducts.find(p => p.id === productId);
-        }).filter(p => p); // Pega os detalhes dos produtos visto que o carrinho so pega o id*/
-        if (items.length === 0) {
-            cartItemsContainer.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
-            checkoutBtn.style.display = 'none'; // Se o carrinho estiver vazio, ele esconde o checkout button
+    cartTotalEl.textContent = `Total: $${total.toFixed(2)}`;
+}
 
-        } else {// caso contrario, ele renderiza os itens do carrinho 
-            cartItemsContainer.innerHTML = '';
-            //cartItemsAdd.innerHTML = '';
-            [...items.keys()].sort().forEach((id) => {
-                const item = items.get(id);
-                const itemEl = document.createElement('div');
-                const itemAdd = document.createElement('div');
-                itemEl.className = 'cart-item';
-                itemAdd.className = 'cart-add'
-                itemEl.innerHTML = `
-                                  <img src="${item.details.image}" alt="${item.details.name}" width="60" height="60">
-                                  <div class="info">
-                                      <h4>${item.details.name}</h4>
-                                      <div>$${item.details.price.toFixed(2)}</div>
-
-                                  <img src="${item.image}" alt="${item.name}" width="60" height="60">
-
-                                  <div class="info">
-                                      <h4>${item.nome}</h4>
-                                      <div>$${item.preco.toFixed(2)}</div>
-                                  </div>
-                      
-                                  <input type="text" id="qtd" readonly value ="${item.amount}"> 
-                                  <button class="adicionar" data-add-id = "${id}">+</button>
-                                  <button class="remover" data-remove-id = "${id}">-</button>
-
-                        `;
-                //itemAdd.innerHTML = `
-                            
-                //`;
-                cartItemsContainer.appendChild(itemEl);
-               // cartItemsAdd.appendChild(itemAdd);
-            });
-            checkoutBtn.style.display = 'block';// aparece como um bloco
-        }
     
 
     checkoutBtn.addEventListener('click', () => {
