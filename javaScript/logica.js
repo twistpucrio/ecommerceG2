@@ -72,7 +72,7 @@ class EcommerceG2 {
     const products = await this.listProducts();
 
     const total = this.cart.reduce((acc, productId) => {
-    const product = products["velas"].find(p => p.id === productId);
+    const product = products["produto"].find(p => p.id === productId);
           return acc + (product ? product.preco : 0);
   }, 0);
           return {
