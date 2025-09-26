@@ -3,6 +3,12 @@
                 src:url(../fonts/Inspiration/Inspiration-Regular.ttf) ; 
         }
 
+        @font-face {
+                font-family: fonteh2;
+                src:url(../fonts/Inspiration/SUSE_Mono/SUSEMono-Italic-VariableFont_wght.ttf) ;
+        }
+
+
         * {
         margin: 0;
         padding: 0;
@@ -34,10 +40,10 @@
 
         h2 {
                 padding: 0.2em;
-                font-family: comic sans-serif;
+                font-family: fonteh2;
                 font-size: 2.5em;
                 text-align: center;
-                background-color: #E8E3DD;
+                background-color: #E2DDD4;
         }
 
         h1 a:active, h1 a:visited, h1 a:hover, h1 a:link {
@@ -99,16 +105,100 @@
                 left: 2em;
         }
 
-        .banners{
-                height:24em;
-                background-color: #E2DDD4;
-        
+        .banners {
+                height: 28em;
+                background-color: #E8E3DD;
+                display: flex;
+                justify-content: center;
+                align-items: center;
         }
 
-        .banner1{
-                height:22em;
-                width:120em;
+        .banner1 {
+                max-height: 100%;
+                max-width: 100%;
+                height: auto;
+                width: auto;
         }
+
+        .categorias {
+                display:flex;
+                justify-content: center;
+                gap:2em;
+                background-color: #E8E3DD;
+                font-family: fonteh2;
+        }
+
+        .categoria-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+        }
+
+        .categoria-item img{
+                border-radius: 50%;
+                width: 12em;
+                height:12em;
+                object-fit: cover;
+        }
+
+        .temas {
+                display:flex;
+                justify-content: center;
+                padding: 1em;
+                margin: 0 1em;
+        }
+
+        .legendas{
+                background-color:#E8E3DD ;
+                font-family:fonteh2;
+                display: inline-block;
+        }
+        
+        .side-menu {
+                position: absolute;
+                top: 1;
+                left: -20em;
+                width: 20em;
+                height: 45.5em;
+                background-color: #E8E3DD;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+                padding-top: 5em;
+                transition: left 0.3s ease;
+                z-index: 1000;
+        }
+
+        #menu-toggle:checked ~ .side-menu {
+                left: 0;
+        }
+
+        .side-menu ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+        }
+
+        .side-menu li {
+                padding: 1em;
+                border-bottom: 1px solid #ccc;
+        }
+
+        .side-menu a {
+                text-decoration: none;
+                color: #000;
+                font-size: 1.2em;
+                display: block;
+        }
+
+        .espaço{
+                background-color: #E8E3DD;
+                height: 2em;
+        }
+
+        .produtos {
+                background-color: #E8E3DD;
+        }
+
 
         .product-item { display: flex; align-items: center; margin-bottom: 15px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
 

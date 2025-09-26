@@ -6,6 +6,8 @@
     <title>Loja</title>
     <script src="javaScript/logica.js"></script> 
     <script src="javaScript/carrinhologica.js"></script>
+    <script src="javaScript/cadastrologica.js"></script>
+    <script src="javaScript/finalizarlogica.js"></script>
 </head>
 <body>
     <div id="container"> 
@@ -47,21 +49,21 @@
                 </fieldset> 
                 <fieldset> 
                     <legend> Endereço: </legend>
-                        <label for="cep"> Cep: </label>
+                        <label for="cep"> CEP: </label>
                         <input type="text" name="txtCep" id="txtCep" autofocus/>
                         <br/> <br/> 
                         <label for="cidade"> Cidade: </label>
                         <input type="text" name="txtCid" id="txtCid" autofocus/> 
                         <br/><br/> 
                         <label for="estado"> Estado: </label>
-                        <select> 
+                        <select id="optEstado"> 
                             <option value="RJ"> RJ </option>
                             <option value="SP"> SP </option>
                             <option value="MG"> MG </option>
                             <option value="ES"> ES </option>
                         </select>
                         <br/> <br/> 
-                        <label for="logradoro"> Logradoro </label>
+                        <label for="logradoro"> Logradoro: </label>
                         <input type="text" name="txtLog" id="txtLog" autofocus/>
                         <br/><br/> 
                         <label for="numero"> Numero: </label>
