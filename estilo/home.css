@@ -211,6 +211,74 @@
         }
 
         .produtos {
+        background-color: #E8E3DD;
+        display: flex; 
+        justify-content: center;
+        }
+
+        .product-item {
+        width: 250px; 
+        height: 300px; 
+        display: inline-block;
+        align-items: center;
+        justify-content: space-between;
+        margin: 15px;
+        border: 1px solid #726051;
+        background-color: #f7f1eb;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product-item-img {
+                width: 100px;
+                height: 100px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                display:block ; 
+                align-items: center;
+                margin: 0 auto;
+        }
+
+        .botao{
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+                gap: 8px;  
+                margin-top: auto;
+        }
+
+        .product-item .info {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        display: inline-block
+        }
+
+        .product-item .price {
+        font-weight: normal;
+        color: #333;
+        margin-bottom: 8px;
+        display: inline-block;
+        }
+
+
+        button {
+        background-color: #1b5d9a; 
+        color: white;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        }
+
+        button:hover {
+        background-color: #14348c;
+        }
+        /*
+        .produtos {
                 background-color: #E8E3DD;
         }
 
@@ -219,9 +287,11 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 15px;
-                border: 1px solid #ccc;
+                border: 1px solid #726051;
+                background-color: #f7f1eb ;
                 padding: 10px;
                 border-radius: 8px;
+                display: inline-block;
         }
 
         .product-item img {
@@ -231,10 +301,12 @@
 
         .product-item .info {
                 flex-grow: 1;
+                display: inline-block;
         }
 
         .product-item .price {
                 font-weight: bold;
+                display: inline-block;
         }
 
         button {
@@ -249,3 +321,4 @@
         button:hover {
                 background-color: #0056b3;
         }
+        */

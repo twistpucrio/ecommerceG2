@@ -31,13 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemEl = document.createElement('div');//cria uma div com classe para adicionar os produtos filtrados
                 itemEl.className = 'product-item';
                 itemEl.innerHTML = `
-                    <img src="${product.image}" alt="${product.nome}" width="80" height="80">
+                    <img src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
                         <h3>${product.nome}</h3>
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
+                    <div class="botao">
                     <button class="add-carrinho" data-product-id="${product.id}">Add to Cart</button>
                     <button class="add-favorito" data-fav-id="${product.id}">❤ Favoritar</button>
+                    </div>
                 `;
                 productListEl.appendChild(itemEl);//coloca na lista de produtos 
             });
