@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>${product.nome}</h3>
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
-                    <button data-product-id="${product.id}">Add to Cart</button>
+                    <button class="add-carrinho" data-product-id="${product.id}">Add to Cart</button>
+                    <button class="add-favorito" data-fav-id="${product.id}">❤ Favoritar</button>
                 `;
                 productListEl.appendChild(itemEl);//coloca na lista de produtos 
             });
@@ -53,13 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // para adicionar itens no carrinho pelo home
     productListEl.addEventListener('click', (event) => {
-        if (event.target.tagName === 'BUTTON' && event.target.dataset.productId) {
-            const productId = parseInt(event.target.dataset.productId, 10);
-            g2.addToCart(productId);
-            alert('Product added to cart!');
-
+        // adicionar ao carrinho
+        if (event.target.classList.contains("add-carrinho")) {
+            const id = parseInt(event.target.dataset.productId, 10);
+            g2.addToCart(id);
+            alert("Produto adicionado ao carrinho!");
         }
-    });
+
+        // adicionar/remover favoritos
+        if (event.target.classList.contains("add-favorito")) {
+            const id = parseInt(event.target.dataset.favId, 10);
+            adicionarFavoritos(id);
+            }
+        });
 
 
     renderProducts();
