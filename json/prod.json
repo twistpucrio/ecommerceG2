@@ -3,7 +3,7 @@
     "produto":[
         {
             "id": 1,
-            "nome": "Vela Aromática Personalizavel Lavanda",
+            "nome": "Vela Aromática Lavanda",
             "preco": 39.90,
             "descricao": "Vela perfumada com essência de lavanda, ideal para relaxamento.",
             "categoria": "velas",
