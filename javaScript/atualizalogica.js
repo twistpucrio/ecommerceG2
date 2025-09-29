@@ -1,20 +1,20 @@
-
 window.onload = function() {
 
     // se não houver um usuario logado, envia para a página de cadastro
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-    if (usuarioLogado === null){
+    if (usuarioLogadoLogado === null){
         window.location.href = 'cadastro.html';
     }
 
     // recupera ids dos campos da pagina de finalização
-    let txtCep = document.getElementById("txtCep");
-    let txtCid = document.getElementById("txtCid");
-    let optEstado = document.getElementById("optEstado");
+    let txtCep = document.getElementById("cepAtualiza");
+    let txtCid = document.getElementById("cidadeAtualiza");
+    let optEstado = document.getElementById("estadoAtualiza");
 
-    let txtLog = document.getElementById("txtLog");
-    let txtNum = document.getElementById("txtNum");
-    let txtComp = document.getElementById("txtComp");
+    let txtLog = document.getElementById("logradoroAtualiza");
+    let txtNum = document.getElementById("numeroAtualiza");
+    let txtComp = document.getElementById("complementoAtualiza");
+
 
    if (usuarioLogado.cep){
         txtCep.value = usuarioLogado.cep;
@@ -35,5 +35,4 @@ window.onload = function() {
         txtComp.value = usuarioLogado.complemento;
     }
 
-
-};
+}

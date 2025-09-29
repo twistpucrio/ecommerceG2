@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Atelier Bougioni</title>
-    <script src="javaScript/logica.js"></script> 
-    <script src="javaScript/carrinhologica.js"></script>
-    <script src="javaScript/cadrastrologica.js"></script>
-    <link rel="stylesheet" href="estilo/carrinho.css">
+        <script src="/javaScript/logica.js"></script> 
+        <script src="javaScript/indexlogica.js"></script>
+        <script src="javaScript/cadrastrologica.js"></script>
+        <link rel="stylesheet" href="estilo/home.css">
 </head>
 <body>
     <input type="checkbox" id="menu-toggle" hidden>
     <header id="titulo"> 
-        <h1><a href="index.html">L'Atelier Bougioni</a></h1>
+            <h1><a href="index.html">L'Atelier Bougioni</a></h1>
     </header>
+    
     <div class="segundo-cabeçalho">
+        <input id="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
         <a href="carrinho.html" class="carrinhoFoto">
             <img src="img/carrinho.png">
         </a>
@@ -24,7 +26,6 @@
             <img src="img/vermais.png" alt="Abrir Menu">
         </label>
     </div>
-
     <aside class="side-menu">
         <nav>
             <ul>
@@ -32,28 +33,16 @@
                 <li><a href="#">Velas</a></li>
                 <li><a href="#">Incensos</a></li>  
                 <li><a href="#">Óleos Essenciais</a></li>
-                <li><a href="#">Meias</a></li>
+                <li><a href="#">Difusor de Aromas</a></li>
                 <li><a href="#">Sobre a Empresa</a></li>
             </ul>
         </nav>
     </aside>
-    
-    <section id="main"> 
-        <div id="cart">
-            <h2>Seu carrinho </h2>
-            <div id="cart-items-container"></div>
-            
-            <button id="clearcart-btn"> Remover todos os itens </button>
-            <div id="cart-summary">
-                <div id="cart-total">Total: $0.00</div>
-                <!-- <button id="checkout-btn">Finalizar Compra</button> -->
-                <button id="checkout-btn" onclick="botaoFinalizar()">Finalizar Compra</button>
-            </div> </br> 
+    <h2> Óleos Essenciais </h2>
+    <section class="produtos" id="main">
+        <div id="products">
+            <div id="product-list"></div>
         </div>
     </section>
-
-    </br> 
-    </br> 
-    <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila, Lis Almeida</footer>
 </body>
 </html>

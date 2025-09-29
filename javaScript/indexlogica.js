@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
             const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
-            const produtosFiltrados = produtosExibe.filter(vela =>
                 vela.nome.toLowerCase().includes(termo)
             );
 
