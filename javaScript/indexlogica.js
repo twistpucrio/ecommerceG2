@@ -71,4 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     renderProducts();
+    
 });
