@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier Bougioni</title>
+        <script src="/javaScript/logica.js"></script> 
+        <script src="javaScript/indexlogica.js"></script>
+        <script src="javaScript/cadrastrologica.js"></script>
+        <link rel="stylesheet" href="estilo/home.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <header id="titulo"> 
+            <h1><a href="index.html">L'Atelier Bougioni</a></h1>
+    </header>
+    
+    <div class="segundo-cabeçalho">
+        <input id="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
+        <a href="carrinho.html" class="carrinhoFoto">
+            <img src="img/carrinho.png">
+        </a>
+        <input class="favoritosFoto"  type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
+        <input class="cadastroFoto"  type="image" src="img/cadastro.png" onclick="iconeCadastro()">
+        <label for="menu-toggle" class=vermaisFoto>
+            <img src="img/vermais.png" alt="Abrir Menu">
+        </label>
+    </div>
+    <aside class="side-menu">
+        <nav>
+            <ul>
+                <li><a href="#">Ver Todos</a></li>
+                <li><a href="#">Velas</a></li>
+                <li><a href="#">Incensos</a></li>  
+                <li><a href="#">Óleos Essenciais</a></li>
+                <li><a href="#">Difusor de Aromas</a></li>
+                <li><a href="#">Sobre a Empresa</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <h2> Óleos Essenciais </h2>
+    <section class="produtos" id="main">
+        <div id="products">
+            <div id="product-list"></div>
+        </div>
+    </section>
+</body>
+</html>

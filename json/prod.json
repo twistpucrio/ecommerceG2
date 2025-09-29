@@ -297,9 +297,9 @@
         }, 
         {
             "id": 24, 
-            "nome": "Umidificador Usb Tipo Madeira Difusor de Aromas",
+            "nome": "Difusor de Aromas Usb Tipo Madeira ",
             "preco": 34.99,
-            "descricao": " Umidificador de aromas, com design em madeira, ideal para ambientes pequenos e médios.",
+            "descricao": "Difusor de Aromas, com design em madeira, ideal para ambientes pequenos e médios.",
             "categoria": "umidificadores",
             "imagem": "../img/",
             "recipiente": "Madeira",  
@@ -307,9 +307,9 @@
         }, 
         {
             "id": 25, 
-            "nome": "Umidificador Difusor de Aromas Usb Com led Colorido",
+            "nome": "Difusor de Aromas Usb Com led Colorido",
             "preco": 48.65,
-            "descricao": " Umidificador de aromas, com design em acrilonitrilo butadieno estireno e base de madeira, ideal para decorar ambientes.",
+            "descricao": " Difusor de Aromas, com design em acrilonitrilo butadieno estireno e base de madeira, ideal para decorar ambientes.",
             "categoria": "umidificadores",
             "imagem": "../img/",
             "recipiente": "acrilonitrilo butadieno estireno",
@@ -317,9 +317,9 @@
         }, 
         {
             "id": 26, 
-            "nome": "Mini Umidificador Difusor Aromatizador",
+            "nome": "Mini Difusor Aromatizador",
             "preco": 32.00,
-            "descricao": " Umidificador de aromas, com design em oval e pequeno, ideal para decorar ambientes de forma minimalista.",
+            "descricao": " Difusor de Aromas, com design em oval e pequeno, ideal para decorar ambientes de forma minimalista.",
             "categoria": "umidificadores",
             "imagem": "../img/",
             "recipiente": "acrilonitrilo butadieno estireno",
@@ -327,9 +327,9 @@
         }, 
         {
             "id": 27, 
-            "nome": "Umidificador Difusor Ambiente Tulipa",
+            "nome": "Difusor Ambiente Tulipa",
             "preco": 39.90,
-            "descricao": " Umidificador de aromas, com design inovador e fluido, ideal para decorar ambientes com originalidade e estilo.",
+            "descricao": "Difusor de Aromas, com design inovador e fluido, ideal para decorar ambientes com originalidade e estilo.",
             "categoria": "umidificadores",
             "imagem": "../img/",
             "recipiente": "acrilonitrilo butadieno estireno",
@@ -337,13 +337,63 @@
         }, 
         {
             "id": 28, 
-            "nome": "Incenso ",
-            "preco": 59.90,
-            "descricao": " Umidificador de aromas, com design em acrilonitrilo butadieno estireno e base de madeira, ideal para decorar ambientes.",
-            "categoria": "umidificadores",
+            "nome": "Incenso Relax Lavanda",
+            "preco": 12.90,
+            "descricao": "Aroma suave de lavanda, perfeito para momentos de relaxamento e descanso.",
+            "categoria": "incensos",
             "imagem": "../img/",
-            "recipiente": "acrilonitrilo butadieno estireno",
-            "capacidade": "300ml"
+            "tipo": "lavanda",
+            "quantidade": "20 varetas"
+        }, 
+        {
+            "id": 29, 
+            "nome": "Incenso Energizante Sândalo",
+            "preco": 14.50,
+            "descricao": "Tradicional incenso de sândalo, ideal para meditação e concentração.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "sândalo",
+            "quantidade": "20 varetas"
+        }, 
+        {
+            "id": 30, 
+            "nome": "Incenso Harmonia Jasmim",
+            "preco": 13.90,
+            "descricao": "Perfume floral de jasmim que cria um ambiente acolhedor e equilibrado.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "jasmim",
+            "quantidade": "20 varetas"
+        }, 
+        {
+            "id": 31, 
+            "nome": "Incenso Purificação Alecrim",
+            "preco": 11.90,
+            "descricao": "Aroma fresco de alecrim, ótimo para renovar a energia do ambiente.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "alecrim",
+            "quantidade": "20 varetas"
+        }, 
+        {
+            "id": 32, 
+            "nome": "Incenso Serenidade Camomila",
+            "preco": 12.50,
+            "descricao": "Delicado aroma de camomila, ideal para promover serenidade e bem-estar.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "camomila",
+            "quantidade": "20 varetas"
+        }, 
+        {
+            "id": 33, 
+            "nome": "Incenso Exótico Patchouli",
+            "preco": 15.90,
+            "descricao": "Fragrância marcante e terrosa do patchouli, perfeita para criar um ambiente sofisticado.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "patchouli",
+            "quantidade": "20 varetas"
         }
     ]
 }
