@@ -5,15 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     async function renderProducts() {
         const barraDePesquisa = document.getElementById("pesquisa");
         const products = await g2.listProducts();
+        const produtosFavoritos = [2, 6, 8, 15];
+        const produtosExibe=(products.velas||[]).filter(vela=>
+            produtosFavoritos.includes(vela.id));
 
         function exibirProdutos(filtroBusca = '') {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
             const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
-
-            console.log(products);
-            //filtrando os produtos vendo se o nome do produto inclui o que foi escrito na barra de pesquisa
-            const produtosFiltrados = products["produto"].filter(vela =>
                 vela.nome.toLowerCase().includes(termo)
             );
 
@@ -70,4 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     renderProducts();
+
+    //aaaaaaa
 });
