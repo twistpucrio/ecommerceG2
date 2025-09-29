@@ -6,14 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const barraDePesquisa = document.getElementById("pesquisa");
         const products = await g2.listProducts();
         const produtosFavoritos = [2, 6, 8, 15];
-        const produtosExibe=(products.velas||[]).filter(vela=>
-            produtosFavoritos.includes(vela.id));
+        const produtosExibe = (products.produto || []).filter(vela =>
+        vela.categoria === "velas" && produtosFavoritos.includes(vela.id)
+    );
 
         function exibirProdutos(filtroBusca = '') {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
             const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
-                vela.nome.toLowerCase().includes(termo);
+            const produtosFiltrados = produtosExibe.filter(vela =>
+                vela.nome.toLowerCase().includes(termo)
+            );
 
             // se o tamanho dos produtos filtrados for igual  zero, ou seja, se não houver produtos que incluam o que foi pesquisado
             if (produtosFiltrados.length === 0) {
@@ -68,6 +71,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     renderProducts();
-
-    //aaaaaaa
 });
