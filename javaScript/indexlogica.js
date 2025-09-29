@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log(products);
             //filtrando os produtos vendo se o nome do produto inclui o que foi escrito na barra de pesquisa
-            const produtosFiltrados = products["velas"].filter(vela =>
+            const produtosFiltrados = products["produto"].filter(vela =>
                 vela.nome.toLowerCase().includes(termo)
             );
 
