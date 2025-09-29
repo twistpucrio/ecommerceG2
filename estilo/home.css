@@ -30,7 +30,7 @@
         }
 
         #products {
-                max-width: 900px;
+                max-width: 1500px;
                 margin: auto;
         }
 
@@ -223,7 +223,8 @@
         display: inline-block;
         align-items: center;
         justify-content: space-between;
-        margin: 15px;
+        margin: 27px;
+        margin-bottom: 34px;
         border: 1px solid #726051;
         background-color: #f7f1eb;
         padding: 10px;
@@ -251,75 +252,32 @@
         }
 
         .product-item .info {
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 8px;
-        display: inline-block
-        }
-
-        .product-item .price {
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 8px;
-        display: inline-block;
-        }
-
-
-        button {
-        background-color: #1b5d9a; 
-        color: white;
-        border: none;
-        padding: 6px 10px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 13px;
-        }
-
-        button:hover {
-        background-color: #14348c;
-        }
-        /*
-        .produtos {
-                background-color: #E8E3DD;
-        }
-
-
-        .product-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 15px;
-                border: 1px solid #726051;
-                background-color: #f7f1eb ;
-                padding: 10px;
-                border-radius: 8px;
-                display: inline-block;
-        }
-
-        .product-item img {
-                border-radius: 4px;
-                margin-right: 15px;
-        }
-
-        .product-item .info {
-                flex-grow: 1;
-                display: inline-block;
-        }
-
-        .product-item .price {
+                font-size: 14px;
                 font-weight: bold;
+                margin-bottom: 8px;
+                display: inline-block
+        }
+
+        .product-item .price {
+                font-weight: normal;
+                color: #333;
+                margin-bottom: 8px;
                 display: inline-block;
         }
 
+
         button {
-                background-color: #007bff;
+                background-color: #1b5d9a; 
                 color: white;
                 border: none;
-                padding: 8px 12px;
-                border-radius: 4px;
+                padding: 6px 10px;
+                border-radius: 6px;
                 cursor: pointer;
+                font-size: 13px;
         }
 
         button:hover {
-                background-color: #0056b3;
+                background-color: #061a52;
         }
-        */
+        
+       
