@@ -70,4 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     renderProducts();
+
+    //aaaaaaa
 });
