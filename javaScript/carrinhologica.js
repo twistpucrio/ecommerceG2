@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div>$${item.details.preco.toFixed(2)}</div>
                 </div>
                 
-                <input type="text" id="qtd-${id}" readonly value="${item.amount}">
-                <button class="adicionar" data-add-id="${id}">+</button>
+                <input type="text" id="qtd-${id}" readonly value="${item.amount}"> &nbsp
+                <button class="adicionar" data-add-id="${id}">+</button> &nbsp
                 <button class="remover" data-remove-id="${id}">-</button>
             `;
 

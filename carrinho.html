@@ -11,15 +11,23 @@
 </head>
 <body>
     <header id="titulo"> 
-        <h1> Loja </h1>
+        <h1><a href="index.html">L'Atelier Bougioni</a></h1>
     </header>
-    <nav id="menu">
-        <a href="index.html">Home</a>
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
+    <div class="segundo-cabeçalho">
+        
+        <a href="carrinho.html" class="carrinhoFoto">
+            <img src="img/carrinho.png">
+        </a>
+        <input class="favoritosFoto"  type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
+        <input class="cadastroFoto"  type="image" src="img/cadastro.png" onclick="iconeCadastro()">
+        <label for="menu-toggle" class=vermaisFoto>
+            <img src="img/vermais.png" alt="Abrir Menu">
+        </label>
+    </div>
+    
     <section id="main"> 
         <div id="cart">
-            <h1>Seu carrinho </h1>
+            <h2>Seu carrinho </h2>
             <div id="cart-items-container"></div>
             
             <button id="clearcart-btn"> Remover todos os itens </button>
