@@ -181,6 +181,7 @@
                 padding-top: 5em;
                 transition: left 0.3s ease;
                 z-index: 1000;
+                font-family: "fonteh2";
         }
 
         #menu-toggle:checked~.side-menu {
