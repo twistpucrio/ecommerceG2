@@ -1,18 +1,20 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const g2 = new EcommerceG2();
     const productListEl = document.getElementById('product-list');//lista de produtos no html
-/*ERRADO*/
- 
+
     async function renderProducts() {
         const barraDePesquisa = document.getElementById("pesquisa");
         const products = await g2.listProducts();
-    }
 
-         function exibirProdutos(filtroBusca = '') {
+        function exibirProdutos(filtroBusca = '') {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
             const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
-            const produtosFiltrados = produtosExibe.filter(vela =>
+
+            console.log(products);
+            //filtrando os produtos vendo se o nome do produto inclui o que foi escrito na barra de pesquisa
+            const produtosFiltrados = products["produto"].filter(vela =>
                 vela.nome.toLowerCase().includes(termo)
             );
 
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            //para cada produto filtrado
             produtosFiltrados.forEach(product => {
                 const itemEl = document.createElement('div');//cria uma div com classe para adicionar os produtos filtrados
                 itemEl.className = 'product-item';
@@ -54,13 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // para adicionar itens no carrinho pelo home
     productListEl.addEventListener('click', (event) => {
-        if (event.target.tagName === 'BUTTON' && event.target.dataset.productId) {
-            const productId = parseInt(event.target.dataset.productId, 10);
-            g2.addToCart(productId);
-            alert('Product added to cart!');
-
+        // adicionar ao carrinho
+        if (event.target.classList.contains("add-carrinho")) {
+            const id = parseInt(event.target.dataset.productId, 10);
+            g2.addToCart(id);
+            alert("Produto adicionado ao carrinho!");
         }
-    }); 
+
+        // adicionar/remover favoritos
+        if (event.target.classList.contains("add-favorito")) {
+            const id = parseInt(event.target.dataset.favId, 10);
+            adicionarFavoritos(id);
+            }
+        });
 
 
     renderProducts();
+});
