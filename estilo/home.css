@@ -70,6 +70,18 @@
                 justify-content: center;
                 display: flex;
                 position: relative;
+                 /* PROPRIEDADES PARA FIXAR AO SCROLL */
+                position: sticky; /* Define o comportamento de "grudar" */
+                top: 0; /* Ponto onde o elemento deve grudar (o topo da viewport) */
+                width: 100%; /* Garante que ocupe a largura total */
+                z-index: 10; /* Garante que fique sobre o conteúdo ao rolar */
+        }
+
+        .menu-sombra-fixa {
+                /* Box shadow: 0 (offset-x) 2px (offset-y) 5px (blur) rgba(0,0,0,0.2) (cor/opacidade) */
+                box-shadow: 0 4px 6px -6px #333; 
+                /* Esta sombra é sutil, focada para baixo */
+                /* Você pode ajustar o '0 4px 6px -6px #333;' para a sombra que preferir. */
         }
 
         .pesquisa {
@@ -193,6 +205,8 @@
                 transition: left 0.3s ease;
                 z-index: 1000;
                 font-family: "fonteh2";
+                position: fixed;
+                top: 5.5em;
         }
 
         .side-menu-fade {
