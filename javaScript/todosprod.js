@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const g2 = new EcommerceG2();
     const productListEl = document.getElementById('product-list');//lista de produtos no html
-
+/*ERRADO*/
+ 
     async function renderProducts() {
         const barraDePesquisa = document.getElementById("pesquisa");
         const products = await g2.listProducts();
-        const produtosFavoritos = [2, 6, 8, 11, 13, 15, 19, 22, 25, 28, 29, 32];
-        const produtosExibe = (products.produto || []).filter(produto =>
-        produtosFavoritos.includes(produto.id)
-    );
+    }
 
-        function exibirProdutos(filtroBusca = '') {
+         function exibirProdutos(filtroBusca = '') {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
             const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            //para cada produto filtrado
             produtosFiltrados.forEach(product => {
                 const itemEl = document.createElement('div');//cria uma div com classe para adicionar os produtos filtrados
                 itemEl.className = 'product-item';
@@ -38,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                    <button class="add-carrinho" data-product-id="${product.id}">Add to Cart</button> &nbsp
-                    
+                    <button class="add-carrinho" data-product-id="${product.id}">Add to Cart</button>
                     <button class="add-favorito" data-fav-id="${product.id}">❤ Favoritar</button>
                     </div>
                 `;
@@ -58,21 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // para adicionar itens no carrinho pelo home
     productListEl.addEventListener('click', (event) => {
-        // adicionar ao carrinho
-        if (event.target.classList.contains("add-carrinho")) {
-            const id = parseInt(event.target.dataset.productId, 10);
-            g2.addToCart(id);
-            alert("Produto adicionado ao carrinho!");
-        }
+        if (event.target.tagName === 'BUTTON' && event.target.dataset.productId) {
+            const productId = parseInt(event.target.dataset.productId, 10);
+            g2.addToCart(productId);
+            alert('Product added to cart!');
 
-        // adicionar/remover favoritos
-        if (event.target.classList.contains("add-favorito")) {
-            const id = parseInt(event.target.dataset.favId, 10);
-            adicionarFavoritos(id);
-            }
-        });
+        }
+    }); 
 
 
     renderProducts();
-    
-});
