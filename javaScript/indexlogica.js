@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                    <button class="add-carrinho" data-product-id="${product.id}">Add to Cart</button>
+                    <button class="add-carrinho" data-product-id="${product.id}">Add to Cart</button> &nbsp
+                    
                     <button class="add-favorito" data-fav-id="${product.id}">❤ Favoritar</button>
                     </div>
                 `;
