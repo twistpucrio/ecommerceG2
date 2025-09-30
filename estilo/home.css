@@ -234,7 +234,7 @@
         }
 
         .produtos {
-        background-color: #E8E3DD;
+        background: #000 url(../img/shimmering-golden-leafy_53876-94586.jpg)  center;
         display: flex; 
         justify-content: center;
         }
