@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,38 +9,73 @@
     <script src="javaScript/cadrastrologica.js"></script>
     <link rel="stylesheet" href="estilo/cadastro.css">
 </head>
-<body>
-    <header> 
-        <h1> </h1>
-    </header>
-    
-    <nav></nav>
 
-    <section>
-        <input type="email" name="email" id="emailLogin" placeholder="Email">
-        <input type="password" name="senha" id="senhaLogin" placeholder="Senha">
-    <button onclick="login()">Login</button>
-    </section>
+<body>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <header id="titulo">
+        <h1><a href="index.html">L'Atelier Bougioni</a></h1>
+    </header>
+    <div class="segundo-cabeçalho">
+        <a href="carrinho.html" class="carrinhoFoto">
+            <img src="img/carrinho.png">
+        </a>
+        <input class="favoritosFoto" type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
+        <input class="cadastroFoto" type="image" src="img/cadastro.png" onclick="iconeCadastro()">
+        <label for="menu-toggle" class=vermaisFoto>
+            <img src="img/vermais.png" alt="Abrir Menu">
+        </label>
+    </div>
+    <aside class="side-menu">
+        <nav>
+            <ul>
+                <li><a href="#">Ver Todos</a></li>
+                <li><a href="#">Velas</a></li>
+                <li><a href="#">Incensos</a></li>
+                <li><a href="#">Óleos Essenciais</a></li>
+                <li><a href="#">Meias</a></li>
+                <li><a href="#">Sobre a Empresa</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <nav></nav>
+    <div class="forms">
+        <section class="form" id="login">
+            <h2>Login</h2> </br></br>
+            <input type="email" name="email" id="emailLogin" placeholder="Email">
+            <input type="password" name="senha" id="senhaLogin" placeholder="Senha">
+            </br></br>
+            <button onclick="login()">Login</button>
+        </section>
+
+        <div class="divider"></div>
+
+
+        </br>
+        <section class="form" id="cadastro">
+            <h2>Cadastrar</h2></br></br>
+            <input type="text" id="nomeCadastro" placeholder="*Nome">
+            <input type="email" name="email" id="emailCadastro" placeholder="*Email">
+            <input type="password" name="senha" id="senhaCadastro" placeholder="*Senha">
+            </br></br>
+
+            <input type="text" id="cepCadastro" placeholder="CEP">
+            <input type="text" id="cidadeCadastro" placeholder="Cidade">
+            <input type="text" id="estadoCadastro" placeholder="Estado">
+            </br></br>
+
+            <input type="text" id="logradoroCadastro" placeholder="Logradoro">
+            <input type="text" id="numeroCadastro" placeholder="Numero">
+            <input type="text" id="complementoCadastro" placeholder="Complemento">
+            </br></br>
+            <button onclick="cadastrar()">Cadastrar</button>
+            </br>
+        </section>
+    </div>
 
 
     </br>
-    <section>
-        <input type="text" id="nomeCadastro" placeholder="*Nome">
-        <input type="email" name="email" id="emailCadastro" placeholder="*Email">
-        <input type="password" name="senha" id="senhaCadastro" placeholder="*Senha">
-
-        <input type="text" id="cepCadastro" placeholder="CEP">
-        <input type="text" id="cidadeCadastro" placeholder="Cidade">
-        <input type="text" id="estadoCadastro" placeholder="Estado">
-
-        <input type="text" id="logradoroCadastro" placeholder="Logradoro">
-        <input type="text" id="numeroCadastro" placeholder="Numero">
-        <input type="text" id="complementoCadastro" placeholder="Complemento">
-        <button onclick="cadastrar()">Cadastrar</button>
-        </br>
-    </section>
-
-
     <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila, Lis Almeida</footer>
 </body>
+
 </html>
