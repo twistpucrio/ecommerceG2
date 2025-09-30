@@ -394,6 +394,146 @@
             "imagem": "../img/",
             "tipo": "patchouli",
             "quantidade": "20 varetas"
+        },
+        {
+            "id": 34, 
+            "nome": "Difusor Aromático Orvalho Dourado",
+            "preco": 30.00,
+            "descricao": "Difusor de Aromas, com design oval e discreto, bom para ambientes de trabalho.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "250ml"
+        },
+        {
+            "id": 35, 
+            "nome": "Difusor Aromático Elegance",
+            "preco": 55.00,
+            "descricao": "Difusor de Aromas, com design elegante e sofisticado, ideal para decoração do ambiente.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "275ml"
+        },
+        {
+            "id": 36, 
+            "nome": "Difusor Aromático Zen",
+            "preco": 45.00,
+            "descricao": "Difusor de Aromas, com design simples e moderno, ideal para qualquer ambiente.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "125ml"
+        },
+        {
+            "id": 37, 
+            "nome": "Difusor Aromático Nature",
+            "preco": 50.00,
+            "descricao": "Difusor de Aromas, com design inspirado na natureza, ideal para ambientes relaxantes.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "300ml"
+        },
+        {
+            "id": 38, 
+            "nome": "Difusor Aromático Serenity",
+            "preco": 52.00,
+            "descricao": "Difusor de Aromas, com design sofisticado e funcional, ideal para ambientes elegantes.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "400ml"
+        },
+        {
+            "id": 39, 
+            "nome": "Difusor Aromático Bliss",
+            "preco": 36.00,
+            "descricao": "Difusor de Aromas, com design moderno e compacto, ideal para qualquer ambiente.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "150ml"
+        },
+        {
+            "id": 40, 
+            "nome": "Difusor Aromático Harmony",
+            "preco": 30.00,
+            "descricao": "Difusor de Aromas, com design elegante e funcional, ideal para ambientes sofisticados.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "350ml"
+        },
+        {
+            "id": 41, 
+            "nome": "Difusor Aromático Pure",
+            "preco": 22.00,
+            "descricao": "Difusor de Aromas, com design simples e moderno, ideal para qualquer ambiente.",
+            "categoria": "umidificadores",
+            "imagem": "../img/",
+            "tipo": "Madeira",
+            "quantidade": "275ml"
+        },
+        {
+            "id": 42,
+            "nome": "Incenso de Baunilha",
+            "preco": 60.00,
+            "descricao": "Aroma doce e acolhedor que traz conforto e suavidade ao ambiente, ideal para momentos de relaxamento e introspecção.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "baunilha",
+            "quantidade": "20 varetas"
+        },
+        {
+            "id": 43,
+            "nome": "Incenso de Cânfora",
+            "preco": 34.99,
+            "descricao": "Aroma refrescante e revigorante que ajuda a purificar o ambiente, ideal para momentos de meditação e concentração.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "cânfora",
+            "quantidade": "20 varetas"
+        },
+        {
+            "id": 44,
+            "nome": "Incenso de Capim Limão",
+            "preco": 29.90,
+            "descricao": "Aroma cítrico e energizante que traz vitalidade e frescor ao ambiente, ideal para momentos de alegria e descontração.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "capim limão",
+            "quantidade": "20 varetas"
+        },
+        {
+            "id": 45,
+            "nome": "Incenso de Canela",
+            "preco": 39.90,
+            "descricao": "Aroma quente e picante que traz conforto e aconchego ao ambiente, ideal para momentos de intimidade e romance.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "canela",
+            "quantidade": "20 varetas"
+        },
+        {
+            "id": 46,
+            "nome": "Incenso de Cravo",
+            "preco": 44.90,
+            "descricao": "Aroma forte e marcante que traz energia e vitalidade ao ambiente, ideal para momentos de ação e decisão.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "cravo",
+            "quantidade": "20 varetas"
+        },
+        {
+            "id": 47,
+            "nome": "Incenso de Verbena",
+            "preco": 49.90,
+            "descricao": "Aroma fresco e floral que traz leveza e serenidade ao ambiente, ideal para momentos de paz e harmonia.",
+            "categoria": "incensos",
+            "imagem": "../img/",
+            "tipo": "verbena",
+            "quantidade": "20 varetas"
         }
     ]
 }

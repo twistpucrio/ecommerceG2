@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function renderProducts() {
         const barraDePesquisa = document.getElementById("pesquisa");
         const products = await g2.listProducts();
-        const produtosFavoritos = [24, 25, 26, 27];
+        const produtosFavoritos = [24, 25, 26, 27, 34, 35, 36, 37, 38, 39, 40, 41];
         const produtosExibe = (products.produto || []).filter(produto =>
         produtosFavoritos.includes(produto.id)
     );
