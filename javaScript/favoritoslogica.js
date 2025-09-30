@@ -134,19 +134,25 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (product) {
       const itemEl = document.createElement("div");
-      itemEl.className = "favorito-item";
+      itemEl.className = "product-item";
 
       itemEl.innerHTML = `
-        <img src="${product.imagem}" alt="${product.nome}" width="80" height="80">
-        <div>
-          <h4>${product.nome}</h4>
-          <p>Preço: $${product.preco.toFixed(2)}</p>
+        <img src="${product.imagem}" alt="${product.nome}" width="80" height="80" class="product-item-img">
+        <div class="info">
+          <h3>${product.nome}</h3>
+          <div class="price">$${product.preco.toFixed(2)}</div>
         </div>
-        <button class="add-carrinho" data-cart-id="${id}">Adicionar ao Carrinho</button>
-        <button class="remover-fav" data-remove-id="${id}">Remover dos Favoritos</button>
+        </br>
+        <button class="add-carrinho" data-cart-id="${id}">Add to cart</button>
+        <button class="remover-fav" data-remove-id="${id}">Remover</button>
       `;
-
       favoritosContainer.appendChild(itemEl);
+
+
+
+
+
+      
     }
   });
 

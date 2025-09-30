@@ -7,29 +7,34 @@
     <script src="/javaScript/logica.js"></script>
     <script src="javaScript/cadrastrologica.js"></script>
     <script src="javaScript/favoritoslogica.js"></script>
-    <link rel="stylesheet" href="estilo/cadastro.css">
+    <link rel="stylesheet" href="estilo/favoritos.css">
 </head>
 <body>
-    <header> 
-        <h1> </h1>
+    <header id="titulo"> 
+        <h1><a href="index.html">L'Atelier Bougioni</a></h1>
     </header>
     
-    <nav></nav>
-
-
-    <section>
-
+    <div class="segundo-cabeçalho">
         
-        </br>
-    </section>
+        <a href="carrinho.html" class="carrinhoFoto">
+            <img src="img/carrinho.png">
+        </a>
+        <input class="favoritosFoto"  type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
+        <input class="cadastroFoto"  type="image" src="img/cadastro.png" onclick="iconeCadastro()">
+        <label for="menu-toggle" class=vermaisFoto>
+            <img src="img/vermais.png" alt="Abrir Menu">
+        </label>
+    </div>
 
 
 
     <section>
-        <h2>Meus Favoritos</h2>
+        <h2>Favoritos</h2>
+        <div id="botao-limpar-favoritos">
+            <button  onclick="limparFavoritos()">Limpar todos os favoritos</button>
+        </div>
         <div id="favoritos-container"></div>
-        <button onclick="limparFavoritos()">Limpar todos os favoritos</button>
-
+        
     </section>
 
     <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila, Lis Almeida</footer>
