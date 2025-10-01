@@ -127,21 +127,22 @@
  }
 
 
- button {
-     background-color: #6c4eb0;
-     color: white;
-     border: none;
-     padding: 8px 12px;
-     border-radius: 15px;
-     cursor: pointer;
- }
+button {
+    background-color: #1b5d9a; 
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
 
- button:hover {
-     background-color: #563a8f;
- }
+    button:hover {
+        background-color: #061a52;
+    }
 
 
-
+    
  .side-menu {
      position: absolute;
      top: 1;

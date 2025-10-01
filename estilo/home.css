@@ -30,8 +30,10 @@
         }
 
         #products {
-                max-width: 1500px;
-                margin: auto;
+                max-width: 70%;
+                margin-left: 7.5%;
+                /*margin-right: 25%;*/
+                align-items: center; 
         }
 
         .titulo {
@@ -251,6 +253,8 @@
         background: #000 url(../img/shimmering-golden-leafy_53876-94586.jpg)  center;
         display: flex; 
         justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
         }
 
         .product-item {
