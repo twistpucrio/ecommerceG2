@@ -135,3 +135,14 @@ if (typeof window !== 'undefined') {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = EcommerceG2;
 }
+
+
+
+function redirecionarParaPaginaIndividualProduto(idProduto){
+    // insere no local storage o ID do produto do qual foi clickado para ativar a função
+    localStorage.setItem("produtoAtual", JSON.stringify(idProduto));
+
+    //redireciona para a pagina de produto individual, que vai usar o "produtoAtual" do LocalStorage para ser gerada
+    window.location.href = 'produtoindividual.html';
+    
+}

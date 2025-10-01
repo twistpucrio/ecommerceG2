@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemEl = document.createElement('div');//cria uma div com classe para adicionar os produtos filtrados
                 itemEl.className = 'product-item';
                 itemEl.innerHTML = `
-                    <img src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
+                    <img onclick="redirecionarParaPaginaIndividualProduto(${product.id}) src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
-                        <h3>${product.nome}</h3>
+                        <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})>${product.nome}</h3>
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
