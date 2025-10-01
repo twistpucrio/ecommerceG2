@@ -28,7 +28,7 @@ function verificaLogado() {
 function cadastrar() {
     // pega dados escritos nos campos
     let nome = document.getElementById("nomeCadastro").value.trim();
-    let cpf = document.getElementById("cpfCadastro").value.trim();
+    let cpf = document.getElementById("cpfCadastro").value;
     let email = document.getElementById("emailCadastro").value.trim().toLowerCase();
     let senha = document.getElementById("senhaCadastro").value;
 
@@ -58,10 +58,13 @@ function cadastrar() {
     let padraoCpf = new RegExp("[a-zA-Z]");
     if (cpf.length != 11) {
         alert("número de caracteres inválido");
+
+        if (padraoCpf.test(cpf)) {
+            alert("Cpf só contém números");
+        }
+        return;
     }
-    else if (padraoCpf.test(cpf)) {
-        alert("Cpf só contém números");
-    }
+
 
     //verificacao email
     let padraoEmail = new RegExp("[a-z0-9]" + "@" + "[a-z]" + "." + "[a-z0-9_]");
@@ -71,24 +74,23 @@ function cadastrar() {
     }
 
     //verificacao senha
-    if ((senha.lenght) < 8 || (senha.lenght) > 15) {
-        console.log("OI");
+    if (senha.length < 8 || senha.length > 15) {
+        console.log("OI senha");
         alert("A senha deve conter entre 8 a 15 caracteres");
-        return;
-        //algo nao ta dando certo aqui
-    }
-    else if (!/[A-Z]/.test(senha)) {
-        console.log("OI2");
-        alert("A senha deve conter pelo menos uma letra maiúscula.");
-        document.getElementById("senha").value = "";
-        return;
-    }
-    else if (!/[0-9]/.test(senha)) {
-        console.log("OI3");
-        alert("A senha deve conter pelo menos 1 número");
-        document.getElementById("senha").value = "";
+
+        if (!/[A-Z]/.test(senha)) {
+            console.log("OI2");
+            alert("A senha deve conter pelo menos uma letra maiúscula.");
+            senha = "";
+        }
+        if (!/[0-9]/.test(senha)) {
+            console.log("OI3");
+            alert("A senha deve conter pelo menos 1 número");
+            senha = "";
+        }
         return;
     }
+
 
     // pega a lista de usuarios existentes
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
@@ -111,14 +113,10 @@ function cadastrar() {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
-
-    // remove as informações escritas
-    document.getElementById("nome").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("senha").value = "";
-
-    window.location.href = 'index.html';
-
+    
+    document.getElementById("emailLogin").value = email;
+    document.getElementById("senhaLogin").value = senha;
+    login();
 }
 
 function login() {
