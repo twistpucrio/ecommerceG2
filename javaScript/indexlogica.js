@@ -60,8 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         exibirProdutos();
 
         // Filtra conforme digita
-        barraDePesquisa.addEventListener("input", () => {
-            exibirProdutos(barraDePesquisa.value);
+        barraDePesquisa.addEventListener("submit", () => {
+            //exibirProdutos(barraDePesquisa.value);
+            g2.openSearchPage(barraDePesquisa.value);
         });
     }
 
