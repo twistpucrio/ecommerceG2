@@ -8,14 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const produtosFavoritos = [2, 6, 8, 11, 13, 15, 19, 22, 25, 28, 29, 32];
         const produtosExibe = (products.produto || []).filter(produto =>
         produtosFavoritos.includes(produto.id)
-    );
+    ); 
+/* PESQUISA */ 
+   /* form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const termo = document.getElementById("searchInput").value;
+        // redireciona para a página de resultados com o termo na URL
+        window.location.href = `resultados.html?q=${encodeURIComponent(termo)}`;
+    }); */ 
+
+        // Função para exibir produtos com filtro de busca
 
         function exibirProdutos(filtroBusca = '') {
             productListEl.innerHTML = '';// limpa a lista de produtos
 
             const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
-            const produtosFiltrados = produtosExibe.filter(vela =>
-                vela.nome.toLowerCase().includes(termo)
+            const produtosFiltrados = produtosExibe.filter(produto =>
+                produto.nome.toLowerCase().includes(termo)
             );
 
             // se o tamanho dos produtos filtrados for igual  zero, ou seja, se não houver produtos que incluam o que foi pesquisado
@@ -51,8 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         exibirProdutos();
 
         // Filtra conforme digita
-        barraDePesquisa.addEventListener("input", () => {
-            exibirProdutos(barraDePesquisa.value);
+        barraDePesquisa.addEventListener("submit", () => {
+            //exibirProdutos(barraDePesquisa.value);
+            g2.openSearchPage(barraDePesquisa.value);
         });
     }
 

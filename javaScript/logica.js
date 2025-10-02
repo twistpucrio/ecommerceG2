@@ -45,6 +45,18 @@ class EcommerceG2 {
   }
 
   
+  /**
+   * abre a pagina de pesquisa com o texto sendo `query`
+   * @param {string} query //definindo o tipo do parametro
+   */
+  // openSearchPage(query){
+  //   const words = query.trim().split(/\s+/); //tira todos os tipos de espaco (o + tira x numeros de espacos consecutivos)
+  //   const param = words.map(x=>encodeURIComponent(x)).join("+");
+  //   const url = `todosprod.html?pesquisa=${param}`;
+  //   console.log(url);
+  // }
+
+  
 
   async addToCart(productId) {
     console.log(productId); 
