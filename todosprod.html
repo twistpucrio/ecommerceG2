@@ -39,10 +39,26 @@
         </nav>
     </aside>
     <h2> Todos os produtos: </h2>
-    <section class="produtos" id="main">
-        <div id="products">
-            <div id="product-list"></div>
+    <div class="filtro-area">
+        <div class="filtro-container">
+            <input type="checkbox" id="filtro-foto" hidden>
+            <label for="filtro-foto" class="filtro-icone">
+                <img src="img/filtrofoto.png" alt="Abrir Filtros">
+                <span> Filtrar Produtos </span>
+            </label>
+            <aside class="filtro-vertical">
+                <div class="grupo-filtro">
+                    <h4> Ordenar Por: </h4>
+                    <label>
+                        <input type="checkbox" name="ordenação" value="menor-preco" onclick="aplicarFiltros()">
+                    </label>
+                </div>
+            </aside>
         </div>
+        <section class="produtos" id="main">
+            <div id="products">
+                <div id="product-list"></div>
+            </div>
     </section>
 </body>
 </html>
