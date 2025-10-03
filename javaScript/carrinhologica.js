@@ -66,15 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
-    checkoutBtn.addEventListener('click', () => {
-        const order = g2.checkout();
-        if (order.success) {
-            //alert(`Checkout successful! Your order ID is ${order.orderId}. Total: $${order.total.toFixed(2)}`);
-            renderCart(); // Re-render to show the empty cart
-        } else {
-            alert('Could not process checkout. Your cart might be empty.');
-        }
-    });
+    //  checkoutBtn.addEventListener('click', () => {
+        
+    //     const order = g2.checkout();
+    //     if (order.success) {
+    //         alert(`Checkout successful! Your order ID is ${order.orderId}. Total: $${order.total.toFixed(2)}`);
+    //         renderCart(); // Re-render to show the empty cart
+    //     } else {
+    //         alert('Could not process checkout. Your cart might be empty.');
+    //     }
+    // });
 
     // para limpar o carinho por completo. Da um clear no carrinho todo e renderiza ele
     clearCartBtn.addEventListener("click", () => {
