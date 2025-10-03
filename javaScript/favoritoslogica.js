@@ -143,7 +143,11 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="price">$${product.preco.toFixed(2)}</div>
         </div>
         </br>
-        <button class="add-carrinho" data-cart-id="${id}">Add to cart</button>
+        <div class="botao">
+                    <button id="add-carrinho" data-product-id="${product.id}">
+                    <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24">
+                    </button>
+        </div>
         <button class="remover-fav" data-remove-id="${id}">Remover</button>
       `;
       favoritosContainer.appendChild(itemEl);

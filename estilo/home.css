@@ -36,8 +36,8 @@
                 align-items: center; 
         }
 
-        .titulo {
-                background-color: #E8E3DD;
+        #titulo {
+                background-color: #1b5d9a;
         }
 
         h1 {
@@ -45,7 +45,7 @@
                 font-family: fonteTitulo;
                 font-size: 8em;
                 text-align: center;
-                background-color: #E8E3DD;
+                background-color:  #88b0be;
         }
 
         h2 {
@@ -53,7 +53,9 @@
                 font-family: fonteh2;
                 font-size: 2.5em;
                 text-align: center;
-                background-color: #E2DDD4;
+               background-color:   #E8E3DD ;
+                width: size-content;
+                margin: 0 auto;
         }
 
         h1 a:active,
@@ -337,7 +339,7 @@
         }
 
         .produtos {
-        background: #000 url(../img/shimmering-golden-leafy_53876-94586.jpg)  center;
+        background-color:#E8E3DD ; 
         display: flex; 
         justify-content: center;
         flex-wrap: wrap;
@@ -377,6 +379,7 @@
                 gap: 8px;  
                 margin-top: auto;
         }
+
 
         .product-item .info {
                 font-size: 14px;

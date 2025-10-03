@@ -38,8 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                    <button class="add-carrinho" data-product-id="${product.id}">Add to Cart</button>
-                    <button class="add-favorito" data-fav-id="${product.id}">❤ Favoritar</button>
+                    
+                    <button id="add-carrinho" data-product-id="${product.id}">
+                    <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24">
+                    </button>
+                    <!-- botão favorito com imagem -->
+                    <button id="add-favorito" data-fav-id="${product.id}">
+                        <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24">
+                    </button>
                     </div>
                 `;
                 productListEl.appendChild(itemEl);//coloca na lista de produtos 
