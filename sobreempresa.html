@@ -1,34 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Atelier Bougioni</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/javaScript/logica.js"></script> 
+  <script src="javaScript/indexlogica.js"></script>
+  <script src="javaScript/cadrastrologica.js"></script>
+  <script src="javaScript/favoritoslogica.js"></script>
+  <script src="javaScript/menu.js"></script>
+  <link rel="stylesheet" href="estilo/home.css">
+  <link rel="stylesheet" href="estilo/sobre.css"> 
+
+  <title>L'Atelier Bougioni</title>
 </head>
-<body>
-    <body>
+<body> 
     <input type="checkbox" id="menu-toggle" hidden>
     <header id="titulo"> 
             <h1><a href="index.html">L'Atelier Bougioni</a></h1>
     </header>
-    <nav> 
-    </nav>
-    <section> 
-        <p> Descrição e história da Marca </p>
-        <h2> Equipe </h2>
-        <h3> Elena Mimouni </h3>
-        <p> Sobre Elena </p>
-        <p> intagram, github, linkedin </p>
-        <h3> Fernanda Fukasawa </h3>
-        <p> Sobre Fernanda </p>
-        <p> intagram, github, linkedin </p>
-        <h3> Maria Eduarda Avila </h3>
-        <p> Sobre Maria Eduarda </p>
-        <p> intagram, github, linkedin </p>
-        <h3> Lis Almeida </h3>
-        <p> Sobre Lis </p>
-        <p> intagram, github, linkedin </p>
+    <div class="segundo-cabeçalho">
+        <form action="todosprod.html" method="get">
+            <input id="pesquisa" name="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
+        </form>
+        <a href="carrinho.html" class="carrinhoFoto">
+            <img src="img/carrinho.png">
+        </a>
+        <input class="favoritosFoto"  type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
+        <input class="cadastroFoto"  type="image" src="img/cadastro.png" onclick="iconeCadastro()">
+        <label for="menu-toggle" class=vermaisFoto>
+            <img src="img/vermais.png" alt="Abrir Menu">
+        </label>
+    </div>
+    <aside class="side-menu">
+        <nav>
+            <ul>
+                <li><a href="todosprod.html">Ver Todos</a></li>
+                <li><a href="velas.html">Velas</a></li>
+                <li><a href="incensos.html">Incensos</a></li>  
+                <li><a href="oleo.html">Óleos Essenciais</a></li>
+                <li><a href="difusor.html">Difusor de Aromas</a></li>
+                <li><a href="sobreempresa.html">Sobre a Empresa</a></li>
+                <li><a href="index.html">Voltar ao Início</a></li>
+            </ul>
+        </nav>
+        <div class="side-menu-fade"></div>
+    </aside>
+    <section class="sobre">
+      <h2>Descrição e História da Marca</h2>
+      <p>
+        A <strong>L'Atelier Bougioni</strong> nasceu da paixão pelo design,
+        pela arte e pelo cuidado nos detalhes. Nossa missão é oferecer
+        produtos únicos que unem tradição, elegância e inovação, sempre
+        respeitando o processo artesanal e valorizando o trabalho coletivo.     
+     </p>
     </section>
-    <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila, Lis Almeida</footer>
+
+    <h2>Equipe</h2>
+    <section class="equipe">
+      <article>
+        <img src="img/velaGuaxinim.PNG" alt="Elena Mimouni" class="foto-equipe">
+        <h3>Elena Mimouni</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate saepe minus aliquam repellat aliquid? Ab eos, reiciendis odit, voluptatibus sapiente quasi, iste quia quos facilis quisquam obcaecati labore pariatur nisi.</p>
+        <p class="social-links">
+            <a href="#"><img class="instagram-logo" src="img/Instagram_logo.png" alt="Instagram Elena"></a>
+            <a href="#"><img class="github-logo" src="img/Github_logo.png" alt="GitHub Elena"></a>
+            <a href="#"><img class="linkedin-logo" src="img/Linkedin_logo.png" alt="LinkedIn Elena"></a>
+        </p>
+      </article>
+
+      <article>
+        <img src="img/velacoala.PNG" alt="Fernanda Fukasawa" class="foto-equipe">
+        <h3>Fernanda Fukasawa</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eum aspernatur temporibus placeat illum aliquid perspiciatis facere, molestiae nihil magni blanditiis porro quasi rerum laborum explicabo adipisci libero. Quos, minima.</p>
+        <p class="social-links">
+            <a href="#"><img class="instagram-logo" src="img/Instagram_logo.png" alt="Instagram Fernanda"></a>
+            <a href="#"><img class="github-logo" src="img/Github_logo.png" alt="GitHub Fernanda"></a>
+            <a href="#"><img class="linkedin-logo" src="img/Linkedin_logo.png" alt="LinkedIn Fernanda"></a>
+        </p>
+      </article>
+
+      <article>
+        <img src="img/velaEstrela.PNG" alt="Maria Eduarda Avila" class="foto-equipe">
+        <h3>Maria Eduarda Avila</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate saepe minus aliquam repellat aliquid? Ab eos, reiciendis odit, voluptatibus sapiente quasi, iste quia quos facilis quisquam obcaecati labore pariatur nisi.</p>
+        <p class="social-links">
+            <a href="#"><img class="instagram-logo" src="img/Instagram_logo.png" alt="Instagram Maria Eduarda"></a>
+            <a href="#"><img class="github-logo" src="img/Github_logo.png" alt="GitHub Maria Eduarda"></a>
+            <a href="#"><img class="linkedin-logo" src="img/Linkedin_logo.png" alt="LinkedIn Maria Eduarda"></a>
+        </p>
+      </article>
+
+      <article>
+        <img src="img/velasazul.PNG" alt="Lis Almeida" class="foto-equipe">
+        <h3>Lis Almeida</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id cupiditate enim officia ex deserunt magni dolorum porro beatae cum modi voluptas ipsam possimus libero totam nesciunt commodi, veritatis distinctio quidem!</p>
+        <p class="social-links">
+            <a href="#"><img class="instagram-logo"src="img/Instagram_logo.png" alt="Instagram Lis"></a>
+            <a href="#"><img class="github-logo" src="img/Github_logo.png" alt="GitHub Lis"></a>
+            <a href="#"><img class="linkedin-logo" src="img/Linkedin_logo.png" alt="LinkedIn Lis"></a>
+        </p>
+      </article>
+    </section>
+    </br>
+
+
+  <footer>
+    <p>Site para fins educativos — Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila, Lis Almeida</p>
+  </footer>
+
 </body>
 </html>
