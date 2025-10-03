@@ -73,12 +73,12 @@
                 align-items: center;
                 justify-content: center;
                 display: flex;
-                position: relative;
                  /* PROPRIEDADES PARA FIXAR AO SCROLL */
                 position: sticky; /* Define o comportamento de "grudar" */
                 top: 0; /* Ponto onde o elemento deve grudar (o topo da viewport) */
                 width: 100%; /* Garante que ocupe a largura total */
-                z-index: 10; /* Garante que fique sobre o conteúdo ao rolar */
+                z-index: 1000; /* Garante que fique sobre o conteúdo ao rolar */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .menu-sombra-fixa {
@@ -134,6 +134,7 @@
                 height: 2.8em;
                 position: absolute;
                 left: 2em;
+                z-index: 1000;
         }
 
         .banners {
@@ -198,19 +199,19 @@
         }
 
         .side-menu {
-                position: absolute;
-                top: 1;
+                position: fixed;
                 left: -20em;
                 width: 20em;
-                height: 45.5em;
                 background-color: #E8E3DD;
                 box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-                padding-top: 5em;
                 transition: left 0.3s ease;
-                z-index: 1000;
+                z-index: 999;
                 font-family: "fonteh2";
                 position: fixed;
-                top: 5.5em;
+                top: 15.5em;
+                padding-top: 4em;
+                height: calc(100vh - 15.5em);
+
         }
 
         .side-menu-fade {
@@ -227,6 +228,9 @@
         #menu-toggle:checked~.side-menu {
                 left: 0;
         }
+        
+
+        
 
         .side-menu ul {
                 list-style: none;
@@ -273,12 +277,14 @@
         .filtro-icone{
                 display: flex;
                 align-items: center;
+                gap: 1em;
                 cursor: pointer;
                 width: fit-content;
-                padding: 0.3em 1em;
+                padding: 3em 1.8em;
                 border-radius: 2.5em;
                 background-color: #E2DDD4;
                 transition: background-color 0.2s;
+                font-family: fonteh2;
         }
 
         .filtro-icone:hover{
@@ -288,12 +294,17 @@
         .filtro-icone img{
                 width:3em;
                 height: 2em;
-                margin-right: 2em;
+                padding: 0.4em;
+                background-color: #1b5d9a;
+                border-radius: 2em;
+                box-shadow: 0 0.3em 0.5em rgba(0,0,0,0.2);
+
         }
 
         .filtro-icone span{
                 font-family: fonteh2;
                 font-size: 1em;
+                color: #000;
         }
 
         .filtro-vertical {
@@ -423,5 +434,58 @@
                 transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
         }
 
-        
+        .filtro-no-header {
+                position: absolute;
+                left: 7.5em;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 100;
+        }
+
+        .filtro-no-header .filtro-icone {
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                gap: 0.8em;
+                padding: 0.8em 1.4em;
+                border-radius: 2.5em;
+                font-family: fonteh2;
+                font-size: 1.05em;
+                cursor: pointer;
+                transition: background-color 0.2s;
+        }
+
+        .filtro-no-header .filtro-icone img {
+                width: 3em;
+                height: 3em;
+                padding: 0.5em;
+                background-color: #1b5d9a;
+                border-radius: 50%;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .filtro-no-header-dropdown {
+                position: absolute;
+                top: 4.5em;
+                left: 0;
+                width: 250px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 0 0 5px 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+                padding: 15px;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out, opacity 0.3s ease-in-out;
+                overflow-y: auto;
+        }
+
+        #filtro-topo:checked ~ label + .filtro-no-header-dropdown {
+                max-height: 500px;
+                opacity: 1;
+        }
+
+
        
