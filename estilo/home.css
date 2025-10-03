@@ -479,6 +479,7 @@
                 opacity: 0;
                 overflow: hidden;
                 transition: max-height 0.4s ease-out, opacity 0.3s ease-in-out;
+                overflow-y: auto;
         }
 
         #filtro-topo:checked ~ label + .filtro-no-header-dropdown {
