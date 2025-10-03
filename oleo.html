@@ -26,6 +26,43 @@
         <label for="menu-toggle" class=vermaisFoto>
             <img src="img/vermais.png" alt="Abrir Menu">
         </label>
+        <!-- NOVO BOTÃO DE FILTRO NO TOPO -->
+    <div class="filtro-no-header">
+        <input type="checkbox" id="filtro-topo" hidden>
+        <label for="filtro-topo" class="filtro-icone">
+            <img src="img/filtrofoto.png" alt="Filtro">
+            <span> Filtrar Produtos </span>
+        </label>
+        <aside class="filtro-no-header-dropdown">
+            <div class="grupo-filtro">
+                <h4>Ordenar Por:</h4>
+                <label>
+                    <input type="checkbox" name="ordenação" value="menor-preco" onclick="aplicarFiltros()"> Menor Preço
+                </label>
+                <label>
+                    <input type="checkbox" name="ordenação" value="maior-preco" onclick="aplicarFiltros()"> Maior Preço
+                </label>
+            </div>
+            <br/>
+            <div class="grupo-filtro">
+                <h4>Faixa de Preços</h4>
+                <label><input type="checkbox" name="faixa-preco" value="0-20" onclick="aplicarFiltros()"> $0 - $20</label>
+                <label><input type="checkbox" name="faixa-preco" value="20-50" onclick="aplicarFiltros()"> $20 - $50</label>
+                <label><input type="checkbox" name="faixa-preco" value="50-100" onclick="aplicarFiltros()"> $50 - $100</label>
+                <label><input type="checkbox" name="faixa-preco" value="100-200" onclick="aplicarFiltros()"> $100 - $200</label>
+                <label><input type="checkbox" name="faixa-preco" value="200-500" onclick="aplicarFiltros()"> $200 - $500</label>
+            </div>
+            <br/>
+            <div class="grupo-filtro">
+                <h4>Categorias</h4>
+                <label><input type="checkbox" name="categoria" value="difusor" onclick="aplicarFiltros()"> Difusores</label>
+                <label><input type="checkbox" name="categoria" value="oleo" onclick="aplicarFiltros()"> Óleos Essenciais</label>
+                <label><input type="checkbox" name="categoria" value="vela" onclick="aplicarFiltros()"> Velas</label>
+                <label><input type="checkbox" name="categoria" value="incenso" onclick="aplicarFiltros()"> Incensos</label>
+            </div>
+        </aside>
+    </div>
+</div>
     </div>
     <aside class="side-menu">
         <nav>
