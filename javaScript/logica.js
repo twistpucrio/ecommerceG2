@@ -45,6 +45,18 @@ class EcommerceG2 {
   }
 
   
+  /**
+   * abre a pagina de pesquisa com o texto sendo `query`
+   * @param {string} query //definindo o tipo do parametro
+   */
+  // openSearchPage(query){
+  //   const words = query.trim().split(/\s+/); //tira todos os tipos de espaco (o + tira x numeros de espacos consecutivos)
+  //   const param = words.map(x=>encodeURIComponent(x)).join("+");
+  //   const url = `todosprod.html?pesquisa=${param}`;
+  //   console.log(url);
+  // }
+
+  
 
   async addToCart(productId) {
     console.log(productId); 
@@ -139,10 +151,11 @@ if (typeof module !== 'undefined' && module.exports) {
 
 
 function redirecionarParaPaginaIndividualProduto(idProduto){
-    // insere no local storage o ID do produto do qual foi clickado para ativar a função
-    localStorage.setItem("produtoAtual", JSON.stringify(idProduto));
+    // insere na url o ID do produto do qual foi clickado para ativar a função
+    let url = new URL("http://127.0.0.1:5500/produtoindividual.html?id=0");
+    url.searchParams.set('id', idProduto);
 
     //redireciona para a pagina de produto individual, que vai usar o "produtoAtual" do LocalStorage para ser gerada
-    window.location.href = 'produtoindividual.html';
+    window.location.href = url;
     
 }

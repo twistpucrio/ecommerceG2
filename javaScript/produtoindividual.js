@@ -1,26 +1,15 @@
 
 
-window.onload = function() {
-
-    // se não houver um produto que foi clickado para termos a página individual dele, redireciona para o index
-    let produtoAtual = JSON.parse(localStorage.getItem("produtoAtual"));
-    if (produtoAtual === null){
-        window.location.href = 'index.html';
-    }
-
-
-
-
-};
-
 
 
 document.addEventListener("DOMContentLoaded", async () => {
   const g2 = new EcommerceG2();
   const container = document.getElementById("produto-container");
 
-  // Recupera o produto salvo no localStorage
-  const produtoId = JSON.parse(localStorage.getItem("produtoAtual"));
+  // Recupera o produto salvo na url
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const produtoId =  Number(urlParams.get('id'));
 
   if (!produtoId) {
     container.innerHTML = "<p>Nenhum produto selecionado.</p>";

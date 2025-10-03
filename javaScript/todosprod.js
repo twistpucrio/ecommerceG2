@@ -2,9 +2,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const g2 = new EcommerceG2();
     const productListEl = document.getElementById('product-list');//lista de produtos no html
+    const params = new URLSearchParams(document.location.search);
+    const barraDePesquisa = document.getElementById("pesquisa");
+    const pesquisaParam = params.get("pesquisa");
+    if(pesquisaParam !== null){
+        barraDePesquisa.value = pesquisaParam;
+    }
 
     async function renderProducts() {
-        const barraDePesquisa = document.getElementById("pesquisa");
         const products = await g2.listProducts();
 
         function exibirProdutos(filtroBusca = '') {
@@ -53,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Mostra todos os produtos ao carregar
-        exibirProdutos();
+        exibirProdutos(barraDePesquisa.value);
 
         // Filtra conforme digita
         barraDePesquisa.addEventListener("input", () => {

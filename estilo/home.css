@@ -214,13 +214,13 @@
         }
 
         .side-menu-fade {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3em;
-        background: linear-gradient(to bottom, rgba(232, 227, 221, 0), #E8E3DD);
-        pointer-events: none; /* garante que ele não bloqueie cliques */
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3em;
+                background: linear-gradient(to bottom, rgba(232, 227, 221, 0), #E8E3DD);
+                pointer-events: none; /* garante que ele não bloqueie cliques */
         }
 
 
@@ -251,6 +251,93 @@
                 height: 2em;
         }
 
+        #filtro-foto{
+                display: none !important;
+        }
+
+        .filtro-area{
+                background-image: url(../img/shimmering-golden-leafy_53876-94586.jpg);
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                padding: 1em 0;
+        }
+
+        .filtro-container{
+                max-width: 300em;
+                margin: 0 auto;
+                position: relative;
+                padding: 0 1em;
+        }
+
+        .filtro-icone{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                width: fit-content;
+                padding: 0.3em 1em;
+                border-radius: 2.5em;
+                background-color: #E2DDD4;
+                transition: background-color 0.2s;
+        }
+
+        .filtro-icone:hover{
+                background-color: #d8d3c9;
+        }
+
+        .filtro-icone img{
+                width:3em;
+                height: 2em;
+                margin-right: 2em;
+        }
+
+        .filtro-icone span{
+                font-family: fonteh2;
+                font-size: 1em;
+        }
+
+        .filtro-vertical {
+                /* Posicionamento e Aparência */
+                position: absolute;
+                top: 100%; /* Inicia logo abaixo do .filtro-icone */
+                left: 1em;
+                width: 250px; /* Largura do menu de filtro */
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-top: none;
+                border-radius: 0 0 5px 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 50; /* Garante que fique sobre os produtos */
+                padding: 15px;
+                /* MÁGICA DO DROPDOWN (Começa fechado) */
+                max-height: 0; /* Altura 0 para fechar */
+                overflow: hidden; /* Esconde o conteúdo que transborda */
+                opacity: 0; /* Opacidade 0 para sumir */
+                transition: max-height 0.4s ease-out, opacity 0.3s ease-in-out; 
+        }
+
+        #filtro-foto:checked ~ .filtro-container .filtro-vertical {
+                max-height: 500px; /* Um valor grande o suficiente para o conteúdo aparecer */
+                opacity: 1; /* Torna o menu visível */
+                transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+        }
+
+        .grupo-filtro h4 {
+                font-family: fonteh2;
+                font-size: 1.1em;
+                margin-bottom: 10px;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 5px;
+        }
+
+        .grupo-filtro label {
+                display: block;
+                font-family: sans-serif;
+                font-size: 0.9em;
+                margin-bottom: 5px;
+                cursor: pointer;
+        }
+
         .produtos {
         background-color:#E8E3DD ; 
         display: flex; 
@@ -260,19 +347,19 @@
         }
 
         .product-item {
-        width: 250px; 
-        height: 300px; 
-        display: inline-block;
-        align-items: center;
-        justify-content: space-between;
-        margin: 27px;
-        margin-bottom: 34px;
-        border: 8px solid #a38f7e;
-        background-color: #f7f1eb;
-        padding: 10px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                width: 250px; 
+                height: 300px; 
+                display: inline-block;
+                align-items: center;
+                justify-content: space-between;
+                margin: 27px;
+                margin-bottom: 34px;
+                border: 1px solid #726051;
+                background-color: #f7f1eb;
+                padding: 10px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .product-item-img {
@@ -323,8 +410,18 @@
                 background-color: #061a52;
         }
 
-        #add-carrinho{
-                width: 80px; 
+        #filtro-foto:checked ~ .filtro-icone + .filtro-vertical, /* Se .filtro-icone estiver antes de .filtro-vertical */
+        #filtro-foto:checked ~ .filtro-vertical { /* Se .filtro-vertical for irmão direto da checkbox */
+                max-height: 500px;
+                opacity: 1;
+                transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
         }
+
+        #filtro-foto:checked ~ .filtro-vertical {
+                max-height: 500px;
+                opacity: 1;
+                transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+        }
+
         
        
