@@ -37,15 +37,18 @@
         }
 
         #titulo {
-                background-color: #1b5d9a;
+                background-color: #ac9c89 ;
         }
 
         h1 {
-                padding: 0.2em;
+                padding: 0.3em;
                 font-family: fonteTitulo;
-                font-size: 8em;
+                font-size: 5em;
                 text-align: center;
-                background-color:  #88b0be;
+                color: #fff;
+                background-color:   #ac9c89;
+                display: inline-block;
+                margin-left: 12%;
         }
 
         h2 {
@@ -53,7 +56,7 @@
                 font-family: fonteh2;
                 font-size: 2.5em;
                 text-align: center;
-               background-color:   #E8E3DD ;
+               background-color:  #ac9c89 ;
                 width: size-content;
                 margin: 0 auto;
         }
@@ -67,7 +70,7 @@
         }
 
         .segundo-cabeçalho {
-                background-color: #E2DDD4;
+                background-color: #ac9c89;
                 height: 5.5em;
                 text-align: center;
                 align-items: center;
@@ -89,6 +92,7 @@
         }
 
         .pesquisa {
+                display: flex; ; 
                 background-image: url('../img/lupa.png');
                 /* fix the path */
                 background-position: right 0.5em center;
@@ -96,50 +100,79 @@
                 background-size: 1em;
                 padding-left: 2em;
                 border-radius: 0.6em;
-                padding: 0.8em;
-                width: 35em;
-                border: none;
+                padding: 0.9em;
+                width: 32em;
+                height: 4em;
+                border: solid 0.3em #fcf8f6;
                 /* remove default white/gray border */
                 outline: none;
                 /* optional: removes blue outline on focus */
-                background-color: #fff;
+                background-color:  #ac9c89;
                 /* or match your background */
-                margin: auto;
-                font-size: 1em;
+                font-size: 0.7em;
+                color: white;
+        }
+        .formulario {
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+                margin-right: 2%;
+                margin-bottom: 3%;
+                margin-left: 7%;
+        }
+
+        .icones {
+                display: inline-block;
+                align-items: center;
+                justify-content: flex-end;
+                margin-right: 1%;
+                margin-top: 2%;
+                margin-left: 20%;
+
         }
 
         .carrinhoFoto {
                 width: 3em;
                 height: 3em;
-                position: absolute;
-                right: 10em;
+                display: inline-flex; 
+                margin-top: inherit;
+                cursor: pointer;
+                gap: 1.5em;
+                margin-right: 2em;
         }
 
         .favoritosFoto {
                 width: 3.5em;
                 height: 3.5em;
-                position: absolute;
-                right: 6.7em;
+                display: inline-flex; 
+                margin-top: inherit;
+                cursor: pointer;
+                margin-right: 2em;
         }
 
         .cadastroFoto {
                 width: 3.5em;
                 height: 3.5em;
-                position: absolute;
-                right: 2em;
+                display: inline-flex; 
+                cursor: pointer;
+                margin-top: inherit;
+                margin-right: 2em;
+
         }
 
         .vermaisFoto {
                 width: 2.8em;
                 height: 2.8em;
                 position: absolute;
-                left: 2em;
+                left: 1.8em;
                 z-index: 1000;
+                margin-top: 3.4%;
         }
 
         .banners {
                 height: 28em;
-                background-color: #E8E3DD;
+                background-color: #ac9c89;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -156,7 +189,7 @@
                 display: flex;
                 justify-content: center;
                 gap: 2em;
-                background-color: #E8E3DD;
+                background-color: #ac9c89;
                 font-family: fonteh2;
         }
 
@@ -202,7 +235,7 @@
                 position: fixed;
                 left: -20em;
                 width: 20em;
-                background-color: #E8E3DD;
+                background-color: #e7e0d8;
                 box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
                 transition: left 0.3s ease;
                 z-index: 999;
@@ -240,7 +273,7 @@
 
         .side-menu li {
                 padding: 1em;
-                border-bottom: 1px solid #ccc;
+                border-bottom: 1px solid #dbd7d7;
         }
 
         .side-menu a {
@@ -251,7 +284,7 @@
         }
 
         .espaço {
-                background-color: #E8E3DD;
+                background-color: #ac9c89;
                 height: 2em;
         }
 
@@ -350,7 +383,7 @@
         }
 
         .produtos {
-        background-color:#E8E3DD ; 
+        background-color:#ac9c89; 
         display: flex; 
         justify-content: center;
         flex-wrap: wrap;
