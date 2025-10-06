@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="botao">
                     
                     <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
-                    <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>x
+                    <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
                     </div>
                 `;
                 productListEl.appendChild(itemEl);//coloca na lista de produtos 
