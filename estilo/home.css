@@ -391,6 +391,9 @@
                 margin-top: auto;
         }
 
+        .botao img {
+                pointer-events: none;
+        }
 
         .product-item .info {
                 font-size: 14px;

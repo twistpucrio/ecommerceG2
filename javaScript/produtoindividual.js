@@ -35,25 +35,34 @@ document.addEventListener("DOMContentLoaded", async () => {
         <h2>${product.nome}</h2>
         <p class="descricao">${product.descricao || "Sem descrição disponível."}</p>
         <div class="price">Preço: $${product.preco.toFixed(2)}</div>
+      </div>
       <div class="botao">
-                    
-                    <button id="add-carrinho" data-product-id="${product.id}">
-                    <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24">
-                    </button>
-                    <!-- botão favorito com imagem -->
-                    <button id="add-favorito" data-fav-id="${product.id}">
-                        <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24">
-                    </button>
-        </div>
+                    <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                    <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
+      </div>
+    </div>
   `;
 
-  // Eventos dos botões
-  document.getElementById("add-carrinho").addEventListener("click", () => {
-    g2.addToCart(product.id);
-    alert("Produto adicionado ao carrinho!");
-  });
 
-  document.getElementById("add-favorito").addEventListener("click", () => {
-    adicionarFavoritos(product.id);
-  });
+  container.addEventListener('click', (event) => {
+        // adicionar ao carrinho
+        if (event.target.classList.contains("add-carrinho")) {
+            const id = parseInt(event.target.dataset.productId, 10);
+            g2.addToCart(id);
+            alert("Produto adicionado ao carrinho!");
+        }
+
+        // adicionar/remover favoritos
+        if (event.target.classList.contains("add-favorito")) {
+            const id = parseInt(event.target.dataset.favId, 10);
+            adicionarFavoritos(id);
+            }
+        });
+
+
+
+
+
+
+
 });
