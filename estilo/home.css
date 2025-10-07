@@ -18,6 +18,7 @@
         body {
                 margin: 0;
                 padding: 0;
+                background-color: #ac9c89;
         }
 
         nav {
@@ -56,9 +57,24 @@
                 font-family: fonteh2;
                 font-size: 2.5em;
                 text-align: center;
-               background-color:  #ac9c89 ;
-                width: size-content;
+                background-color:  #ac9c89 ;
+                width:  max-content;
                 margin: 0 auto;
+                color: white;
+                position: relative;
+                overflow: visible;
+                padding-left: 2em;
+        }
+
+        h2::before {
+                content: "";
+                position: absolute;
+                left: -9999px; 
+                right: calc(100% - 10px);
+                top: 50%;
+                transform: translateY(-50%);
+                height: 3px;
+                background-color: white;
         }
 
         h1 a:active,
@@ -208,6 +224,7 @@
                 height: 12em;
                 object-fit: cover;
                 margin-bottom: 0.5em; /* espaço entre imagem e texto */
+                box-shadow: 0 0 0 0.1em white;
         }
 
         .categoria-item p {
@@ -313,15 +330,13 @@
                 gap: 1em;
                 cursor: pointer;
                 width: fit-content;
-                padding: 3em 1.8em;
-                border-radius: 2.5em;
-                background-color: #E2DDD4;
                 transition: background-color 0.2s;
                 font-family: fonteh2;
+                background-color: transparent !important;
         }
 
         .filtro-icone:hover{
-                background-color: #d8d3c9;
+                background-color: transparent;
         }
 
         .filtro-icone img{
@@ -471,11 +486,14 @@
         }
 
         .filtro-no-header {
-                position: absolute;
-                left: 7.5em;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 100;
+                /* REMOVIDAS AS PROPRIEDADES DE POSICIONAMENTO ABSOLUTO */
+                z-index: 100; 
+                
+                /* Novo posicionamento na coluna da esquerda */
+                position: relative;
+                margin-left: 1.5em; /* Empurra um pouco para a direita da borda */
+                margin-top: 2em; /* Empurra para baixo do menu lateral */
+                width: fit-content; /* Garante que a div não se espalhe desnecessariamente */
         }
 
         .filtro-no-header .filtro-icone {
@@ -501,8 +519,6 @@
         }
 
         .filtro-no-header-dropdown {
-                position: absolute;
-                top: 4.5em;
                 left: 0;
                 width: 250px;
                 background-color: #fff;
@@ -522,6 +538,22 @@
                 max-height: 500px;
                 opacity: 1;
         }
+
+        #titulo {
+                background-color: #ac9c89; 
+                /* Garante que ocupe a largura total */
+                width: 100%; 
+                /* Habilita o comportamento de "grudar" */
+                position: sticky; 
+                /* Ponto onde deve grudar (o topo da viewport) */
+                top: 0; 
+                /* Garante que fique sobre o conteúdo ao rolar */
+                z-index: 1000; /* Mantenha um z-index alto, mas 1000 era muito alto, 100 deve ser suficiente */
+                
+                /* Demais propriedades que você já tinha: */
+                /* Você pode adicionar uma sombra aqui, se quiser: */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+}
 
 
        
