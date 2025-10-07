@@ -91,6 +91,16 @@ function cadastrar() {
         return;
     }
 
+    //verificacao cep
+    let padraoCep = new RegExp("[0-9]");
+    if (!padraoCep.test(cep)) {
+        alert("O cep deve apenas conter numeros.");
+        if (cep.length != 8)
+            alert("O cep deve conter 8 digitos.");
+        return;
+    }
+
+
 
     // pega a lista de usuarios existentes
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
@@ -113,7 +123,7 @@ function cadastrar() {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
-    
+
     document.getElementById("emailLogin").value = email;
     document.getElementById("senhaLogin").value = senha;
     login();
