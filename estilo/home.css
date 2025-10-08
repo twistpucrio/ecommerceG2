@@ -108,8 +108,9 @@
         }
 
         .pesquisa {
+                background-image: url('../img/lupa_branca\ \(3\).png');
                 display: flex; ; 
-                background-image: url('../img/lupa.png');
+
                 /* fix the path */
                 background-position: right 0.5em center;
                 background-repeat: no-repeat;
