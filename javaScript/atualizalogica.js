@@ -2,7 +2,7 @@ window.onload = function() {
 
     // se não houver um usuario logado, envia para a página de cadastro
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-    if (usuarioLogadoLogado === null){
+    if (usuarioLogado === null){
         window.location.href = 'cadastro.html';
     }
 
