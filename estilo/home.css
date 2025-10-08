@@ -225,11 +225,17 @@
                 object-fit: cover;
                 margin-bottom: 0.5em; /* espaço entre imagem e texto */
                 box-shadow: 0 0 0 0.1em white;
+                transition: transform 0.3s ease-in-out;
+        }
+
+        .categoria-item:hover img {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 0.1em white, 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .categoria-item p {
                 margin: 0;
-                font-size: 1em;
+                font-size: 1.5em;
                 line-height: 1.2;
                 text-decoration: none !important;
                 color: inherit !important;
