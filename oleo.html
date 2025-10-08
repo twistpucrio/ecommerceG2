@@ -41,17 +41,9 @@
 
         <aside class="filtro-no-header-dropdown">
             <div class="grupo-filtro">
-                <h4>Ordenar Por:</h4>
-                <label>
-                    <input type="checkbox" name="ordenação" value="menor-preco" onclick="aplicarFiltros()"> Menor Preço
-                </label>
-                <label>
-                    <input type="checkbox" name="ordenação" value="maior-preco" onclick="aplicarFiltros()"> Maior Preço
-                </label>
-            </div>
-            <br/>
-            <div class="grupo-filtro">
                 <h4>Faixa de Preços</h4>
+                <label> <input type="checkbox" name="ordenação" value="menor-preco" onclick="aplicarFiltros()"> Menor Preço</label>
+                <label><input type="checkbox" name="ordenação" value="maior-preco" onclick="aplicarFiltros()"> Maior Preço</label>
                 <label><input type="checkbox" name="faixa-preco" value="0-20" onclick="aplicarFiltros()"> $0 - $20</label>
                 <label><input type="checkbox" name="faixa-preco" value="20-50" onclick="aplicarFiltros()"> $20 - $50</label>
                 <label><input type="checkbox" name="faixa-preco" value="50-100" onclick="aplicarFiltros()"> $50 - $100</label>
@@ -60,11 +52,19 @@
             </div>
             <br/>
             <div class="grupo-filtro">
-                <h4>Categorias</h4>
-                <label><input type="checkbox" name="categoria" value="difusor" onclick="aplicarFiltros()"> Difusores</label>
-                <label><input type="checkbox" name="categoria" value="oleo" onclick="aplicarFiltros()"> Óleos Essenciais</label>
-                <label><input type="checkbox" name="categoria" value="vela" onclick="aplicarFiltros()"> Velas</label>
-                <label><input type="checkbox" name="categoria" value="incenso" onclick="aplicarFiltros()"> Incensos</label>
+                <h4>Objetivos</h4>
+                <label><input type="checkbox" name="categoria" value="aromaterapia" onclick="aplicarFiltros()"> Ideal para aromaterapia</label>
+                <label><input type="checkbox" name="categoria" value="concentracao" onclick="aplicarFiltros()"> Ideal para concentração </label>
+                <label><input type="checkbox" name="categoria" value="relaxamento" onclick="aplicarFiltros()"> Ideal para relaxamento</label>
+                <label><input type="checkbox" name="categoria" value="energizacao" onclick="aplicarFiltros()"> Ideal para energização</label>
+            </div>
+            <br/>
+            <div class="grupo-filtro">
+                <h4>Aromas</h4>
+                <label><input type="checkbox" name="categoria" value="citrico" onclick="aplicarFiltros()"> Cítrico</label>
+                <label><input type="checkbox" name="categoria" value="doce" onclick="aplicarFiltros()"> Doce</label>
+                <label><input type="checkbox" name="categoria" value="floral" onclick="aplicarFiltros()"> Floral</label>
+                <label><input type="checkbox" name="categoria" value="amadeirado" onclick="aplicarFiltros()"> Amadeirado</label>
             </div>
         </aside>
     </div>
