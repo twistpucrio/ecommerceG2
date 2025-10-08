@@ -12,26 +12,31 @@
 </head>
 <body>
     <input type="checkbox" id="menu-toggle" hidden>
-    <header id="titulo"> 
-            <h1><a href="index.html">L'Atelier Bougioni</a></h1>
-    </header>
-    <div class="segundo-cabeçalho">
-        <input id="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
+    <header id="titulo">
+            <form action="todosprod.html" method="get" class="formulario">
+            <input id="pesquisa" name="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
+        </form>
+        <h1><a href="index.html">L'Atelier Bougioni</a></h1>
+        <div class="icones">
+        <input class="cadastroFoto"  type="image" src="img/cadastro_branco (1).png" onclick="iconeCadastro()">
+        <input class="favoritosFoto"  type="image" src="img/favoritos_branco.png" onclick="iconeFavoritos()">
         <a href="carrinho.html" class="carrinhoFoto">
             <img src="img/carrinho_branco.png">
         </a>
-        <input class="favoritosFoto"  type="image" src="img/favoritos_branco.png" onclick="iconeFavoritos()">
-        <input class="cadastroFoto"  type="image" src="img/cadastro_branco (1).png" onclick="iconeCadastro()">
+    </div> 
+    
         <label for="menu-toggle" class=vermaisFoto>
             <img src="img/vermais_branco (1).png" alt="Abrir Menu">
         </label>
-        <!-- NOVO BOTÃO DE FILTRO NO TOPO -->
-    <div class="filtro-no-header">
-        <input type="checkbox" id="filtro-topo" hidden>
-        <label for="filtro-topo" class="filtro-icone">
-            <img src="img/filtrofoto_branca (1).png" alt="Filtro">
-            <span> Filtrar Produtos </span>
-        </label>
+
+    </header>
+        <div class="filtro-no-header">
+            <input type="checkbox" id="filtro-topo" hidden>
+            <label for="filtro-topo" class="filtro-icone">
+                <img src="img/filtrofoto_branca (1).png" alt="Filtro">
+                <span> Filtrar Produtos </span>
+            </label>
+
         <aside class="filtro-no-header-dropdown">
             <div class="grupo-filtro">
                 <h4>Ordenar Por:</h4>

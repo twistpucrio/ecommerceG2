@@ -18,6 +18,7 @@
         body {
                 margin: 0;
                 padding: 0;
+                background-color: #ac9c89;
         }
 
         nav {
@@ -37,15 +38,18 @@
         }
 
         #titulo {
-                background-color: #1b5d9a;
+                background-color: #ac9c89 ;
         }
 
         h1 {
-                padding: 0.2em;
+                padding: 0.3em;
                 font-family: fonteTitulo;
-                font-size: 8em;
+                font-size: 5em;
                 text-align: center;
-                background-color:  #88b0be;
+                color: #fff;
+                background-color:   #ac9c89;
+                display: inline-block;
+                margin-left: 12%;
         }
 
         h2 {
@@ -53,9 +57,24 @@
                 font-family: fonteh2;
                 font-size: 2.5em;
                 text-align: center;
-               background-color:   #E8E3DD ;
-                width: size-content;
+                background-color:  #ac9c89 ;
+                width:  max-content;
                 margin: 0 auto;
+                color: white;
+                position: relative;
+                overflow: visible;
+                padding-left: 2em;
+        }
+
+        h2::before {
+                content: "";
+                position: absolute;
+                left: -9999px; 
+                right: calc(100% - 10px);
+                top: 50%;
+                transform: translateY(-50%);
+                height: 3px;
+                background-color: white;
         }
 
         h1 a:active,
@@ -67,7 +86,7 @@
         }
 
         .segundo-cabeçalho {
-                background-color: #E2DDD4;
+                background-color: #ac9c89;
                 height: 5.5em;
                 text-align: center;
                 align-items: center;
@@ -90,56 +109,87 @@
 
         .pesquisa {
                 background-image: url('../img/lupa_branca\ \(3\).png');
+                display: flex; ; 
+
                 /* fix the path */
                 background-position: right 0.5em center;
                 background-repeat: no-repeat;
                 background-size: 1em;
                 padding-left: 2em;
                 border-radius: 0.6em;
-                padding: 0.8em;
-                width: 35em;
-                border: none;
+                padding: 0.9em;
+                width: 32em;
+                height: 4em;
+                border: solid 0.3em #fcf8f6;
                 /* remove default white/gray border */
                 outline: none;
                 /* optional: removes blue outline on focus */
-                background-color: #fff;
+                background-color:  #ac9c89;
                 /* or match your background */
-                margin: auto;
-                font-size: 1em;
+                font-size: 0.7em;
+                color: white;
+        }
+        .formulario {
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+                gap: 1em;
+                margin-right: 2%;
+                margin-bottom: 3%;
+                margin-left: 7%;
+        }
+
+        .icones {
+                display: inline-block;
+                align-items: center;
+                justify-content: flex-end;
+                margin-right: 1%;
+                margin-top: 2%;
+                margin-left: 20%;
+
         }
 
         .carrinhoFoto {
                 width: 3em;
                 height: 3em;
-                position: absolute;
-                right: 10em;
+                display: inline-flex; 
+                margin-top: inherit;
+                cursor: pointer;
+                gap: 1.5em;
+                margin-right: 2em;
         }
 
         .favoritosFoto {
                 width: 3.5em;
                 height: 3.5em;
-                position: absolute;
-                right: 6.7em;
+                display: inline-flex; 
+                margin-top: inherit;
+                cursor: pointer;
+                margin-right: 2em;
         }
 
         .cadastroFoto {
                 width: 3.5em;
                 height: 3.5em;
-                position: absolute;
-                right: 2em;
+                display: inline-flex; 
+                cursor: pointer;
+                margin-top: inherit;
+                margin-right: 2em;
+
         }
 
         .vermaisFoto {
                 width: 2.8em;
                 height: 2.8em;
                 position: absolute;
-                left: 2em;
+                left: 1.8em;
                 z-index: 1000;
+                margin-top: 3.4%;
         }
 
         .banners {
                 height: 28em;
-                background-color: #E8E3DD;
+                background-color: #ac9c89;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -156,7 +206,7 @@
                 display: flex;
                 justify-content: center;
                 gap: 2em;
-                background-color: #E8E3DD;
+                background-color: #ac9c89;
                 font-family: fonteh2;
         }
 
@@ -175,11 +225,18 @@
                 height: 12em;
                 object-fit: cover;
                 margin-bottom: 0.5em; /* espaço entre imagem e texto */
+                box-shadow: 0 0 0 0.1em white;
+                transition: transform 0.3s ease-in-out;
+        }
+
+        .categoria-item:hover img {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 0.1em white, 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .categoria-item p {
                 margin: 0;
-                font-size: 1em;
+                font-size: 1.5em;
                 line-height: 1.2;
                 text-decoration: none !important;
                 color: inherit !important;
@@ -202,7 +259,7 @@
                 position: fixed;
                 left: -20em;
                 width: 20em;
-                background-color: #E8E3DD;
+                background-color: #e7e0d8;
                 box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
                 transition: left 0.3s ease;
                 z-index: 999;
@@ -240,7 +297,7 @@
 
         .side-menu li {
                 padding: 1em;
-                border-bottom: 1px solid #ccc;
+                border-bottom: 1px solid #dbd7d7;
         }
 
         .side-menu a {
@@ -251,7 +308,7 @@
         }
 
         .espaço {
-                background-color: #E8E3DD;
+                background-color: #ac9c89;
                 height: 2em;
         }
 
@@ -280,15 +337,13 @@
                 gap: 1em;
                 cursor: pointer;
                 width: fit-content;
-                padding: 3em 1.8em;
-                border-radius: 2.5em;
-                background-color: #E2DDD4;
                 transition: background-color 0.2s;
                 font-family: fonteh2;
+                background-color: transparent !important;
         }
 
         .filtro-icone:hover{
-                background-color: #d8d3c9;
+                background-color: transparent;
         }
 
         .filtro-icone img{
@@ -350,7 +405,7 @@
         }
 
         .produtos {
-        background-color:#E8E3DD ; 
+        background-color:#ac9c89; 
         display: flex; 
         justify-content: center;
         flex-wrap: wrap;
@@ -391,6 +446,9 @@
                 margin-top: auto;
         }
 
+        .botao img {
+                pointer-events: none;
+        }
 
         .product-item .info {
                 font-size: 14px;
@@ -435,11 +493,14 @@
         }
 
         .filtro-no-header {
-                position: absolute;
-                left: 7.5em;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 100;
+                position: relative;
+                /* REMOVIDAS AS PROPRIEDADES DE POSICIONAMENTO ABSOLUTO */
+                z-index: 100; 
+                
+                /* Novo posicionamento na coluna da esquerda */
+                margin-left: 1.5em; /* Empurra um pouco para a direita da borda */
+                margin-top: 2em; /* Empurra para baixo do menu lateral */
+                width: fit-content; /* Garante que a div não se espalhe desnecessariamente */
         }
 
         .filtro-no-header .filtro-icone {
@@ -466,7 +527,7 @@
 
         .filtro-no-header-dropdown {
                 position: absolute;
-                top: 4.5em;
+                top:100%;
                 left: 0;
                 width: 250px;
                 background-color: #fff;
@@ -486,6 +547,22 @@
                 max-height: 500px;
                 opacity: 1;
         }
+
+        #titulo {
+                background-color: #ac9c89; 
+                /* Garante que ocupe a largura total */
+                width: 100%; 
+                /* Habilita o comportamento de "grudar" */
+                position: sticky; 
+                /* Ponto onde deve grudar (o topo da viewport) */
+                top: 0; 
+                /* Garante que fique sobre o conteúdo ao rolar */
+                z-index: 1000; /* Mantenha um z-index alto, mas 1000 era muito alto, 100 deve ser suficiente */
+                
+                /* Demais propriedades que você já tinha: */
+                /* Você pode adicionar uma sombra aqui, se quiser: */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+}
 
 
        
