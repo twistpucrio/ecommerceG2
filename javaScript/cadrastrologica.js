@@ -1,7 +1,7 @@
 
 
 // cria primeiro usuario
-let usuarios = [{ "nome": "Elena", "email": "elena@gmail.com", "senha": "teste123", "id": "0", "estado": "MG", "logradoro": "PUC-Rio", "numero": "123", "complemento": "Leme" }]
+let usuarios = [{ "nome": "Elena", "email": "elena@gmail.com", "senha": "teste123", "id": "0", "estado": "MG", "logradouro": "PUC-Rio", "numero": "123", "complemento": "Leme" }]
 
 // coloca o primeiro usuuario no localStorage se não houver nada lá, fazemos isso pra não apagar os usuarios ao mudar de página
 let verificaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
@@ -37,7 +37,7 @@ function cadastrar() {
     let estado = document.getElementById("estadoCadastro").value;
 
 
-    let logradoro = document.getElementById("logradoroCadastro").value;
+    let logradouro = document.getElementById("logradouroCadastro").value;
     let numero = document.getElementById("numeroCadastro").value;
     let complemento = document.getElementById("complementoCadastro").value;
 
@@ -58,10 +58,10 @@ function cadastrar() {
     let padraoCpf = new RegExp("[a-zA-Z]");
     if (cpf.length != 11) {
         alert("número de caracteres inválido");
-
-        if (padraoCpf.test(cpf)) {
-            alert("Cpf só contém números");
-        }
+        return;
+    }
+    if (padraoCpf.test(cpf)) {
+        alert("Cpf só contém números");
         return;
     }
 
@@ -77,30 +77,87 @@ function cadastrar() {
     if (senha.length < 8 || senha.length > 15) {
         console.log("OI senha");
         alert("A senha deve conter entre 8 a 15 caracteres");
-
-        if (!/[A-Z]/.test(senha)) {
-            console.log("OI2");
-            alert("A senha deve conter pelo menos uma letra maiúscula.");
-            senha = "";
-        }
-        if (!/[0-9]/.test(senha)) {
-            console.log("OI3");
-            alert("A senha deve conter pelo menos 1 número");
-            senha = "";
-        }
         return;
     }
+    if (!/[A-Z]/.test(senha)) {
+        console.log("OI2");
+        alert("A senha deve conter pelo menos uma letra maiúscula.");
+        senha = "";
+        return;
+    }
+    if (!/[0-9]/.test(senha)) {
+        console.log("OI3");
+        alert("A senha deve conter pelo menos 1 número");
+        senha = "";
+        return;
+    }
+
+
 
     //verificacao cep
-    let padraoCep = new RegExp("[0-9]");
-    if (!padraoCep.test(cep)) {
-        alert("O cep deve apenas conter numeros.");
-        if (cep.length != 8)
+    if (cep != "") {
+        console.log("!");
+        let padraoCep = new RegExp("[0-9]");
+        if (!padraoCep.test(cep)) {
+            alert("O cep deve apenas conter numeros.");
+            return;
+        }
+        if (cep.length != 8) {
             alert("O cep deve conter 8 digitos.");
-        return;
+            return;
+        }
     }
 
 
+
+    //verificacao cidade
+    if (cidade != "") {
+        let padraoCidade = /^[A-Za-zÀ-ÿ\s]+$/; // permite letras + acentos + espaços
+        if (!padraoCidade.test(cidade)) {
+            alert("A cidade deve conter apenas letras e espaços.");
+            return;
+        }
+        if (cidade.length < 2 || cidade.length > 60) {
+            alert("Cidade deve ter entre 2 e 60 caracteres.");
+            return;
+        }
+    }
+
+
+    // verificaco estado
+    if (estado != "") {
+        const estadosValidos = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+        if (!estadosValidos.includes(estado.toUpperCase())) {
+            alert("Estado inválido. Use a sigla correta (ex: SP, RJ).");
+            return;
+        }
+    }
+
+    //verificacao logradouro
+    if (logradouro != "") {
+        const padraoLogradouro = /^[A-Za-zÀ-ÿ\s.,-]+$/;
+        if (!padraoLogradouro.test(logradouro)) {
+            alert("Logradouro inválido.");
+        } else if (logradouro.length < 3 || logradouro.length > 100) {
+            alert("Logradouro deve ter entre 3 e 100 caracteres.");
+        }
+    }
+
+    //verificacao numero
+    if (numero != "") {
+        if (!/^\d+$/.test(numero) && numero.toUpperCase() !== "S/N") {
+            alert("Número inválido. Use apenas números ou 'S/N'.");
+            return;
+        }
+    }
+
+    //verificacao complemento
+    if (complemento != "") {
+        if(complemento.length < 2 || complemento.length > 40){
+            alert("Complemento não pode ter mais de 80 caracteres.");
+            return;
+        }
+    }
 
     // pega a lista de usuarios existentes
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
@@ -119,7 +176,7 @@ function cadastrar() {
 
 
     // adiciona novo usuario no banco da dados
-    usuarios.push({ nome, email, senha, id, cep, cidade, estado, logradoro, numero, complemento });
+    usuarios.push({ nome, email, senha, id, cep, cidade, estado, logradouro, numero, complemento });
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
@@ -209,7 +266,7 @@ function atualizarCadastro() {
     let cidadeAtualiza = document.getElementById("cidadeAtualiza").value;
     let estadoAtualiza = document.getElementById("estadoAtualiza").value;
 
-    let logradoroAtualiza = document.getElementById("logradoroAtualiza").value;
+    let logradouroAtualiza = document.getElementById("logradouroAtualiza").value;
     let numeroAtualiza = document.getElementById("numeroAtualiza").value;
     let complementoAtualiza = document.getElementById("complementoAtualiza").value;
 
@@ -227,7 +284,7 @@ function atualizarCadastro() {
 
 
     if (cepAtualiza) {
-        usuarioLogado.logradoro = cepAtualiza;
+        usuarioLogado.logradouro = cepAtualiza;
         console.log(cepAtualiza);
     }
     if (cidadeAtualiza) {
@@ -240,9 +297,9 @@ function atualizarCadastro() {
     }
 
 
-    if (logradoroAtualiza) {
-        usuarioLogado.logradoro = logradoroAtualiza;
-        console.log(logradoroAtualiza);
+    if (logradouroAtualiza) {
+        usuarioLogado.logradouro = logradouroAtualiza;
+        console.log(logradouroAtualiza);
     }
     if (numeroAtualiza) {
         console.log(numeroAtualiza);
