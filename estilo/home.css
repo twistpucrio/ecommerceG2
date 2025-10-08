@@ -486,11 +486,11 @@
         }
 
         .filtro-no-header {
+                position: relative;
                 /* REMOVIDAS AS PROPRIEDADES DE POSICIONAMENTO ABSOLUTO */
                 z-index: 100; 
                 
                 /* Novo posicionamento na coluna da esquerda */
-                position: relative;
                 margin-left: 1.5em; /* Empurra um pouco para a direita da borda */
                 margin-top: 2em; /* Empurra para baixo do menu lateral */
                 width: fit-content; /* Garante que a div não se espalhe desnecessariamente */
@@ -519,6 +519,8 @@
         }
 
         .filtro-no-header-dropdown {
+                position: absolute;
+                top:100%;
                 left: 0;
                 width: 250px;
                 background-color: #fff;
