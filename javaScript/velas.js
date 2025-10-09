@@ -1,21 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const g2 = new EcommerceG2();
     const productListEl = document.getElementById('product-list');
-    const params = new URLSearchParams(document.location.search);
     const barraDePesquisa = document.getElementById("pesquisa");
-    const pesquisaParam = params.get("pesquisa");
-    if (pesquisaParam !== null) {
-        barraDePesquisa.value = pesquisaParam;
-    }
 
     async function renderProducts() {
         const products = await g2.listProducts();
-        const todosProdutos = products["produto"]; // array completo de produtos
+        const produtosFavoritos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+        const produtosExibe = (products.produto || []).filter(produto =>
+            produtosFavoritos.includes(produto.id)
+        );
 
-        // função para exibir produtos
+        // Função que exibe produtos (recebe lista filtrada)
         function exibirProdutos(lista) {
             productListEl.innerHTML = '';
-
             if (lista.length === 0) {
                 const mensagem = document.createElement('div');
                 mensagem.className = 'nenhum-produto';
@@ -30,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 itemEl.innerHTML = `
                     <img onclick="redirecionarParaPaginaIndividualProduto(${product.id})" src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
-                        <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})>${product.nome}</h3>
-                        <div class="price">R$${product.preco.toFixed(2)}</div>
+                        <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})">${product.nome}</h3>
+                        <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
                         <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
@@ -42,23 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // função global para aplicar filtros + pesquisa
+        // Função global de filtros
         window.aplicarFiltros = function() {
-            let filtrado = todosProdutos.slice();
+            let filtrado = produtosExibe.slice();
 
-            // 🔹 filtro da barra de pesquisa
+            // Filtro de pesquisa
             const termo = barraDePesquisa.value.toLowerCase();
-            if (termo) {
-                filtrado = filtrado.filter(p => p.nome.toLowerCase().includes(termo));
-            }
+            filtrado = filtrado.filter(p => p.nome.toLowerCase().includes(termo));
 
-            // 🔹 filtro de categoria
+            // Filtro por categoria
             const categoriasSelecionadas = Array.from(document.querySelectorAll('input[name="categoria"]:checked')).map(cb => cb.value.toLowerCase());
             if (categoriasSelecionadas.length > 0) {
                 filtrado = filtrado.filter(p => categoriasSelecionadas.includes(p.categoria.toLowerCase()));
             }
 
-            // 🔹 filtro por faixa de preço
+            // Filtro por faixa de preço
             const faixasSelecionadas = Array.from(document.querySelectorAll('input[name="faixa-preco"]:checked')).map(cb => cb.value);
             if (faixasSelecionadas.length > 0) {
                 filtrado = filtrado.filter(p => {
@@ -69,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // 🔹 ordenação
+            // Ordenação
             const ordenacaoSelecionada = Array.from(document.querySelectorAll('input[name="ordenação"]:checked')).map(cb => cb.value);
             if (ordenacaoSelecionada.length > 0) {
                 const ordem = ordenacaoSelecionada[0];
@@ -77,20 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (ordem === 'maior-preco') filtrado.sort((a,b) => b.preco - a.preco);
             }
 
-            // exibe produtos filtrados
             exibirProdutos(filtrado);
         };
 
-        // exibe todos produtos inicialmente (considerando pesquisa)
-        window.aplicarFiltros();
-
-        // atualiza dinamicamente conforme digita na barra de pesquisa
+        // Atualiza enquanto digita na barra de pesquisa
         barraDePesquisa.addEventListener("input", () => {
             window.aplicarFiltros();
         });
+
+        // Exibe todos ao carregar
+        exibirProdutos(produtosExibe);
     }
 
-    // adicionar ao carrinho/favoritos
+    // Clique em carrinho/favoritos
     productListEl.addEventListener('click', (event) => {
         if (event.target.classList.contains("add-carrinho")) {
             const id = parseInt(event.target.dataset.productId, 10);

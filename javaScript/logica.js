@@ -159,3 +159,6 @@ function redirecionarParaPaginaIndividualProduto(idProduto){
     window.location.href = url;
     
 }
+
+
+

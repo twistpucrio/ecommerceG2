@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Atelier Bougioni</title>
         <script src="/javaScript/logica.js"></script> 
-        <script src="javaScript/indexlogica.js"></script>
+        <script src="javaScript/velas.js"></script>
         <script src="javaScript/cadrastrologica.js"></script>
         <script src="javaScript/favoritoslogica.js"></script>
         <link rel="stylesheet" href="estilo/home.css">
@@ -40,10 +40,19 @@
 
         <aside class="filtro-no-header-dropdown">
             <br/>
+        
+        <div class="grupo-filtro">
+                <h4>Ordenar Por:</h4>
+                <label>
+                    <input type="checkbox" name="ordenação" value="menor-preco" onclick="aplicarFiltros()"> Menor Preço
+                </label>
+                <label>
+                    <input type="checkbox" name="ordenação" value="maior-preco" onclick="aplicarFiltros()"> Maior Preço
+                </label>
+            </div>
+            <br/>
             <div class="grupo-filtro">
                 <h4>Faixa de Preços</h4>
-                <label><input type="checkbox" name="ordenação" value="menor-preco" onclick="aplicarFiltros()"> Menor Preço</label>
-                <label><input type="checkbox" name="ordenação" value="maior-preco" onclick="aplicarFiltros()"> Maior Preço</label>
                 <label><input type="checkbox" name="faixa-preco" value="0-20" onclick="aplicarFiltros()"> $0 - $20</label>
                 <label><input type="checkbox" name="faixa-preco" value="20-50" onclick="aplicarFiltros()"> $20 - $50</label>
                 <label><input type="checkbox" name="faixa-preco" value="50-100" onclick="aplicarFiltros()"> $50 - $100</label>
@@ -52,31 +61,41 @@
             </div>
             <br/>
             <div class="grupo-filtro">
-                <h4>Objetivos</h4>
-                <label><input type="checkbox" name="categoria" value="relaxamento" onclick="aplicarFiltros()"> Relaxamento</label>
-                <label><input type="checkbox" name="categoria" value="meditacao" onclick="aplicarFiltros()"> Meditação</label>
-                <label><input type="checkbox" name="categoria" value="protecao" onclick="aplicarFiltros()"> Proteção</label>
-                <label><input type="checkbox" name="categoria" value="energizacao" onclick="aplicarFiltros()">  Energização</label>
+                <h4>Categorias</h4>
+                <label><input type="checkbox" name="categoria" value="difusor" onclick="aplicarFiltros()"> Difusores</label>
+                <label><input type="checkbox" name="categoria" value="oleo" onclick="aplicarFiltros()"> Óleos Essenciais</label>
+                <label><input type="checkbox" name="categoria" value="vela" onclick="aplicarFiltros()"> Velas</label>
+                <label><input type="checkbox" name="categoria" value="incenso" onclick="aplicarFiltros()"> Incensos</label>
             </div>
-            <br/>
-            <div class="grupo-filtro">
-                <h4>Duração de Queima</h4>
-                <label><input type="checkbox" name="categoria" value="15h" onclick="aplicarFiltros()"> 15 Horas </label>
-                <label><input type="checkbox" name="categoria" value="20h" onclick="aplicarFiltros()"> 20 Horas </label>
-                <label><input type="checkbox" name="categoria" value="30h" onclick="aplicarFiltros()"> 22 Horas </label>
-                <label><input type="checkbox" name="categoria" value="40h" onclick="aplicarFiltros()"> 24 Horas </label>
-                <label><input type="checkbox" name="categoria" value="50h" onclick="aplicarFiltros()"> 25 Horas </label>
-                <label><input type="checkbox" name="categoria" value="60h" onclick="aplicarFiltros()"> 26 Horas </label>
-                <label><input type="checkbox" name="categoria" value="70h" onclick="aplicarFiltros()"> 30 Horas </label>
-                <label><input type="checkbox" name="categoria" value="70h" onclick="aplicarFiltros()"> 32 Horas </label>
-                <label><input type="checkbox" name="categoria" value="80h" onclick="aplicarFiltros()"> 35 Horas </label>
-            </div>
-            <br/>
-            <div class="grupo-filtro">
-                <h4>Tipo de Suporte</h4>
-                <label><input type="checkbox" name="categoria" value="lata" onclick="aplicarFiltros()"> Em lata </label>
-                <label><input type="checkbox" name="categoria" value="vidro" onclick="aplicarFiltros()"> Em vidro </label>
-            </div>
+        
+        <!-- Não tá funcionando 
+        <div class="grupo-filtro">
+            <h4>Objetivos</h4>
+            <label><input type="checkbox" name="objetivo" value="relaxamento" onclick="aplicarFiltros()"> Relaxamento</label>
+            <label><input type="checkbox" name="objetivo" value="meditacao" onclick="aplicarFiltros()"> Meditação</label>
+            <label><input type="checkbox" name="objetivo" value="protecao" onclick="aplicarFiltros()"> Proteção</label>
+            <label><input type="checkbox" name="objetivo" value="energizacao" onclick="aplicarFiltros()">  Energização</label>
+        </div>
+
+        <div class="grupo-filtro">
+            <h4>Duração de Queima</h4>
+            <label><input type="checkbox" name="duracao" value="15 horas" onclick="aplicarFiltros()"> 15 Horas </label>
+            <label><input type="checkbox" name="duracao" value="20 horas" onclick="aplicarFiltros()"> 20 Horas </label>
+            <label><input type="checkbox" name="duracao" value="22 horas" onclick="aplicarFiltros()"> 22 Horas </label>
+            <label><input type="checkbox" name="duracao" value="24 horas" onclick="aplicarFiltros()"> 24 Horas </label>
+            <label><input type="checkbox" name="duracao" value="25 horas" onclick="aplicarFiltros()"> 25 Horas </label>
+            <label><input type="checkbox" name="duracao" value="26 horas" onclick="aplicarFiltros()"> 26 Horas </label>
+            <label><input type="checkbox" name="duracao" value="30 horas" onclick="aplicarFiltros()"> 30 Horas </label>
+            <label><input type="checkbox" name="duracao" value="32 horas" onclick="aplicarFiltros()"> 32 Horas </label>
+            <label><input type="checkbox" name="duracao" value="35 horas" onclick="aplicarFiltros()"> 35 Horas </label>
+        </div>
+
+        <div class="grupo-filtro">
+            <h4>Tipo de Suporte</h4>
+            <label><input type="checkbox" name="suporte" value="lata" onclick="aplicarFiltros()"> Em lata </label>
+            <label><input type="checkbox" name="suporte" value="vidro" onclick="aplicarFiltros()"> Em vidro </label>
+        </div>
+        -->
         </aside>
     </div>
 </div>
