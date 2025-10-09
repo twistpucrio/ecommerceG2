@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function renderProducts() {
         const products = await g2.listProducts();
-        const produtosFavoritos = [28, 29, 30, 31, 32, 33, 42, 43, 44, 45, 46, 47];
+        const produtosFavoritos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
         const produtosExibe = (products.produto || []).filter(produto =>
             produtosFavoritos.includes(produto.id)
         );

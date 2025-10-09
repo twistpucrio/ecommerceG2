@@ -1,77 +1,101 @@
 document.addEventListener('DOMContentLoaded', () => {
     const g2 = new EcommerceG2();
-    const productListEl = document.getElementById('product-list');//lista de produtos no html
+    const productListEl = document.getElementById('product-list');
+    const barraDePesquisa = document.getElementById("pesquisa");
 
     async function renderProducts() {
-        const barraDePesquisa = document.getElementById("pesquisa");
         const products = await g2.listProducts();
         const produtosFavoritos = [16, 17, 18, 19, 20, 21, 22, 23];
         const produtosExibe = (products.produto || []).filter(produto =>
-        produtosFavoritos.includes(produto.id)
-    );
+            produtosFavoritos.includes(produto.id)
+        );
 
-        function exibirProdutos(filtroBusca = '') {
-            productListEl.innerHTML = '';// limpa a lista de produtos
-
-            const termo = filtroBusca.toLowerCase();// bota tudo que ta escrito na barra de pesquisa em lowercase pra nao ter problema de diferenciação entre letyras maiúsculas e minúsculas
-            const produtosFiltrados = produtosExibe.filter(vela =>
-                vela.nome.toLowerCase().includes(termo)
-            );
-
-            // se o tamanho dos produtos filtrados for igual  zero, ou seja, se não houver produtos que incluam o que foi pesquisado
-            if (produtosFiltrados.length === 0) {
-                const mensagem = document.createElement('div');//cria uma mensagem com classe para modificar no css
+        // Função que exibe produtos (recebe lista filtrada)
+        function exibirProdutos(lista) {
+            productListEl.innerHTML = '';
+            if (lista.length === 0) {
+                const mensagem = document.createElement('div');
                 mensagem.className = 'nenhum-produto';
                 mensagem.textContent = 'Nenhum produto encontrado';
-                productListEl.appendChild(mensagem);// coloca na lista a mensagem
+                productListEl.appendChild(mensagem);
                 return;
             }
 
-            //para cada produto filtrado
-            produtosFiltrados.forEach(product => {
-                const itemEl = document.createElement('div');//cria uma div com classe para adicionar os produtos filtrados
+            lista.forEach(product => {
+                const itemEl = document.createElement('div');
                 itemEl.className = 'product-item';
                 itemEl.innerHTML = `
-                    <img onclick="redirecionarParaPaginaIndividualProduto(${product.id}) src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
+                    <img onclick="redirecionarParaPaginaIndividualProduto(${product.id})" src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
-                        <h3>${product.nome}</h3>
+                        <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})">${product.nome}</h3>
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                    <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
-                    <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
+                        <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                        <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
                     </div>
                 `;
-                productListEl.appendChild(itemEl);//coloca na lista de produtos 
+                productListEl.appendChild(itemEl);
             });
         }
 
-        // Mostra todos os produtos ao carregar
-        exibirProdutos();
+        // Função global de filtros
+        window.aplicarFiltros = function() {
+            let filtrado = produtosExibe.slice();
 
-        // Filtra conforme digita
+            // Filtro de pesquisa
+            const termo = barraDePesquisa.value.toLowerCase();
+            filtrado = filtrado.filter(p => p.nome.toLowerCase().includes(termo));
+
+            // Filtro por categoria
+            const categoriasSelecionadas = Array.from(document.querySelectorAll('input[name="categoria"]:checked')).map(cb => cb.value.toLowerCase());
+            if (categoriasSelecionadas.length > 0) {
+                filtrado = filtrado.filter(p => categoriasSelecionadas.includes(p.categoria.toLowerCase()));
+            }
+
+            // Filtro por faixa de preço
+            const faixasSelecionadas = Array.from(document.querySelectorAll('input[name="faixa-preco"]:checked')).map(cb => cb.value);
+            if (faixasSelecionadas.length > 0) {
+                filtrado = filtrado.filter(p => {
+                    return faixasSelecionadas.some(faixa => {
+                        const [min, max] = faixa.split('-').map(Number);
+                        return p.preco >= min && p.preco <= max;
+                    });
+                });
+            }
+
+            // Ordenação
+            const ordenacaoSelecionada = Array.from(document.querySelectorAll('input[name="ordenação"]:checked')).map(cb => cb.value);
+            if (ordenacaoSelecionada.length > 0) {
+                const ordem = ordenacaoSelecionada[0];
+                if (ordem === 'menor-preco') filtrado.sort((a,b) => a.preco - b.preco);
+                else if (ordem === 'maior-preco') filtrado.sort((a,b) => b.preco - a.preco);
+            }
+
+            exibirProdutos(filtrado);
+        };
+
+        // Atualiza enquanto digita na barra de pesquisa
         barraDePesquisa.addEventListener("input", () => {
-            exibirProdutos(barraDePesquisa.value);
+            window.aplicarFiltros();
         });
+
+        // Exibe todos ao carregar
+        exibirProdutos(produtosExibe);
     }
 
-    // para adicionar itens no carrinho pelo home
+    // Clique em carrinho/favoritos
     productListEl.addEventListener('click', (event) => {
-        // adicionar ao carrinho
         if (event.target.classList.contains("add-carrinho")) {
             const id = parseInt(event.target.dataset.productId, 10);
             g2.addToCart(id);
             alert("Produto adicionado ao carrinho!");
         }
-
-        // adicionar/remover favoritos
         if (event.target.classList.contains("add-favorito")) {
             const id = parseInt(event.target.dataset.favId, 10);
             adicionarFavoritos(id);
-            }
-        });
-
+        }
+    });
 
     renderProducts();
-    
 });
