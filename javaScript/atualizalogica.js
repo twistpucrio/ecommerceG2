@@ -15,7 +15,9 @@ window.onload = function() {
     let txtNum = document.getElementById("numeroAtualiza");
     let txtComp = document.getElementById("complementoAtualiza");
 
-
+    if (usuarioLogado.cep){
+        txtCep.value = usuarioLogado.cep;
+    }
    if (usuarioLogado.cep){
         txtCep.value = usuarioLogado.cep;
     }
