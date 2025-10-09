@@ -3,10 +3,7 @@
                 src: url(../fonts/Inspiration/Inspiration-Regular.ttf);
         }
 
-        @font-face {
-                font-family: fonteh2;
-                src: url(../fonts/Inspiration/SUSE_Mono/SUSEMono-Italic-VariableFont_wght.ttf);
-        }
+       
 
 
         * {
@@ -54,7 +51,7 @@
 
         h2 {
                 padding: 0.2em;
-                font-family: fonteh2;
+                font-family: 'Calibri';
                 font-size: 2.5em;
                 text-align: center;
                 background-color:  #ac9c89 ;
@@ -203,7 +200,7 @@
                 justify-content: center;
                 gap: 2em;
                 background-color: #ac9c89;
-                font-family: fonteh2;
+                font-family: 'Calibri';
         }
 
         .categoria-item {
@@ -212,7 +209,7 @@
                 align-items: center;
                 text-align: center;
                 text-decoration: none !important;
-                color: inherit !important;
+                color: white;
         }
 
         .categoria-item img {
@@ -247,7 +244,7 @@
 
         .legendas {
                 background-color: #E8E3DD;
-                font-family: fonteh2;
+                font-family: 'Calibri';
                 display: inline-block;
         }
 
@@ -259,7 +256,7 @@
                 box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
                 transition: left 0.3s ease;
                 z-index: 999;
-                font-family: "fonteh2";
+                font-family: 'Calibri';
                 position: fixed;
                 top: 15.5em;
                 padding-top: 4em;
@@ -334,7 +331,7 @@
                 cursor: pointer;
                 width: fit-content;
                 transition: background-color 0.2s;
-                font-family: fonteh2;
+                font-family: 'Calibri';
                 background-color: transparent !important;
         }
 
@@ -353,7 +350,7 @@
         }
 
         .filtro-icone span{
-                font-family: fonteh2;
+                font-family: 'Calibri';
                 font-size: 1em;
                 color: #000;
         }
@@ -385,7 +382,7 @@
         }
 
         .grupo-filtro h4 {
-                font-family: fonteh2;
+                font-family: 'Calibri';
                 font-size: 1.1em;
                 margin-bottom: 10px;
                 border-bottom: 1px solid #eee;
@@ -452,6 +449,11 @@
                 margin-bottom: 8px;
                 display: inline-block
         }
+        
+        .info{
+                color: black;
+                font-family: 'Calibri';
+        }
 
         .product-item .price {
                 font-weight: normal;
@@ -506,7 +508,7 @@
                 gap: 0.8em;
                 padding: 0.8em 1.4em;
                 border-radius: 2.5em;
-                font-family: fonteh2;
+                font-family: 'Calibri';
                 font-size: 1.05em;
                 cursor: pointer;
                 transition: background-color 0.2s;

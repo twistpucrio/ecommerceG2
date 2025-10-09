@@ -3,11 +3,6 @@
      src: url(../fonts/Inspiration/Inspiration-Regular.ttf);
  }
 
- @font-face {
-     font-family: fonteh2;
-     src: url(../fonts/Inspiration/SUSE_Mono/SUSEMono-Italic-VariableFont_wght.ttf);
- }
-
 
  * {
      margin: 0;
@@ -49,7 +44,7 @@
 
  h2 {
      padding: 0.2em;
-     font-family: fonteh2;
+     font-family: 'calibri';
      font-size: 2.5em;
  }
 
