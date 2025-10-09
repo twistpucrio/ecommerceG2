@@ -1,129 +1,219 @@
- @font-face {
-     font-family: fonteTitulo;
-     src: url(../fonts/Inspiration/Inspiration-Regular.ttf);
- }
+@font-face {
+    font-family: fonteTitulo;
+    src: url(../fonts/Inspiration/Inspiration-Regular.ttf);
+}
 
 
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- body {
-     margin: 0;
-     padding: 0;
-     background-color: #E8E3DD;
- }
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ac9c89;
+}
 
- footer {
-     margin: 2%;
- }
+nav {
+    margin-bottom: 20px;
+}
 
- nav {
-     margin: 20px;
- }
+nav a {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
 
- nav a {
-     margin: 15px;
-     font-size: 1.2em;
- }
+h1 {
+    padding: 0.3em;
+    font-family: fonteTitulo;
+    font-size: 5em;
+    text-align: center;
+    color: #fff;
+    background-color: #ac9c89;
+    display: inline-block;
+    margin-left: 12%;
+}
 
-
- .titulo {
-     background-color: #E8E3DD;
- }
-
- h1 {
-     padding: 0.2em;
-     font-family: fonteTitulo;
-     font-size: 8em;
-     text-align: center;
-     background-color: #E8E3DD;
- }
-
- h2 {
-     padding: 0.2em;
-     font-family: 'calibri';
-     font-size: 2.5em;
- }
-
- .segundo-cabeçalho {
-     background-color: #E2DDD4;
-     height: 5.5em;
-     text-align: center;
-     align-items: center;
-     justify-content: center;
-     display: flex;
-     position: relative;
- }
-
- .carrinhoFoto {
-     width: 3em;
-     height: 3em;
-     position: absolute;
-     right: 10em;
- }
-
- .favoritosFoto {
-     width: 3.5em;
-     height: 3.5em;
-     position: absolute;
-     right: 6.7em;
- }
-
- .cadastroFoto {
-     width: 3.5em;
-     height: 3.5em;
-     position: absolute;
-     right: 2em;
- }
-
- .vermaisFoto {
-     width: 2.8em;
-     height: 2.8em;
-     position: absolute;
-     left: 2em;
- }
+h2 {
+    padding: 0.1em;
+    font-family: 'Calibri';
+    font-size: 2.5em;
+    background-color: #ac9c89;
+    width: max-content;
+    color: white;
+    overflow: visible;
+    margin-top: 10%;
+}
 
 
- h1 a:active,
- h1 a:visited,
- h1 a:hover,
- h1 a:link {
-     color: inherit;
-     text-decoration: none;
- }
+h1 a:active,
+h1 a:visited,
+h1 a:hover,
+h1 a:link {
+    color: inherit;
+    text-decoration: none;
+}
 
- .forms {
-     display: flex;
-     justify-content: space-between;
-     background: #E8E3DD;
-     padding: 30px;
-     border-radius: 5px;
- }
+.segundo-cabeçalho {
+    background-color: #ac9c89;
+    height: 5.5em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* PROPRIEDADES PARA FIXAR AO SCROLL */
+    position: sticky;
+    /* Define o comportamento de "grudar" */
+    top: 0;
+    /* Ponto onde o elemento deve grudar (o topo da viewport) */
+    width: 100%;
+    /* Garante que ocupe a largura total */
+    z-index: 1000;
+    /* Garante que fique sobre o conteúdo ao rolar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
- .form {
-     width: 45%;
-     margin-left: 5%;
- }
+.menu-sombra-fixa {
+    /* Box shadow: 0 (offset-x) 2px (offset-y) 5px (blur) rgba(0,0,0,0.2) (cor/opacidade) */
+    box-shadow: 0 4px 6px -6px #333;
+    /* Esta sombra é sutil, focada para baixo */
+    /* Você pode ajustar o '0 4px 6px -6px #333;' para a sombra que preferir. */
+}
+
+.pesquisa {
+    background-image: url('../img/lupa_branca\ \(3\).png');
+    display: flex;
+    background-position: right 0.5em center;
+    background-repeat: no-repeat;
+    background-size: 1em;
+    padding-left: 2em;
+    border-radius: 0.6em;
+    padding: 0.9em;
+    width: 32em;
+    height: 4em;
+    border: solid 0.3em #fcf8f6;
+    outline: none;
+    background-color: #ac9c89;
+    font-size: 0.7em;
+    color: white;
+}
+
+.formulario {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        margin-right: 2%;
+        margin-bottom: 3%;
+        margin-left: 7%;
+}
 
 
+.icones {
+    display: inline-block;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 1%;
+    margin-top: 2%;
+    margin-left: 20%;
 
- section input {
-     padding: 8px;
-     border: 1px solid #555;
-     border-radius: 5px;
- }
+}
 
- .divider {
-     width: 0.1%;
-     background-color: #333;
- }
+.carrinhoFoto {
+    width: 3em;
+    height: 3em;
+    display: inline-flex;
+    margin-top: inherit;
+    cursor: pointer;
+    gap: 1.5em;
+    margin-right: 2em;
+}
+
+.favoritosFoto {
+    width: 3.5em;
+    height: 3.5em;
+    display: inline-flex;
+    margin-top: inherit;
+    cursor: pointer;
+    margin-right: 2em;
+}
+
+.cadastroFoto {
+    width: 3.5em;
+    height: 3.5em;
+    display: inline-flex;
+    cursor: pointer;
+    margin-top: inherit;
+    margin-right: 2em;
+
+}
+
+.vermaisFoto {
+    width: 2.8em;
+    height: 2.8em;
+    position: absolute;
+    left: 1.8em;
+    z-index: 1000;
+    margin-top: 3.4%;
+}
+
+
+.side-menu {
+    position: fixed;
+    left: -20em;
+    width: 20em;
+    background-color: #e7e0d8;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 999;
+    font-family: 'Calibri';
+    position: fixed;
+    top: 15.5em;
+    padding-top: 4em;
+    height: calc(100vh - 15.5em);
+
+}
+
+.side-menu-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3em;
+    background: linear-gradient(to bottom, rgba(232, 227, 221, 0), #E8E3DD);
+    pointer-events: none;
+    /* garante que ele não bloqueie cliques */
+}
+
+
+#menu-toggle:checked~.side-menu {
+    left: 0;
+}
+
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu li {
+    padding: 1em;
+    border-bottom: 1px solid #dbd7d7;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2em;
+    display: block;
+}
 
 
 button {
-    background-color: #1b5d9a; 
+    background-color: #1b5d9a;
     color: white;
     border: none;
     padding: 6px 10px;
@@ -132,44 +222,47 @@ button {
     font-size: 13px;
 }
 
-    button:hover {
-        background-color: #061a52;
-    }
+button:hover {
+    background-color: #061a52;
+}
 
 
-    
- .side-menu {
-     position: absolute;
-     top: 1;
-     left: -20em;
-     width: 20em;
-     height: 45.5em;
-     background-color: #E8E3DD;
-     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-     padding-top: 5em;
-     transition: left 0.3s ease;
-     z-index: 1000;
-     font-family: "fonteh2";
- }
+#titulo {
+    background-color: #ac9c89;
+    /* Garante que ocupe a largura total */
+    width: 100%;
+    /* Habilita o comportamento de "grudar" */
+    position: sticky;
+    /* Ponto onde deve grudar (o topo da viewport) */
+    top: 0;
+    /* Garante que fique sobre o conteúdo ao rolar */
+    z-index: 1000;
+    /* Mantenha um z-index alto, mas 1000 era muito alto, 100 deve ser suficiente */
 
- #menu-toggle:checked~.side-menu {
-     left: 0;
- }
+    /* Demais propriedades que você já tinha: */
+    /* Você pode adicionar uma sombra aqui, se quiser: */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
- .side-menu ul {
-     list-style: none;
-     padding: 0;
-     margin: 0;
- }
+.forms {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 5px;
+}
 
- .side-menu li {
-     padding: 1em;
-     border-bottom: 1px solid #ccc;
- }
+.form {
+    width: 45%;
+    margin-left: 5%;
+}
 
- .side-menu a {
-     text-decoration: none;
-     color: #000;
-     font-size: 1.2em;
-     display: block;
- }
+section input {
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.divider {
+    width: 0.1%;
+    background-color: white;
+}
