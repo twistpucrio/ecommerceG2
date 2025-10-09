@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img onclick="redirecionarParaPaginaIndividualProduto(${product.id}) src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
                         <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})>${product.nome}</h3>
-                        <div class="price">$${product.preco.toFixed(2)}</div>
+                        <div class="price">R$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
                     

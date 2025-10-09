@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       <div class="info">
         <h2>${product.nome}</h2>
         <p class="descricao">${product.descricao || "Sem descrição disponível."}</p>
-        <div class="price">Preço: $${product.preco.toFixed(2)}</div>
+        <div class="price">Preço: R$${product.preco.toFixed(2)}</div>
       </div>
       <div class="botao">
                     <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>

@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const total = [...items.values()]
         .reduce((sum, item) => sum + item.details.preco * item.amount, 0);
 
-    cartTotalEl.textContent = `Total: $${total.toFixed(2)}`;
+    cartTotalEl.textContent = `Total: R$${total.toFixed(2)}`;
 }
 
     
