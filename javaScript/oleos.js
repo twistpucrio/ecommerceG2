@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemEl = document.createElement('div');
                 itemEl.className = 'product-item';
                 itemEl.innerHTML = `
-                    <img onclick="redirecionarParaPaginaIndividualProduto(${product.id})" src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
+                    <img onclick="redirecionarParaPaginaIndividualProduto(${product.id})" src="${product.imagem}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
                         <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})">${product.nome}</h3>
                         <div class="price">R$${product.preco.toFixed(2)}</div>

@@ -1,0 +1,76 @@
+.img{
+    width: 25%;
+    height: 25%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 5%;
+    margin-left: 15%; 
+}
+
+.info{
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+ 
+}
+
+.nome {
+  font-size: 32pt;
+  font-weight: bold;
+  color: white;
+  margin: 0; 
+}
+
+
+.price {
+  font-size: 28pt;
+  color: white;
+  margin-bottom: 5% ;
+  display: flex; 
+}
+
+
+.descricao {
+  color: white;
+  font-size: 14pt;
+  margin-bottom: 30px;
+  display: flex; 
+  max-width: 80%;
+  line-height: 1.5;
+  margin-left: 7%;
+  
+}
+
+.add-carrinho {
+  display: flex;              
+  align-items: center;        
+  justify-content: center;    
+  gap: 6px;                   
+  background-color:  #1b5d9a;         
+  border-radius: 8px;
+  padding: 10px 16px;         
+  font-size: 22px;            
+  cursor: pointer;
+
+}
+
+button {
+        background-color: #1b5d9a;
+        color: white;
+        border: none;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 150px; 
+        height: 60px; 
+}
+
+button:hover {
+        background-color: #061a52;
+}
+
+
+
+

@@ -30,16 +30,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Renderiza o produto individual
   container.innerHTML = `
     <div class="produto-individual">
-      <img src="${product.imagem}" alt="${product.nome}" width="200" height="200">
+      <img class="img" src="${product.imagem}" alt="${product.nome}"/>
       <div class="info">
-        <h2>${product.nome}</h2>
-        <p class="descricao">${product.descricao || "Sem descrição disponível."}</p>
-        <div class="price">Preço: R$${product.preco.toFixed(2)}</div>
+        <p class="nome">${product.nome}</p>
+        
+        <div class="price"> R$${product.preco.toFixed(2)}</div>
+        <div class="botoes">
+            <button class="add-carrinhos" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> Comprar</button>
+            <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
+        </div>
       </div>
-      <div class="botao">
-                    <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
-                    <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
-      </div>
+
+      <p class="descricao">${product.descricao || "Sem descrição disponível."}</p>
     </div>
   `;
 

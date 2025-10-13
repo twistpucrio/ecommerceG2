@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemEl = document.createElement('div');//cria uma div com classe para adicionar os produtos filtrados
                 itemEl.className = 'product-item';
                 itemEl.innerHTML = `
-                    <img onclick="redirecionarParaPaginaIndividualProduto(${product.id})" src="${product.image}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
+                    <img onclick="redirecionarParaPaginaIndividualProduto(${product.id})" src="${product.imagem}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
                         <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})">${product.nome}</h3>
                         <div class="price">R$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                    <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                    <button class="add-carrinho" id="cart" data-product-id="${product.id}"><img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> Comprar </button>
                     <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
                     </div>
                 `;
