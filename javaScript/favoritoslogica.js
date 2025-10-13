@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <img src="${product.imagem}" alt="${product.nome}" width="80" height="80" class="product-item-img">
         <div class="info">
           <h3>${product.nome}</h3>
-          <div class="price">$${product.preco.toFixed(2)}</div>
+          <div class="price">R$${product.preco.toFixed(2)}</div>
         </div>
         </br>
         <div class="botao">
