@@ -176,7 +176,7 @@ function cadastrar() {
 
 
     // adiciona novo usuario no banco da dados
-    usuarios.push({ nome, email, senha, id, cep, cidade, estado, logradouro, numero, complemento });
+    usuarios.push({ nome, email, cpf, senha, id, cep, cidade, estado, logradouro, numero, complemento });
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
