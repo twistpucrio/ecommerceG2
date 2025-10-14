@@ -202,7 +202,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de lavanda puro, ideal para aromaterapia e relaxamento.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/lavanda.png",
             "fragrancia":"Lavanda",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -213,7 +213,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Menta puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/menta.png",
             "fragrancia":"Menta",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -224,7 +224,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Menta puro, com uma variedade de benefícios para o sistema respiratório e tem ação terápeutica.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/eucalipto.png",
             "fragrancia":"Eucalipto",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -235,7 +235,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Rosas puro, com uma variedade de benefícios emocionais e cosmédicos.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/rosa.png",
             "fragrancia":"Rosas",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -246,7 +246,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Laranja puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/laranja.png",
             "fragrancia":"Laranja",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -257,18 +257,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Alecrim puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
-            "imagem": "../img/",
-            "fragrancia":"Alecrim",
-            "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
-            "volume": "10ml"
-        },
-        {
-            "id": 21, 
-            "nome": "Óleo essencial Alecrim",
-            "preco": 18.54,
-            "descricao": " Óleo essencial de Alecrim puro, ideal para mente e o ânimo.",
-            "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/alecrim.png",
             "fragrancia":"Alecrim",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -279,7 +268,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Limão Tahiti puro, com muitos benefícios para o corpo e mente.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/limao.png",
             "fragrancia":"Limão Tahiti",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -290,7 +279,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Capim Limão puro, com muitos benefícios para o corpo e mente.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/capim.png",
             "fragrancia":"Capim Limão",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"

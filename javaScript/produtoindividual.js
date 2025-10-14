@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         
         <div class="price"> R$${product.preco.toFixed(2)}</div>
         <div class="botoes">
-            <button class="add-carrinhos" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> Comprar</button>
-            <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
+            <button class="add-carrinhos" data-product-id="${product.id}"> <img id="imgcart" src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> <span class="comprar-texto">Comprar</span></button>
+            <button class="add-favorito" data-fav-id="${product.id}"> <img  id="imgfav" src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
         </div>
       </div>
 

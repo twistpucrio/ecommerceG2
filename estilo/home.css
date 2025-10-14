@@ -421,18 +421,18 @@ h1 a:link {
 
 .product-item {
         width: 250px;
-        height: 300px;
+        height: 320px;
         display: inline-block;
         align-items: center;
         justify-content: space-between;
         margin: 27px;
         margin-bottom: 34px;
         border: 1px solid #ddcdc0;
-        background-color: #f7f1eb;
+        background-color: #f7f1eb6b;
         padding: 10px;
         border-radius: 10px;
         text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.295);
 }
 
 .product-item-img {
@@ -450,6 +450,7 @@ h1 a:link {
         gap: 8px;
         justify-content: center;
         margin-top: auto;
+        
 }
 
 
@@ -459,15 +460,16 @@ h1 a:link {
 
 
 .add-carrinho {
-  display: flex;              /* alinha ícone e texto lado a lado */
-  align-items: center;        /* centraliza verticalmente */
-  justify-content: center;    /* centraliza horizontalmente */
+  display: flex;              
+  align-items: center;        
+  justify-content: center;    
   gap: 6px;                   
   background-color:  #1b5d9a;         
   border-radius: 8px;
-  padding: 10px 16px;         /* espaço interno */
-  font-size: 15px;            /* tamanho da palavra “Comprar” */
+  padding: 10px 16px;         
+  font-size: 15px;            
   cursor: pointer;
+  
 }
 
 .product-item .info {
