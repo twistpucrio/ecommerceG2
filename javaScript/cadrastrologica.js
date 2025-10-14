@@ -176,7 +176,7 @@ function cadastrar() {
 
 
     // adiciona novo usuario no banco da dados
-    usuarios.push({ nome, email, senha, id, cep, cidade, estado, logradouro, numero, complemento });
+    usuarios.push({ nome, email, cpf, senha, id, cep, cidade, estado, logradouro, numero, complemento });
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     alert("Usuário Cadastrado!")
 
@@ -254,75 +254,145 @@ function logout() {
 
 
 function atualizarCadastro() {
-    // pega informações sobre usuarios no banco de dados
+    // Pega dados dos usuários
     let usuarios = JSON.parse(localStorage.getItem("usuarios"));
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-    // pega informações sobre a troca de dados na pagina
-    let nomeAtualiza = document.getElementById("nomeAtualiza").value.trim();
-    let senhaAtualiza = document.getElementById("senhaAtualiza").value;
+    if (!usuarioLogado) {
+        alert("Nenhum usuário logado no momento.");
+        window.location.href = 'cadastro.html';
+        return;
+    }
+
+    // Pega campos da página
+    let senhaAntiga = document.getElementById("senhaAntigaAtualiza").value;
+    let senhaNova = document.getElementById("senhaNovaAtualiza").value;
 
     let cepAtualiza = document.getElementById("cepAtualiza").value;
     let cidadeAtualiza = document.getElementById("cidadeAtualiza").value;
     let estadoAtualiza = document.getElementById("estadoAtualiza").value;
-
     let logradouroAtualiza = document.getElementById("logradouroAtualiza").value;
     let numeroAtualiza = document.getElementById("numeroAtualiza").value;
     let complementoAtualiza = document.getElementById("complementoAtualiza").value;
 
 
-    // atualiza se o campo estiver preenchido, colocando na variavel local
+    // Senha
+    if (senhaAntiga || senhaNova) {
+        // Exigir que os dois campos estejam preenchidos
+        if (!senhaAntiga || !senhaNova) {
+            alert("Preencha tanto a senha atual quanto a nova senha para alterar.");
+            return;
+        }
 
-    if (nomeAtualiza) {
-        console.log(nomeAtualiza);
-        usuarioLogado.nome = nomeAtualiza;
+        // Verifica se a senha antiga confere
+        if (senhaAntiga !== usuarioLogado.senha) {
+            alert("Senha atual incorreta. Tente novamente.");
+            return;
+        }
+
+        // Validação da nova senha
+        if (senhaNova.length < 8 || senhaNova.length > 15) {
+            alert("A nova senha deve conter entre 8 e 15 caracteres.");
+            return;
+        }
+        if (!/[A-Z]/.test(senhaNova)) {
+            alert("A nova senha deve conter pelo menos uma letra maiúscula.");
+            return;
+        }
+        if (!/[0-9]/.test(senhaNova)) {
+            alert("A nova senha deve conter pelo menos um número.");
+            return;
+        }
+
+        usuarioLogado.senha = senhaNova;
     }
-    if (senhaAtualiza) {
-        usuarioLogado.senha = senhaAtualiza;
-        console.log(senhaAtualiza);
-    }
 
-
+    // CEP
     if (cepAtualiza) {
-        usuarioLogado.logradouro = cepAtualiza;
-        console.log(cepAtualiza);
+        if (!/^\d+$/.test(cepAtualiza)) {
+            alert("O CEP deve conter apenas números.");
+            return;
+        }
+        if (cepAtualiza.length !== 8) {
+            alert("O CEP deve conter exatamente 8 dígitos.");
+            return;
+        }
+        usuarioLogado.cep = cepAtualiza;
     }
+
+    // Cidade
     if (cidadeAtualiza) {
+        let padraoCidade = /^[A-Za-zÀ-ÿ\s]+$/;
+        if (!padraoCidade.test(cidadeAtualiza)) {
+            alert("A cidade deve conter apenas letras e espaços.");
+            return;
+        }
+        if (cidadeAtualiza.length < 2 || cidadeAtualiza.length > 60) {
+            alert("A cidade deve ter entre 2 e 60 caracteres.");
+            return;
+        }
         usuarioLogado.cidade = cidadeAtualiza;
-        console.log(cidadeAtualiza);
     }
+
+    // Estado
     if (estadoAtualiza) {
-        usuarioLogado.estado = estadoAtualiza;
-        console.log(estadoAtualiza);
+        const estadosValidos = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
+        if (!estadosValidos.includes(estadoAtualiza.toUpperCase())) {
+            alert("Estado inválido. Use a sigla correta (ex: SP, RJ).");
+            return;
+        }
+        usuarioLogado.estado = estadoAtualiza.toUpperCase();
     }
 
-
+    // Logradouro
     if (logradouroAtualiza) {
+        const padraoLogradouro = /^[A-Za-zÀ-ÿ\s.,-]+$/;
+        if (!padraoLogradouro.test(logradouroAtualiza)) {
+            alert("Logradouro inválido.");
+            return;
+        }
+        if (logradouroAtualiza.length < 3 || logradouroAtualiza.length > 100) {
+            alert("Logradouro deve ter entre 3 e 100 caracteres.");
+            return;
+        }
         usuarioLogado.logradouro = logradouroAtualiza;
-        console.log(logradouroAtualiza);
     }
+
+    // Número
     if (numeroAtualiza) {
-        console.log(numeroAtualiza);
+        if (!/^\d+$/.test(numeroAtualiza) && numeroAtualiza.toUpperCase() !== "S/N") {
+            alert("Número inválido. Use apenas números ou 'S/N'.");
+            return;
+        }
         usuarioLogado.numero = numeroAtualiza;
     }
+
+    // Complemento
     if (complementoAtualiza) {
-        console.log(complementoAtualiza);
+        if (complementoAtualiza.length < 2 || complementoAtualiza.length > 40) {
+            alert("Complemento deve ter entre 2 e 40 caracteres.");
+            return;
+        }
         usuarioLogado.complemento = complementoAtualiza;
     }
 
-    // pega a variavel local usuarioLogado e envia para o localStorage
+    // Atualiza o localStorage
     localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
 
-
-    // encontra o index do usuarioLogado na lista de usuarios e retorna o index, após isso, modifica a array usuarios a partir do usuariologado
+    // Substitui o usuário correspondente no array geral
     const index = usuarios.findIndex(user => user.id === usuarioLogado.id);
-    usuarios[index] = usuarioLogado;
+    if (index !== -1) {
+        usuarios[index] = usuarioLogado;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    }
 
-    // envia as modificações da array usuarios para o localStorage
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    alert("Seus dados foram atualizados")
-
+    alert("Seus dados foram atualizados com sucesso!");
+    window.location.href = "index.html";
 }
+
+
+
+
 
 function iconeCadastro() {
     let verificaSeLogado = verificaLogado();

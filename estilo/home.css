@@ -185,18 +185,27 @@ h1 a:link {
 }
 
 .banners {
-        height: 28em;
+        height: 30em;
+        max-width: 100em;
+        margin: 0 auto; 
         background-color: #ac9c89;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
 }
 
-.banner1 {
-        max-height: 100%;
-        max-width: 100%;
-        height: auto;
-        width: auto;
+.banner-strip {
+    width: 300%; 
+    height: 100%;
+    display: flex;
+    transition: transform 1s ease-in-out; 
+}
+
+.banner-strip img{
+    width: 33.3333%; 
+    height: 100%;
+    object-fit: cover;
 }
 
 .categorias {
@@ -263,9 +272,9 @@ h1 a:link {
         z-index: 999;
         font-family: 'Calibri';
         position: fixed;
-        top: 15.5em;
+        top: 7em;
         padding-top: 4em;
-        height: calc(100vh - 15.5em);
+        height: calc(100vh - 7em);
 
 }
 
@@ -600,4 +609,33 @@ button:hover {
         /* Demais propriedades que você já tinha: */
         /* Você pode adicionar uma sombra aqui, se quiser: */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 10; /* Ensures buttons are above the images */
+    user-select: none; /* Prevents text selection on button */
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#prev-button {
+    left: 1em; /* Position button 10px from the left edge */
+    border-radius: 1em 0 1em 0; /* Rounded edge on the right */
+}
+
+#next-button {
+    right: 1em; /* Position button 10px from the right edge */
+    border-radius: 0 1em 0 1em; /* Rounded edge on the left */
 }
