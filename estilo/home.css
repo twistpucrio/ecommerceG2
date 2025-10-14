@@ -261,9 +261,9 @@
                 z-index: 999;
                 font-family: "fonteh2";
                 position: fixed;
-                top: 15.5em;
+                top: 7em;
                 padding-top: 4em;
-                height: calc(100vh - 15.5em);
+                height: calc(100vh - 7em);
 
         }
 
