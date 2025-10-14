@@ -7,7 +7,7 @@
             "preco": 39.90,
             "descricao": "Vela perfumada com essência de lavanda, ideal para relaxamento.",
             "categoria": "vela",
-            "imagem": "vela_lavanda.jpg",
+            "imagem": "../img/vela",
             "cor": "opcional",
             "fragrancia": "Lavanda",
             "recipiente": "lata",
@@ -20,7 +20,7 @@
             "preco": 29.90,
             "descricao": "Vela pequena em vidro redondo com design diferenciado, ideal para decorar e perfumar ambientes.",
             "categoria": "vela",
-            "imagem": "img/velaRosaVidro.png",
+            "imagem": "../img/velaRosaVidro.PNG",
             "cor": "Rosa",
             "fragrancia": "Jasmim",
             "recipiente": "Vidro",
@@ -33,7 +33,7 @@
             "preco": 34.90,
             "descricao": "Vela com fragrância leve de rosas, ideal para momentos de tranquilidade.",
             "categoria": "vela",
-            "imagem": "vela_limao.jpg",
+            "imagem": "../img/vela_limao.jpg",
             "cor": "Branco",
             "fragrancia": "Rosas",
             "recipiente": "Cerâmica",
@@ -98,7 +98,7 @@
             "preco": 67.54,
             "descricao": "Vela linda e perfeita para decorações criativas, fragrância agradavel e reconfortante.",
             "categoria": "vela",
-            "imagem": "../img/vermais.png",
+            "imagem": "../img/velaGuaxinim.png",
             "cor": "Branca",
             "fragrancia": "Sândalo",
             "recipiente": "Cerâmica",
@@ -146,9 +146,9 @@
         }, 
         {
             "id": 12,
-            "nome": "Velas Personalizaveis",
+            "nome": "Velas Surpresa",
             "preco": 39.90,
-            "descricao": "Velas com formatos variados e fragrâncias personalizáveis, perfeitas para qualquer ocasião.",
+            "descricao": "Velas com formatos variados e fragrâncias surpresas, todas com design exclusivo e padrões variados.",
             "categoria": "vela",
             "imagem": "../img/velasazul.png",
             "cor": ["Rosa, Verde, Azul, Roxa, Larnja"],
@@ -202,7 +202,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de lavanda puro, ideal para aromaterapia e relaxamento.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/lavanda.png",
             "fragrancia":"Lavanda",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -213,7 +213,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Menta puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/menta.png",
             "fragrancia":"Menta",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -224,7 +224,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Menta puro, com uma variedade de benefícios para o sistema respiratório e tem ação terápeutica.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/eucalipto.png",
             "fragrancia":"Eucalipto",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -235,7 +235,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Rosas puro, com uma variedade de benefícios emocionais e cosmédicos.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/rosa.png",
             "fragrancia":"Rosas",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -246,7 +246,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Laranja puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/laranja.png",
             "fragrancia":"Laranja",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -257,18 +257,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Alecrim puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
-            "imagem": "../img/",
-            "fragrancia":"Alecrim",
-            "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
-            "volume": "10ml"
-        },
-        {
-            "id": 21, 
-            "nome": "Óleo essencial Alecrim",
-            "preco": 18.54,
-            "descricao": " Óleo essencial de Alecrim puro, ideal para mente e o ânimo.",
-            "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/alecrim.png",
             "fragrancia":"Alecrim",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -279,7 +268,7 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Limão Tahiti puro, com muitos benefícios para o corpo e mente.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/limao.png",
             "fragrancia":"Limão Tahiti",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
@@ -290,24 +279,24 @@
             "preco": 18.54,
             "descricao": " Óleo essencial de Capim Limão puro, com muitos benefícios para o corpo e mente.",
             "categoria": "oleo",
-            "imagem": "../img/",
+            "imagem": "../img/capim.png",
             "fragrancia":"Capim Limão",
             "recipiente": "Frasco de vidro âmbar com gotejador, tampa plástica e rótulo em impressão colorida.", 
             "volume": "10ml"
         }, 
         {
             "id": 24, 
-            "nome": "Difusor de Aromas Usb Tipo Madeira ",
+            "nome": "Difusor Aromático Madeira ",
             "preco": 34.99,
             "descricao": "Difusor de Aromas, com design em madeira, ideal para ambientes pequenos e médios.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorMadeira.PNG",
             "recipiente": "Madeira",  
             "capacidade": "130ml"
         }, 
         {
             "id": 25, 
-            "nome": "Difusor de Aromas Usb Com led Colorido",
+            "nome": "Difusor Aromático LED",
             "preco": 48.65,
             "descricao": " Difusor de Aromas, com design em acrilonitrilo butadieno estireno e base de madeira, ideal para decorar ambientes.",
             "categoria": "difusor",
@@ -317,7 +306,7 @@
         }, 
         {
             "id": 26, 
-            "nome": "Mini Difusor Aromatizador",
+            "nome": "Mini Difusor Aromático",
             "preco": 32.00,
             "descricao": " Difusor de Aromas, com design em oval e pequeno, ideal para decorar ambientes de forma minimalista.",
             "categoria": "difusor",
@@ -327,11 +316,11 @@
         }, 
         {
             "id": 27, 
-            "nome": "Difusor Ambiente Tulipa",
+            "nome": "Difusor Aromático Tulipa",
             "preco": 39.90,
             "descricao": "Difusor de Aromas, com design inovador e fluido, ideal para decorar ambientes com originalidade e estilo.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorTulipa.PNG",
             "recipiente": "acrilonitrilo butadieno estireno",
             "capacidade": "225ml"
         }, 
@@ -347,7 +336,7 @@
         }, 
         {
             "id": 29, 
-            "nome": "Incenso Energizante Sândalo",
+            "nome": "Incenso Sândalo",
             "preco": 14.50,
             "descricao": "Tradicional incenso de sândalo, ideal para meditação e concentração.",
             "categoria": "incenso",
@@ -357,7 +346,7 @@
         }, 
         {
             "id": 30, 
-            "nome": "Incenso Harmonia Jasmim",
+            "nome": "Incenso Jasmim",
             "preco": 13.90,
             "descricao": "Perfume floral de jasmim que cria um ambiente acolhedor e equilibrado.",
             "categoria": "incenso",
@@ -367,7 +356,7 @@
         }, 
         {
             "id": 31, 
-            "nome": "Incenso Purificação Alecrim",
+            "nome": "Incenso Alecrim",
             "preco": 11.90,
             "descricao": "Aroma fresco de alecrim, ótimo para renovar a energia do ambiente.",
             "categoria": "incenso",
@@ -377,7 +366,7 @@
         }, 
         {
             "id": 32, 
-            "nome": "Incenso Serenidade Camomila",
+            "nome": "Incenso Camomila",
             "preco": 12.50,
             "descricao": "Delicado aroma de camomila, ideal para promover serenidade e bem-estar.",
             "categoria": "incenso",
@@ -387,7 +376,7 @@
         }, 
         {
             "id": 33, 
-            "nome": "Incenso Exótico Patchouli",
+            "nome": "Incenso Patchouli",
             "preco": 15.90,
             "descricao": "Fragrância marcante e terrosa do patchouli, perfeita para criar um ambiente sofisticado.",
             "categoria": "incenso",
@@ -397,7 +386,7 @@
         },
         {
             "id": 34, 
-            "nome": "Difusor Aromático Orvalho Dourado",
+            "nome": "Difusor Aromático Dourado",
             "preco": 30.00,
             "descricao": "Difusor de Aromas, com design oval e discreto, bom para ambientes de trabalho.",
             "categoria": "difusor",
@@ -411,7 +400,7 @@
             "preco": 55.00,
             "descricao": "Difusor de Aromas, com design elegante e sofisticado, ideal para decoração do ambiente.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorBranco.PNG",
             "tipo": "Madeira",
             "quantidade": "275ml"
         },
@@ -477,7 +466,7 @@
         },
         {
             "id": 42,
-            "nome": "Incenso de Baunilha",
+            "nome": "Incenso Baunilha",
             "preco": 60.00,
             "descricao": "Aroma doce e acolhedor que traz conforto e suavidade ao ambiente, ideal para momentos de relaxamento e introspecção.",
             "categoria": "incenso",
@@ -487,7 +476,7 @@
         },
         {
             "id": 43,
-            "nome": "Incenso de Cânfora",
+            "nome": "Incenso Cânfora",
             "preco": 34.99,
             "descricao": "Aroma refrescante e revigorante que ajuda a purificar o ambiente, ideal para momentos de meditação e concentração.",
             "categoria": "incenso",
@@ -497,7 +486,7 @@
         },
         {
             "id": 44,
-            "nome": "Incenso de Capim Limão",
+            "nome": "Incenso Capim Limão",
             "preco": 29.90,
             "descricao": "Aroma cítrico e energizante que traz vitalidade e frescor ao ambiente, ideal para momentos de alegria e descontração.",
             "categoria": "incenso",
@@ -507,7 +496,7 @@
         },
         {
             "id": 45,
-            "nome": "Incenso de Canela",
+            "nome": "Incenso Canela",
             "preco": 39.90,
             "descricao": "Aroma quente e picante que traz conforto e aconchego ao ambiente, ideal para momentos de intimidade e romance.",
             "categoria": "incenso",
@@ -517,7 +506,7 @@
         },
         {
             "id": 46,
-            "nome": "Incenso de Cravo",
+            "nome": "Incenso Cravo",
             "preco": 44.90,
             "descricao": "Aroma forte e marcante que traz energia e vitalidade ao ambiente, ideal para momentos de ação e decisão.",
             "categoria": "incenso",
@@ -527,7 +516,7 @@
         },
         {
             "id": 47,
-            "nome": "Incenso de Verbena",
+            "nome": "Incenso Verbena",
             "preco": 49.90,
             "descricao": "Aroma fresco e floral que traz leveza e serenidade ao ambiente, ideal para momentos de paz e harmonia.",
             "categoria": "incenso",

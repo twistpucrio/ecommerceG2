@@ -8,31 +8,43 @@
     <script src="javaScript/cadrastrologica.js"></script>
     <script src="javaScript/favoritoslogica.js"></script>
     <script src="javaScript/produtoindividual.js"></script>
-    <link rel="stylesheet" href="estilo/favoritos.css">
+    
+    <link rel="stylesheet" href="estilo/produto.css">
+    <link rel="stylesheet" href="estilo/home.css">
+
 </head>
 <body>
     <header id="titulo"> 
+        <form action="todosprod.html" method="get" class="formulario">
+            <input id="pesquisa" name="pesquisa" class="pesquisa" type="search" placeholder="O que você procura?">
+        </form>
+
         <h1><a href="index.html">L'Atelier Bougioni</a></h1>
-    </header>
-    
-    <div class="segundo-cabeçalho">
+
+
+        <div class="icones">
+        <input class="cadastroFoto"  type="image" src="img/cadastro_branco (1).png" onclick="iconeCadastro()">
+
+        <input class="favoritosFoto"  type="image" src="img/favoritos_branco.png" onclick="iconeFavoritos()">
         
         <a href="carrinho.html" class="carrinhoFoto">
-            <img src="img/carrinho.png">
+            <img src="img/carrinho_branco.png">
         </a>
-        <input class="favoritosFoto"  type="image" src="img/favoritos.png" onclick="iconeFavoritos()">
-        <input class="cadastroFoto"  type="image" src="img/cadastro.png" onclick="iconeCadastro()">
+    </div> 
+    
+
         <label for="menu-toggle" class=vermaisFoto>
-            <img src="img/vermais.png" alt="Abrir Menu">
+            <img src="img/vermais_branco (1).png" alt="Abrir Menu">
         </label>
-    </div>
+
+    </header>
 
     <section>
         <div id="produto-container"></div>
 
     </section>
 
-    <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila, Lis Almeida</footer>
+    
 
 </body>
 </html>
