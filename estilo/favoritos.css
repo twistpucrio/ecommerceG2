@@ -3,10 +3,7 @@
        src: url(../fonts/Inspiration/Inspiration-Regular.ttf);
 }
 
-@font-face {
-       font-family: fonteh2;
-       src: url(../fonts/Inspiration/SUSE_Mono/SUSEMono-Italic-VariableFont_wght.ttf);
-}
+
 
 
 * {
@@ -18,10 +15,8 @@
 body {
        margin: 0;
        padding: 0;
-       font-family: Arial, sans-serif;
-       background-color: #E8E3DD;
+       background-color: #ac9c89;
 }
-
 
 nav {
        margin-bottom: 20px;
@@ -33,28 +28,50 @@ nav a {
 }
 
 #products {
-       max-width: 900px;
-       margin: auto;
+       max-width: 70%;
+       margin-left: 7.5%;
+       /*margin-right: 25%;*/
+       align-items: center;
 }
 
-.titulo {
-       background-color: #E8E3DD;
+#titulo {
+       background-color: #ac9c89;
 }
 
 h1 {
-       padding: 0.2em;
+       padding: 0.3em;
        font-family: fonteTitulo;
-       font-size: 8em;
+       font-size: 5em;
        text-align: center;
-       background-color: #E8E3DD;
+       color: #fff;
+       background-color: #ac9c89;
+       display: inline-block;
+       margin-left: 12%;
 }
 
 h2 {
        padding: 0.2em;
-       font-family: fonteh2;
+       font-family: 'Calibri';
        font-size: 2.5em;
        text-align: center;
-       background-color: #E8E3DD;
+       background-color: #ac9c89;
+       width: max-content;
+       margin: 0 auto;
+       color: white;
+       position: relative;
+       overflow: visible;
+       padding-left: 2em;
+}
+
+h2::before {
+       content: "";
+       position: absolute;
+       left: -9999px;
+       right: calc(100% - 10px);
+       top: 50%;
+       transform: translateY(-50%);
+       height: 3px;
+       background-color: white;
 }
 
 h1 a:active,
@@ -66,67 +83,210 @@ h1 a:link {
 }
 
 .segundo-cabeçalho {
-       background-color: #E2DDD4;
+       background-color: #ac9c89;
        height: 5.5em;
        text-align: center;
        align-items: center;
        justify-content: center;
        display: flex;
-       position: relative;
+       /* PROPRIEDADES PARA FIXAR AO SCROLL */
+       position: sticky;
+       /* Define o comportamento de "grudar" */
+       top: 0;
+       /* Ponto onde o elemento deve grudar (o topo da viewport) */
+       width: 100%;
+       /* Garante que ocupe a largura total */
+       z-index: 1000;
+       /* Garante que fique sobre o conteúdo ao rolar */
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.menu-sombra-fixa {
+       /* Box shadow: 0 (offset-x) 2px (offset-y) 5px (blur) rgba(0,0,0,0.2) (cor/opacidade) */
+       box-shadow: 0 4px 6px -6px #333;
+       /* Esta sombra é sutil, focada para baixo */
+       /* Você pode ajustar o '0 4px 6px -6px #333;' para a sombra que preferir. */
+}
+
+.pesquisa {
+       background-image: url('../img/lupa_branca\ \(3\).png');
+       display: flex;
+       background-position: right 0.5em center;
+       background-repeat: no-repeat;
+       background-size: 1em;
+       padding-left: 2em;
+       border-radius: 0.6em;
+       padding: 0.9em;
+       width: 32em;
+       height: 4em;
+       border: solid 0.3em #fcf8f6;
+       outline: none;
+       background-color: #ac9c89;
+       font-size: 0.7em;
+       color: white;
+}
+
+.formulario {
+       display: inline-block;
+       justify-content: center;
+       align-items: center;
+       gap: 1em;
+       margin-right: 2%;
+       margin-bottom: 3%;
+       margin-left: 7%;
+}
+
+.icones {
+       display: inline-block;
+       align-items: center;
+       justify-content: flex-end;
+       margin-right: 1%;
+       margin-top: 2%;
+       margin-left: 20%;
+
+}
 
 .carrinhoFoto {
        width: 3em;
        height: 3em;
-       position: absolute;
-       right: 10em;
+       display: inline-flex;
+       margin-top: inherit;
+       cursor: pointer;
+       gap: 1.5em;
+       margin-right: 2em;
 }
 
 .favoritosFoto {
        width: 3.5em;
        height: 3.5em;
-       position: absolute;
-       right: 6.7em;
+       display: inline-flex;
+       margin-top: inherit;
+       cursor: pointer;
+       margin-right: 2em;
 }
 
 .cadastroFoto {
        width: 3.5em;
        height: 3.5em;
-       position: absolute;
-       right: 2em;
+       display: inline-flex;
+       cursor: pointer;
+       margin-top: inherit;
+       margin-right: 2em;
+
 }
 
 .vermaisFoto {
        width: 2.8em;
        height: 2.8em;
        position: absolute;
-       left: 2em;
+       left: 1.8em;
+       z-index: 1000;
+       margin-top: 3.4%;
 }
 
+.banners {
+       height: 28em;
+       background-color: #ac9c89;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+}
+
+.banner1 {
+       max-height: 100%;
+       max-width: 100%;
+       height: auto;
+       width: auto;
+}
+
+.categorias {
+       display: flex;
+       justify-content: center;
+       gap: 2em;
+       background-color: #ac9c89;
+       font-family: 'Calibri';
+}
+
+.categoria-item {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       text-decoration: none !important;
+       color: white;
+}
+
+.categoria-item img {
+       border-radius: 50%;
+       width: 12em;
+       height: 12em;
+       object-fit: cover;
+       margin-bottom: 0.5em;
+       /* espaço entre imagem e texto */
+       box-shadow: 0 0 0 0.1em white;
+       transition: transform 0.3s ease-in-out;
+}
+
+.categoria-item:hover img {
+       transform: scale(1.1);
+       box-shadow: 0 0 0 0.1em white, 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.categoria-item p {
+       margin: 0;
+       font-size: 1.5em;
+       line-height: 1.2;
+       text-decoration: none !important;
+       color: inherit !important;
+}
+
+.temas {
+       display: flex;
+       justify-content: center;
+       padding: 1em;
+       margin: 0 1em;
+}
 
 .legendas {
        background-color: #E8E3DD;
-       font-family: fonteh2;
+       font-family: 'Calibri';
        display: inline-block;
 }
 
 .side-menu {
-       position: absolute;
-       top: 1;
+       position: fixed;
        left: -20em;
        width: 20em;
-       height: 45.5em;
-       background-color: #E8E3DD;
+       background-color: #e7e0d8;
        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-       padding-top: 5em;
        transition: left 0.3s ease;
-       z-index: 1000;
+       z-index: 999;
+       font-family: 'Calibri';
+       position: fixed;
+       top: 15.5em;
+       padding-top: 4em;
+       height: calc(100vh - 15.5em);
+
 }
+
+.side-menu-fade {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       width: 100%;
+       height: 3em;
+       background: linear-gradient(to bottom, rgba(232, 227, 221, 0), #E8E3DD);
+       pointer-events: none;
+       /* garante que ele não bloqueie cliques */
+}
+
 
 #menu-toggle:checked~.side-menu {
        left: 0;
 }
+
+
+
 
 .side-menu ul {
        list-style: none;
@@ -136,7 +296,7 @@ h1 a:link {
 
 .side-menu li {
        padding: 1em;
-       border-bottom: 1px solid #ccc;
+       border-bottom: 1px solid #dbd7d7;
 }
 
 .side-menu a {
@@ -147,33 +307,132 @@ h1 a:link {
 }
 
 .espaço {
-       background-color: #E8E3DD;
+       background-color: #ac9c89;
        height: 2em;
 }
 
+#filtro-foto {
+       display: none !important;
+}
 
+.filtro-area {
+       background-image: url(../img/shimmering-golden-leafy_53876-94586.jpg);
+       background-position: center center;
+       background-size: cover;
+       background-repeat: no-repeat;
+       padding: 1em 0;
+}
 
+.filtro-container {
+       max-width: 300em;
+       margin: 0 auto;
+       position: relative;
+       padding: 0 1em;
+}
+
+.filtro-icone {
+       display: flex;
+       align-items: center;
+       gap: 1em;
+       cursor: pointer;
+       width: fit-content;
+       transition: background-color 0.2s;
+       font-family: 'Calibri';
+       background-color: transparent !important;
+}
+
+.filtro-icone:hover {
+       background-color: transparent;
+}
+
+.filtro-icone img {
+       width: 3em;
+       height: 2em;
+       padding: 0.4em;
+       background-color: #1b5d9a;
+       border-radius: 2em;
+       box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.2);
+
+}
+
+.filtro-icone span {
+       font-family: 'Calibri';
+       font-size: 1em;
+       color: #000;
+}
+
+.filtro-vertical {
+       /* Posicionamento e Aparência */
+       position: absolute;
+       top: 100%;
+       /* Inicia logo abaixo do .filtro-icone */
+       left: 1em;
+       width: 250px;
+       /* Largura do menu de filtro */
+       background-color: #fff;
+       border: 1px solid #ccc;
+       border-top: none;
+       border-radius: 0 0 5px 5px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       z-index: 50;
+       /* Garante que fique sobre os produtos */
+       padding: 15px;
+       /* MÁGICA DO DROPDOWN (Começa fechado) */
+       max-height: 0;
+       /* Altura 0 para fechar */
+       overflow: hidden;
+       /* Esconde o conteúdo que transborda */
+       opacity: 0;
+       /* Opacidade 0 para sumir */
+       transition: max-height 0.4s ease-out, opacity 0.3s ease-in-out;
+}
+
+#filtro-foto:checked~.filtro-container .filtro-vertical {
+       max-height: 500px;
+       /* Um valor grande o suficiente para o conteúdo aparecer */
+       opacity: 1;
+       /* Torna o menu visível */
+       transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+.grupo-filtro h4 {
+       font-family: 'Calibri';
+       font-size: 1.1em;
+       margin-bottom: 10px;
+       border-bottom: 1px solid #eee;
+       padding-bottom: 5px;
+}
+
+.grupo-filtro label {
+       display: block;
+       font-family: sans-serif;
+       font-size: 0.9em;
+       margin-bottom: 5px;
+       cursor: pointer;
+}
 
 .produtos {
-background-color: #E8E3DD;
-display: flex; 
-justify-content: center;
+       background-color: #ac9c89;
+       display: flex;
+       justify-content: center;
+       flex-wrap: wrap;
+       margin: 0 auto;
 }
 
 .product-item {
-width: 250px; 
-height: 300px; 
-display: inline-block;
-align-items: center;
-justify-content: space-between;
-margin: 27px;
-margin-bottom: 34px;
-border: 1px solid #726051;
-background-color: #f7f1eb;
-padding: 10px;
-border-radius: 10px;
-text-align: center;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+       width: 250px;
+       height: 300px;
+       display: inline-block;
+       align-items: center;
+       justify-content: space-between;
+       margin: 27px;
+       margin-bottom: 34px;
+       border: 1px solid #726051;
+       background-color: #f7f1eb;
+       padding: 10px;
+       border-radius: 10px;
+       text-align: center;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .product-item-img {
@@ -181,16 +440,185 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.1);
        height: 100px;
        border-radius: 10px;
        margin-bottom: 10px;
-       display:block ; 
+       display: block;
        align-items: center;
        margin: 0 auto;
 }
 
-.botao{
+.botao {
        display: flex;
        gap: 8px;
        justify-content: center;
-       gap: 8px;  
+       gap: 8px;
+       margin-top: auto;
+}
+
+.botao img {
+       pointer-events: none;
+}
+
+.product-item .info {
+       font-size: 14px;
+       font-weight: bold;
+       margin-bottom: 8px;
+       display: inline-block
+}
+
+.info {
+       color: black;
+       font-family: 'Calibri';
+}
+
+.product-item .price {
+       font-weight: normal;
+       color: #333;
+       margin-bottom: 8px;
+       display: inline-block;
+}
+
+
+button {
+       background-color: #1b5d9a;
+       color: white;
+       border: none;
+       padding: 6px 10px;
+       border-radius: 6px;
+       cursor: pointer;
+       font-size: 13px;
+}
+
+button:hover {
+       background-color: #061a52;
+}
+
+#filtro-foto:checked~.filtro-icone+.filtro-vertical,
+/* Se .filtro-icone estiver antes de .filtro-vertical */
+#filtro-foto:checked~.filtro-vertical {
+       /* Se .filtro-vertical for irmão direto da checkbox */
+       max-height: 500px;
+       opacity: 1;
+       transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+#filtro-foto:checked~.filtro-vertical {
+       max-height: 500px;
+       opacity: 1;
+       transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+.filtro-no-header {
+       position: relative;
+       /* REMOVIDAS AS PROPRIEDADES DE POSICIONAMENTO ABSOLUTO */
+       z-index: 100;
+
+       /* Novo posicionamento na coluna da esquerda */
+       margin-left: 1.5em;
+       /* Empurra um pouco para a direita da borda */
+       margin-top: 2em;
+       /* Empurra para baixo do menu lateral */
+       width: fit-content;
+       /* Garante que a div não se espalhe desnecessariamente */
+}
+
+.filtro-no-header .filtro-icone {
+       background-color: transparent;
+       display: flex;
+       align-items: center;
+       gap: 0.8em;
+       padding: 0.8em 1.4em;
+       border-radius: 2.5em;
+       font-family: 'Calibri';
+       font-size: 1.05em;
+       cursor: pointer;
+       transition: background-color 0.2s;
+}
+
+.filtro-no-header .filtro-icone img {
+       width: 3em;
+       height: 3em;
+       padding: 0.5em;
+       background-color: #1b5d9a;
+       border-radius: 50%;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.filtro-no-header-dropdown {
+       position: absolute;
+       top: 100%;
+       left: 0;
+       width: 250px;
+       background-color: #fff;
+       border: 1px solid #ccc;
+       border-radius: 0 0 5px 5px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       z-index: 999;
+       padding: 15px;
+       max-height: 0;
+       opacity: 0;
+       overflow: hidden;
+       transition: max-height 0.4s ease-out, opacity 0.3s ease-in-out;
+       overflow-y: auto;
+}
+
+#filtro-topo:checked~label+.filtro-no-header-dropdown {
+       max-height: 500px;
+       opacity: 1;
+}
+
+#titulo {
+       background-color: #ac9c89;
+       /* Garante que ocupe a largura total */
+       width: 100%;
+       /* Habilita o comportamento de "grudar" */
+       position: sticky;
+       /* Ponto onde deve grudar (o topo da viewport) */
+       top: 0;
+       /* Garante que fique sobre o conteúdo ao rolar */
+       z-index: 1000;
+       /* Mantenha um z-index alto, mas 1000 era muito alto, 100 deve ser suficiente */
+
+       /* Demais propriedades que você já tinha: */
+       /* Você pode adicionar uma sombra aqui, se quiser: */
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.produtos {
+       background-color: #E8E3DD;
+       display: flex;
+       justify-content: center;
+}
+
+.product-item {
+       width: 250px;
+       height: 300px;
+       display: inline-block;
+       align-items: center;
+       justify-content: space-between;
+       margin: 27px;
+       margin-bottom: 34px;
+       border: 1px solid #726051;
+       background-color: #f7f1eb;
+       padding: 10px;
+       border-radius: 10px;
+       text-align: center;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-item-img {
+       width: 100px;
+       height: 100px;
+       border-radius: 10px;
+       margin-bottom: 10px;
+       display: block;
+       align-items: center;
+       margin: 0 auto;
+}
+
+.botao {
+       display: flex;
+       gap: 8px;
+       justify-content: center;
+       gap: 8px;
        margin-top: auto;
 }
 
@@ -215,7 +643,7 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
 
 button {
-       background-color: #1b5d9a; 
+       background-color: #1b5d9a;
        color: white;
        border: none;
        padding: 6px 10px;
@@ -233,7 +661,7 @@ button:hover {
        text-align: center;
 }
 
-#botao-limpar-favoritos{
+#botao-limpar-favoritos {
        text-align: center;
 }
 

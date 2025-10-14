@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${item.details.imagem}" alt="${item.details.nome}" width="60" height="60">
                 <div class="info">
                     <h4>${item.details.nome}</h4>
-                    <div>$${item.details.preco.toFixed(2)}</div>
+                    <div>R$${item.details.preco.toFixed(2)}</div>
                 </div>
                 
                 <input type="text" id="qtd-${id}" readonly value="${item.amount}"> &nbsp
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const total = [...items.values()]
         .reduce((sum, item) => sum + item.details.preco * item.amount, 0);
 
-    cartTotalEl.textContent = `Total: $${total.toFixed(2)}`;
+    cartTotalEl.innerHTML = `<p id='total'>Total: R$${total.toFixed(2)}<p/>`;
 }
 
     

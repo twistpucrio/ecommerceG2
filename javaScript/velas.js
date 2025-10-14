@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function renderProducts() {
         const products = await g2.listProducts();
-        const produtosFavoritos = [24, 25, 26, 27, 34, 35, 36, 37, 38, 39, 40, 41];
+        const produtosFavoritos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
         const produtosExibe = (products.produto || []).filter(produto =>
             produtosFavoritos.includes(produto.id)
         );
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img onclick="redirecionarParaPaginaIndividualProduto(${product.id})" src="${product.imagem}" alt="${product.nome}" width="80" height="80" class="product-item-img"/>
                     <div class="info">
                         <h3 onclick="redirecionarParaPaginaIndividualProduto(${product.id})">${product.nome}</h3>
-                        <div class="price">R$${product.preco.toFixed(2)}</div>
+                        <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
                         <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>

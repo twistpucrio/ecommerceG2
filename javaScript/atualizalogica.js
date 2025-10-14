@@ -2,7 +2,7 @@ window.onload = function() {
 
     // se não houver um usuario logado, envia para a página de cadastro
     let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-    if (usuarioLogadoLogado === null){
+    if (usuarioLogado === null){
         window.location.href = 'cadastro.html';
     }
 
@@ -11,11 +11,13 @@ window.onload = function() {
     let txtCid = document.getElementById("cidadeAtualiza");
     let optEstado = document.getElementById("estadoAtualiza");
 
-    let txtLog = document.getElementById("logradoroAtualiza");
+    let txtLog = document.getElementById("logradouroAtualiza");
     let txtNum = document.getElementById("numeroAtualiza");
     let txtComp = document.getElementById("complementoAtualiza");
 
-
+    if (usuarioLogado.cep){
+        txtCep.value = usuarioLogado.cep;
+    }
    if (usuarioLogado.cep){
         txtCep.value = usuarioLogado.cep;
     }
@@ -25,8 +27,8 @@ window.onload = function() {
    if (usuarioLogado.estado){
         optEstado.value = usuarioLogado.estado;
     }
-   if (usuarioLogado.logradoro){
-        txtLog.value = usuarioLogado.logradoro;
+   if (usuarioLogado.logradouro){
+        txtLog.value = usuarioLogado.logradouro;
     }
    if (usuarioLogado.numero){
         txtNum.value = usuarioLogado.numero;

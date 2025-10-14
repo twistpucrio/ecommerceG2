@@ -1,0 +1,119 @@
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3.5em;
+    margin-left: 0;
+  }
+
+  .formulario {
+    margin-left: 2%;
+    width: 60%;
+  }
+
+  .icones {
+    margin-left: 5%;
+  }
+
+  .pesquisa {
+    width: 22em;
+  }
+
+  .categoria-item img {
+    width: 10em;
+    height: 10em;
+  }
+
+  .product-item {
+    width: 200px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header#titulo {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+  }
+
+  .formulario {
+    width: 80%;
+    margin: 1em auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .pesquisa {
+    width: 100%;
+  }
+
+  .icones {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+  }
+
+  .icones img,
+  .carrinhoFoto,
+  .favoritosFoto,
+  .cadastroFoto {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0 0.5em;
+  }
+
+  .categorias {
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .categoria-item img {
+    width: 8em;
+    height: 8em;
+  }
+
+  .product-item {
+    width: 160px;
+    margin: 10px;
+  }
+
+  .nav-button {
+    font-size: 1.2em;
+    padding: 0.3em;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .pesquisa {
+    font-size: 0.8em;
+    padding: 0.7em;
+  }
+
+  .categoria-item img {
+    width: 6em;
+    height: 6em;
+  }
+
+  .product-item {
+    width: 140px;
+    height: auto;
+  }
+
+  .banner-strip img {
+    max-height: 40vh;
+  }
+
+  .nav-button {
+    font-size: 1em;
+  }
+}

@@ -266,3 +266,88 @@ section input {
     width: 0.1%;
     background-color: white;
 }
+
+
+/* === ESTILOS PARA A PÁGINA DE ATUALIZAÇÃO DE CADASTRO === */
+
+#camposAtualiza {
+    background-color: #e7e0d8;
+    width: 70%;
+    max-width: 600px;
+    margin: 0.1em auto;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    align-items: center;
+    font-family: 'Calibri', sans-serif;
+}
+
+#camposAtualiza h2 {
+    color: #3a2f26;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+#camposAtualiza input[type="text"],
+#camposAtualiza input[type="password"] {
+    width: 85%;
+    padding: 0.9em;
+    border: 1px solid #c8bfb6;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #fcf8f6;
+    color: #3a2f26;
+    transition: 0.2s;
+}
+
+#camposAtualiza input:focus {
+    border-color: #1b5d9a;
+    box-shadow: 0 0 5px rgba(27, 93, 154, 0.5);
+    outline: none;
+}
+
+#camposAtualiza button {
+    width: 60%;
+    padding: 0.12sem;
+    margin-top: 0.2em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#camposAtualiza button:first-of-type {
+    background-color: #1b5d9a;
+}
+
+#camposAtualiza button:first-of-type:hover {
+    background-color: #061a52;
+}
+
+#camposAtualiza button:last-of-type {
+    background-color: #7b6050;
+}
+
+#camposAtualiza button:last-of-type:hover {
+    background-color: #3a2f26;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    #camposAtualiza {
+        width: 90%;
+        padding: 2em 1em;
+    }
+
+    #camposAtualiza input {
+        width: 95%;
+    }
+
+    #camposAtualiza button {
+        width: 80%;
+    }
+}

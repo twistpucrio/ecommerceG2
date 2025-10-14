@@ -1,85 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Atelier Bougioni</title>
+    <title>Finalizar Pedido - L'Atelier Bougioni</title>
+    <link rel="stylesheet" href="estilo/finalizar.css">
+
     <script src="javaScript/logica.js"></script> 
     <script src="javaScript/carrinhologica.js"></script>
     <script src="javaScript/cadastrologica.js"></script>
     <script src="javaScript/finalizarlogica.js"></script>
 </head>
 <body>
-    <div id="container"> 
-        <header id="titulo"> 
-            <h1> Loja </h1>     
-        </header> 
-        <div id="cadrastro" hidden> </div>
-        <section id="main"> 
-        <!--<div id="revisao do pedido"> 
-                <h2> Revisão do pedido: </h2>
-                <div id="cart">
-                <div id="cart-items-container"></div>
-                <div id="cart-summary"></div>
-                <div id="cart-total">Total: $0.00</div>
-                </div> 
-            </div>--> 
-                <a href="carrinho.html"> Voltar para o carrinho </a>
-            
-            <h2> Para finalizar seu pedido preencha as seguientes informações:  </h2>
-            <fieldset> 
-                <legend> Informações de pagamento: </legend>
-                    <label for="genero"> Selecione forma de pagamento: </label>
-                    <select> 
-                            <option value="RJ"> Cartão de Credito </option>
-                            <option value="SP"> Cartão de Debito  </option>
-                            <option value="MG"> PIX </option>
-                            <option value="ES"> Boleto </option>
-                    </select>
-                    <br/> <br/>
-                    <label for="cpf"> CPF: </label>
-                    <input type="text" name="txtCpf" id="txtCpf" size="11" autofocus/>
-                    <br/><br/> 
-                    <label for="nome"> Nome do titular: </label>
-                    <input type="text" name="txtNome" id="txtNome" autofocus/>    
-                    <br/><br/> 
-                    <label for="validade"> Validade: </label>
-                    <input type="date" name="txtValidade" id="txtValidade" size="5" autofocus/>
-                    <br/><br/>
-                </fieldset> 
-                <fieldset> 
-                    <legend> Endereço: </legend>
-                        <label for="cep"> CEP: </label>
-                        <input type="text" name="txtCep" id="txtCep" autofocus/>
-                        <br/> <br/> 
-                        <label for="cidade"> Cidade: </label>
-                        <input type="text" name="txtCid" id="txtCid" autofocus/> 
-                        <br/><br/> 
-                        <label for="estado"> Estado: </label>
-                        <select id="optEstado"> 
-                            <option value="RJ"> RJ </option>
-                            <option value="SP"> SP </option>
-                            <option value="MG"> MG </option>
-                            <option value="ES"> ES </option>
-                        </select>
-                        <br/> <br/> 
-                        <label for="logradoro"> Logradoro: </label>
-                        <input type="text" name="txtLog" id="txtLog" autofocus/>
-                        <br/><br/> 
-                        <label for="numero"> Numero: </label>
-                        <input type="text" name="txtNum" id="txtNum" autofocus/> 
-                        <br/><br/> 
-                        <label for="complemento"> Complemento:</label>
-                        <input type="text" name="txtComp" id="txtComp" autofocus/> 
-                        <br/><br/> 
-                </fieldset>
-                <br/> <br/> 
-                <input id="finalizando" type="submit" value="Salvar" 
-                onclick="alert('Pedido fianlizado com sucesso! Obrigada por comprar conosco!')"> 
-            </section>
-        </br> 
-        </br> 
-        <footer>Site para fins educativos- Elena Mimouni, Fernanda Fukasawa, Maria Eduarda Avila</footer>
-    </div>
+
+    <header id="titulo">
+        <h1><a href="index.html">L'Atelier Bougioni</a></h1>
+        <nav class="menu-principal">
+            <a href="carrinho.html">Voltar ao Carrinho</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h2>Revisão do Pedido</h2>
+        <div id="cart">
+            <div id="cart-items-container"></div>
+            <div id="cart-total">Total: R$ 0,00</div>
+        </div>
+
+
+
+        <h2>Finalize seu pedido</h2>
+        <p>Confira seus dados e preencha as informações restantes:</p>
+
+        <form id="formFinalizacao">
+            <!-- Informações do Usuário -->
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <label for="txtNome">Nome:</label>
+                <input type="text" id="txtNome" name="txtNome" required>
+
+                <label for="txtCpf">CPF:</label>
+                <input type="text" id="txtCpf" name="txtCpf" required maxlength="14">
+            </fieldset>
+
+            <!-- Endereço -->
+            <fieldset>
+                <legend>Endereço</legend>
+                <label for="txtCep">CEP:</label>
+                <input type="text" id="txtCep" name="txtCep" required maxlength="9">
+
+                <label for="txtCid">Cidade:</label>
+                <input type="text" id="txtCid" name="txtCid" required>
+
+                <label for="optEstado">Estado:</label>
+                <select id="optEstado" required>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+
+                <label for="txtLog">Logradouro:</label>
+                <input type="text" id="txtLog" name="txtLog" required>
+
+                <label for="txtNum">Número:</label>
+                <input type="text" id="txtNum" name="txtNum" required>
+
+                <label for="txtComp">Complemento:</label>
+                <input type="text" id="txtComp" name="txtComp">
+            </fieldset>
+
+            <!-- Pagamento -->
+            <fieldset>
+                <legend>Pagamento</legend>
+                <label for="pagamento">Forma de Pagamento:</label>
+                <select id="pagamento" name="pagamento" required>
+                    <option value="">Selecione</option>
+                    <option value="cartaoCredito">Cartão de Crédito</option>
+                    <option value="cartaoDebito">Cartão de Débito</option>
+                    <option value="pix">PIX</option>
+                    <option value="boleto">Boleto</option>
+                </select>
+
+                <label for="txtNomeTitular">Nome do Titular:</label>
+                <input type="text" id="txtNomeTitular" name="txtNomeTitular" required>
+
+                <label for="txtValidade">Validade:</label>
+                <input type="month" id="txtValidade" name="txtValidade" required>
+            </fieldset>
+
+            <div class="botoes">
+                     <button id="finalizarPedido">Finalizar Pedido</button>
+            </div>
+        </form>
+    </main>
+
 </body>
 </html>
