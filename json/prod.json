@@ -330,7 +330,7 @@
             "preco": 12.90,
             "descricao": "Aroma suave de lavanda, perfeito para momentos de relaxamento e descanso.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoLavanda.png",
             "tipo": "lavanda",
             "quantidade": "20 varetas"
         }, 
@@ -340,7 +340,7 @@
             "preco": 14.50,
             "descricao": "Tradicional incenso de sândalo, ideal para meditação e concentração.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoSandalo.png",
             "tipo": "sândalo",
             "quantidade": "20 varetas"
         }, 
@@ -350,7 +350,7 @@
             "preco": 13.90,
             "descricao": "Perfume floral de jasmim que cria um ambiente acolhedor e equilibrado.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoJasmin.png",
             "tipo": "jasmim",
             "quantidade": "20 varetas"
         }, 
@@ -360,7 +360,7 @@
             "preco": 11.90,
             "descricao": "Aroma fresco de alecrim, ótimo para renovar a energia do ambiente.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoAlecrim.png",
             "tipo": "alecrim",
             "quantidade": "20 varetas"
         }, 
@@ -370,7 +370,7 @@
             "preco": 12.50,
             "descricao": "Delicado aroma de camomila, ideal para promover serenidade e bem-estar.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoCamomila.png",
             "tipo": "camomila",
             "quantidade": "20 varetas"
         }, 
@@ -380,7 +380,7 @@
             "preco": 15.90,
             "descricao": "Fragrância marcante e terrosa do patchouli, perfeita para criar um ambiente sofisticado.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoPatchouli.png",
             "tipo": "patchouli",
             "quantidade": "20 varetas"
         },
@@ -470,7 +470,7 @@
             "preco": 60.00,
             "descricao": "Aroma doce e acolhedor que traz conforto e suavidade ao ambiente, ideal para momentos de relaxamento e introspecção.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoBaunilha.png",
             "tipo": "baunilha",
             "quantidade": "20 varetas"
         },
@@ -480,7 +480,7 @@
             "preco": 34.99,
             "descricao": "Aroma refrescante e revigorante que ajuda a purificar o ambiente, ideal para momentos de meditação e concentração.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoCanfora.png",
             "tipo": "cânfora",
             "quantidade": "20 varetas"
         },
@@ -490,7 +490,7 @@
             "preco": 29.90,
             "descricao": "Aroma cítrico e energizante que traz vitalidade e frescor ao ambiente, ideal para momentos de alegria e descontração.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoCapimLimao.png",
             "tipo": "capim limão",
             "quantidade": "20 varetas"
         },
@@ -500,7 +500,7 @@
             "preco": 39.90,
             "descricao": "Aroma quente e picante que traz conforto e aconchego ao ambiente, ideal para momentos de intimidade e romance.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoCanela.png",
             "tipo": "canela",
             "quantidade": "20 varetas"
         },
@@ -510,7 +510,7 @@
             "preco": 44.90,
             "descricao": "Aroma forte e marcante que traz energia e vitalidade ao ambiente, ideal para momentos de ação e decisão.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoCravo.png",
             "tipo": "cravo",
             "quantidade": "20 varetas"
         },
@@ -520,7 +520,7 @@
             "preco": 49.90,
             "descricao": "Aroma fresco e floral que traz leveza e serenidade ao ambiente, ideal para momentos de paz e harmonia.",
             "categoria": "incenso",
-            "imagem": "../img/",
+            "imagem": "../img/incensoVerbena.png",
             "tipo": "verbena",
             "quantidade": "20 varetas"
         }
