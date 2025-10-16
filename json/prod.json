@@ -210,7 +210,7 @@
         {
             "id": 17,
             "nome": "Óleo essencial Menta",
-            "preco": 18.54,
+            "preco": 19.00,
             "descricao": " Óleo essencial de Menta puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
             "imagem": "../img/menta.png",
@@ -232,7 +232,7 @@
         {
             "id": 19, 
             "nome": "Óleo essencial Rosas",
-            "preco": 18.54,
+            "preco": 17.00,
             "descricao": " Óleo essencial de Rosas puro, com uma variedade de benefícios emocionais e cosmédicos.",
             "categoria": "oleo",
             "imagem": "../img/rosa.png",
@@ -243,7 +243,7 @@
         {
             "id": 20, 
             "nome": "Óleo essencial Laranja",
-            "preco": 18.54,
+            "preco": 20.85,
             "descricao": " Óleo essencial de Laranja puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
             "imagem": "../img/laranja.png",
@@ -254,7 +254,7 @@
         {
             "id": 21, 
             "nome": "Óleo essencial Alecrim",
-            "preco": 18.54,
+            "preco": 22.99,
             "descricao": " Óleo essencial de Alecrim puro, com uma variedade de benefícios para saúde, emocial e física.",
             "categoria": "oleo",
             "imagem": "../img/alecrim.png",
@@ -265,7 +265,7 @@
         {
             "id": 22, 
             "nome": "Óleo essencial Limão Tahiti",
-            "preco": 18.54,
+            "preco": 19.99,
             "descricao": " Óleo essencial de Limão Tahiti puro, com muitos benefícios para o corpo e mente.",
             "categoria": "oleo",
             "imagem": "../img/limao.png",
@@ -276,7 +276,7 @@
         {
             "id": 23, 
             "nome": "Óleo essencial Capim Limão",
-            "preco": 18.54,
+            "preco": 22.30,
             "descricao": " Óleo essencial de Capim Limão puro, com muitos benefícios para o corpo e mente.",
             "categoria": "oleo",
             "imagem": "../img/capim.png",
