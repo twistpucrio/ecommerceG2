@@ -300,7 +300,7 @@
             "preco": 48.65,
             "descricao": " Difusor de Aromas, com design em acrilonitrilo butadieno estireno e base de madeira, ideal para decorar ambientes.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorLed.png",
             "recipiente": "acrilonitrilo butadieno estireno",
             "capacidade": "300ml"
         }, 
@@ -310,7 +310,7 @@
             "preco": 32.00,
             "descricao": " Difusor de Aromas, com design em oval e pequeno, ideal para decorar ambientes de forma minimalista.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorMini.png",
             "recipiente": "acrilonitrilo butadieno estireno",
             "capacidade": "125ml"
         }, 
@@ -390,7 +390,7 @@
             "preco": 30.00,
             "descricao": "Difusor de Aromas, com design oval e discreto, bom para ambientes de trabalho.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorDourado.png",
             "tipo": "Madeira",
             "quantidade": "250ml"
         },
@@ -400,7 +400,7 @@
             "preco": 55.00,
             "descricao": "Difusor de Aromas, com design elegante e sofisticado, ideal para decoração do ambiente.",
             "categoria": "difusor",
-            "imagem": "../img/difusorBranco.PNG",
+            "imagem": "../img/difusorElegance.png",
             "tipo": "Madeira",
             "quantidade": "275ml"
         },
@@ -410,7 +410,7 @@
             "preco": 45.00,
             "descricao": "Difusor de Aromas, com design simples e moderno, ideal para qualquer ambiente.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorZen.png",
             "tipo": "Madeira",
             "quantidade": "125ml"
         },
@@ -420,7 +420,7 @@
             "preco": 50.00,
             "descricao": "Difusor de Aromas, com design inspirado na natureza, ideal para ambientes relaxantes.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorNature.png",
             "tipo": "Madeira",
             "quantidade": "300ml"
         },
@@ -430,7 +430,7 @@
             "preco": 52.00,
             "descricao": "Difusor de Aromas, com design sofisticado e funcional, ideal para ambientes elegantes.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorSerenity.png",
             "tipo": "Madeira",
             "quantidade": "400ml"
         },
@@ -440,7 +440,7 @@
             "preco": 36.00,
             "descricao": "Difusor de Aromas, com design moderno e compacto, ideal para qualquer ambiente.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorBliss.png",
             "tipo": "Madeira",
             "quantidade": "150ml"
         },
@@ -450,7 +450,7 @@
             "preco": 30.00,
             "descricao": "Difusor de Aromas, com design elegante e funcional, ideal para ambientes sofisticados.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorHarmony.png",
             "tipo": "Madeira",
             "quantidade": "350ml"
         },
@@ -460,7 +460,7 @@
             "preco": 22.00,
             "descricao": "Difusor de Aromas, com design simples e moderno, ideal para qualquer ambiente.",
             "categoria": "difusor",
-            "imagem": "../img/",
+            "imagem": "../img/difusorPure.png",
             "tipo": "Madeira",
             "quantidade": "275ml"
         },
