@@ -1,30 +1,25 @@
 class EcommerceG2 {
   constructor() {
-    // Load cart from localStorage or initialize as empty array
+    // Inicializa carrinho
     this.cart = this._loadCart();
-    this.products = this.loadProducts(); 
+    this.products = null; // produtos ainda não carregados
   }
 
-  async loadProducts() {
+  async listProducts() {
+    if (this.products) return this.products;
+
     try {
-      const response = await fetch('../json/prod.json');
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-      const result = await response.json();
-      return result;
+      const response = await fetch("json/prod.json");
+      if (!response.ok) throw new Error("Erro ao carregar produtos: " + response.status);
+
+      const data = await response.json();
+      this.products = data; // salva para próximas chamadas
+      return data;
     } catch (error) {
-      console.error(error.message);
-      return [];
+      console.error("Erro ao listar produtos:", error);
+      return { produto: [] }; // garante que não quebre a página
     }
   }
-
-
-  listProducts() {
-    
-    return this.products;
-  }
-
 
   _loadCart() {
     try {
@@ -150,15 +145,13 @@ if (typeof module !== 'undefined' && module.exports) {
 
 
 
-function redirecionarParaPaginaIndividualProduto(idProduto){
-    // insere na url o ID do produto do qual foi clickado para ativar a função
-    let url = new URL("http://127.0.0.1:5500/produtoindividual.html?id=0");
-    url.searchParams.set('id', idProduto);
-
-    //redireciona para a pagina de produto individual, que vai usar o "produtoAtual" do LocalStorage para ser gerada
-    window.location.href = url;
-    
+function redirecionarParaPaginaIndividualProduto(idProduto) {
+  // Cria URL relativa à página atual
+  const url = new URL("produtoindividual.html", window.location.origin);
+  url.searchParams.set("id", idProduto);
+  window.location.href = url;
 }
+
 
 
 
