@@ -9,7 +9,7 @@ class EcommerceG2 {
     if (this.products) return this.products;
 
     try {
-      const response = await fetch("./json/prod.json"); // caminho relativo
+      const response = await fetch("json/prod.json");
       if (!response.ok) throw new Error("Erro ao carregar produtos: " + response.status);
 
       const data = await response.json();
@@ -145,15 +145,13 @@ if (typeof module !== 'undefined' && module.exports) {
 
 
 
-function redirecionarParaPaginaIndividualProduto(idProduto){
-    // insere na url o ID do produto do qual foi clickado para ativar a função
-    let url = new URL("http://127.0.0.1:5500/produtoindividual.html?id=0");
-    url.searchParams.set('id', idProduto);
-
-    //redireciona para a pagina de produto individual, que vai usar o "produtoAtual" do LocalStorage para ser gerada
-    window.location.href = url;
-    
+function redirecionarParaPaginaIndividualProduto(idProduto) {
+  // Cria URL relativa à página atual
+  const url = new URL("produtoindividual.html", window.location.origin);
+  url.searchParams.set("id", idProduto);
+  window.location.href = url;
 }
+
 
 
 
