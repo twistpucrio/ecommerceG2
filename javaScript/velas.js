@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="price">$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                        <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                       <button class="add-carrinho" id="cart" data-product-id="${product.id}"><img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> Comprar </button>
                         <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
                     </div>
                 `;
@@ -39,33 +39,78 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Função global de filtros
+         // Função global de filtros
         window.aplicarFiltros = function() {
             let filtrado = produtosExibe.slice();
 
-            // Filtro de pesquisa
+            //  Pesquisa
             const termo = barraDePesquisa.value.toLowerCase();
             filtrado = filtrado.filter(p => p.nome.toLowerCase().includes(termo));
 
-            // Filtro por categoria
-            const categoriasSelecionadas = Array.from(document.querySelectorAll('input[name="categoria"]:checked')).map(cb => cb.value.toLowerCase());
-            if (categoriasSelecionadas.length > 0) {
-                filtrado = filtrado.filter(p => categoriasSelecionadas.includes(p.categoria.toLowerCase()));
+            //  Filtro por objetivo (ex: relaxamento, decoração, energização)
+            const objetivosSelecionados = Array.from(
+                document.querySelectorAll('input[name="objetivo"]:checked')
+            )
+                .map(cb => cb.value.toLowerCase())
+                .filter(v => ['relaxamento', 'meditacao', 'energizacao', 'protecao'].includes(v));
+
+            if (objetivosSelecionados.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    objetivosSelecionados.includes((p.objetivo|| '').toLowerCase())
+                );
             }
 
-            // Filtro por faixa de preço
-            const faixasSelecionadas = Array.from(document.querySelectorAll('input[name="faixa-preco"]:checked')).map(cb => cb.value);
+            //  Filtro por fragrância/aroma (baunilha, lavanda, floral, amadeirado)
+            const fragranciasSelecionadas = Array.from(
+                document.querySelectorAll('input[name="fragrancia"]:checked')
+            ).map(cb => cb.value.toLowerCase());
+
+            if (fragranciasSelecionadas.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    fragranciasSelecionadas.includes((p.fragrancia || p.aroma || '').toLowerCase())
+                );
+            }
+
+            // Filtro por tipo de suporte (usa o campo "recipiente" do JSON)
+            const suportesSelecionados = Array.from(
+                document.querySelectorAll('input[name="suporte"]:checked')
+            ).map(cb => cb.value.toLowerCase());
+
+            if (suportesSelecionados.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    suportesSelecionados.includes((p.recipiente || '').toLowerCase())
+                );
+            }
+
+            //  Faixa de preço
+            const faixasSelecionadas = Array.from(
+                document.querySelectorAll('input[name="faixa-preco"]:checked')
+            ).map(cb => cb.value);
+
             if (faixasSelecionadas.length > 0) {
-                filtrado = filtrado.filter(p => {
-                    return faixasSelecionadas.some(faixa => {
+                filtrado = filtrado.filter(p =>
+                    faixasSelecionadas.some(faixa => {
                         const [min, max] = faixa.split('-').map(Number);
                         return p.preco >= min && p.preco <= max;
-                    });
-                });
+                    })
+                );
             }
+            // Filtro por duração de queima
+            const duracoesSelecionadas = Array.from(
+                document.querySelectorAll('input[name="tempodequeima"]:checked')
+            ).map(cb => cb.value.toLowerCase());
 
-            // Ordenação
-            const ordenacaoSelecionada = Array.from(document.querySelectorAll('input[name="ordenação"]:checked')).map(cb => cb.value);
+            if (duracoesSelecionadas.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    duracoesSelecionadas.includes((p.tempodequeima || '').toLowerCase())
+                );
+}
+
+            //  Ordenação
+            const ordenacaoSelecionada = Array.from(
+                document.querySelectorAll('input[name="ordenação"]:checked')
+            ).map(cb => cb.value);
+
             if (ordenacaoSelecionada.length > 0) {
                 const ordem = ordenacaoSelecionada[0];
                 if (ordem === 'menor-preco') filtrado.sort((a,b) => a.preco - b.preco);
@@ -75,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             exibirProdutos(filtrado);
         };
 
-        // Atualiza enquanto digita na barra de pesquisa
+        // Atualiza conforme digita
         barraDePesquisa.addEventListener("input", () => {
             window.aplicarFiltros();
         });

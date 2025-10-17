@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="price">R$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                        <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                    <button class="add-carrinho" id="cart" data-product-id="${product.id}"><img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> Comprar </button>
                         <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
                     </div>
                 `;
@@ -43,35 +43,72 @@ document.addEventListener('DOMContentLoaded', () => {
         window.aplicarFiltros = function() {
             let filtrado = produtosExibe.slice();
 
-            // Filtro de pesquisa
+            // Pesquisa
             const termo = barraDePesquisa.value.toLowerCase();
             filtrado = filtrado.filter(p => p.nome.toLowerCase().includes(termo));
 
-            // Filtro por categoria
-            const categoriasSelecionadas = Array.from(document.querySelectorAll('input[name="categoria"]:checked')).map(cb => cb.value.toLowerCase());
-            if (categoriasSelecionadas.length > 0) {
-                filtrado = filtrado.filter(p => categoriasSelecionadas.includes(p.categoria.toLowerCase()));
+            //  Filtro por objetivo
+            const objetivosSelecionados = Array.from(
+                document.querySelectorAll('input[name="categoria"]:checked')
+            )
+                .map(cb => cb.value.toLowerCase())
+                .filter(v => ['meditacao', 'concentracao', 'equilibrio'].includes(v));
+
+            if (objetivosSelecionados.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    objetivosSelecionados.includes((p.objetivo || '').toLowerCase())
+                );
             }
 
-            // Filtro por faixa de preço
-            const faixasSelecionadas = Array.from(document.querySelectorAll('input[name="faixa-preco"]:checked')).map(cb => cb.value);
+            //  Filtro por aroma
+            const aromasSelecionados = Array.from(
+                document.querySelectorAll('input[name="aroma"]:checked')
+            ).map(cb => cb.value.toLowerCase());
+
+            if (aromasSelecionados.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    aromasSelecionados.includes((p.aroma || '').toLowerCase())
+                );
+            }
+            // Filtro por quantidade de varetas
+            const quantidadeSelecionada = Array.from(
+                document.querySelectorAll('input[name="categoria"]:checked')
+            )
+                .map(cb => cb.value.toLowerCase())
+                .filter(v => v.includes('v'));
+
+            if (quantidadeSelecionada.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    quantidadeSelecionada.includes((p.quantidade || '').toLowerCase())
+                );
+            }
+
+            // Faixa de preço
+            const faixasSelecionadas = Array.from(
+                document.querySelectorAll('input[name="faixa-preco"]:checked')
+            ).map(cb => cb.value);
+
             if (faixasSelecionadas.length > 0) {
-                filtrado = filtrado.filter(p => {
-                    return faixasSelecionadas.some(faixa => {
+                filtrado = filtrado.filter(p =>
+                    faixasSelecionadas.some(faixa => {
                         const [min, max] = faixa.split('-').map(Number);
                         return p.preco >= min && p.preco <= max;
-                    });
-                });
+                    })
+                );
             }
 
-            // Ordenação
-            const ordenacaoSelecionada = Array.from(document.querySelectorAll('input[name="ordenação"]:checked')).map(cb => cb.value);
+            //  Ordenação
+            const ordenacaoSelecionada = Array.from(
+                document.querySelectorAll('input[name="ordenação"]:checked')
+            ).map(cb => cb.value);
+
             if (ordenacaoSelecionada.length > 0) {
                 const ordem = ordenacaoSelecionada[0];
                 if (ordem === 'menor-preco') filtrado.sort((a,b) => a.preco - b.preco);
                 else if (ordem === 'maior-preco') filtrado.sort((a,b) => b.preco - a.preco);
             }
 
+            // Exibe resultado
             exibirProdutos(filtrado);
         };
 
