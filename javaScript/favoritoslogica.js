@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         </br>
         <div class="botao">
                     
-                    <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                    <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24">Comprar </button>
                     <button class="remover-fav" data-remove-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
         </div>
 
