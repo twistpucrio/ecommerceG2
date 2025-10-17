@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="price">R$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                        <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                        <button class="add-carrinho" id="cart" data-product-id="${product.id}"><img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> Comprar </button>
                         <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
                     </div>
                 `;
@@ -47,12 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const termo = barraDePesquisa.value.toLowerCase();
             filtrado = filtrado.filter(p => p.nome.toLowerCase().includes(termo));
 
-            // Filtro por categoria
-            const categoriasSelecionadas = Array.from(document.querySelectorAll('input[name="categoria"]:checked')).map(cb => cb.value.toLowerCase());
-            if (categoriasSelecionadas.length > 0) {
-                filtrado = filtrado.filter(p => categoriasSelecionadas.includes(p.categoria.toLowerCase()));
-            }
+            // Filtro por material (usa categoria_detalhe)
+            const categoriasSelecionadas = Array.from(
+                document.querySelectorAll('input[name="categoria"]:checked')
+            ).map(cb => cb.value.toLowerCase());
 
+            if (categoriasSelecionadas.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    categoriasSelecionadas.includes((p.recipiente || '').toLowerCase())
+                );
+            }
             // Filtro por faixa de preço
             const faixasSelecionadas = Array.from(document.querySelectorAll('input[name="faixa-preco"]:checked')).map(cb => cb.value);
             if (faixasSelecionadas.length > 0) {
@@ -62,6 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         return p.preco >= min && p.preco <= max;
                     });
                 });
+            }
+            // Filtro por quantidade
+            const quantidadeSelecionadas = Array.from(
+                document.querySelectorAll('input[name="quantidade"]:checked')
+            ).map(cb => cb.value.toLowerCase());
+
+            if (quantidadeSelecionadas.length > 0) {
+                filtrado = filtrado.filter(p =>
+                    quantidadeSelecionadas.includes((p.quantidade || '').toLowerCase())
+                );
             }
 
             // Ordenação

@@ -10,9 +10,10 @@
             "imagem": "../img/velalavanda.PNG",
             "cor": "opcional",
             "fragrancia": "Lavanda",
-            "recipiente": "lata",
+            "recipiente": "cerâmica",
             "tempodequeima": "30 horas",
-            "peso": "200g"
+            "peso": "200g",
+            "objetivo":"relaxamento"
         },
         {
             "id": 2,
@@ -23,9 +24,10 @@
             "imagem": "../img/velasbubble.png",
             "cor": "Rosa",
             "fragrancia": "Jasmim",
-            "recipiente": "Vidro",
+            "recipiente": "idro",
             "tempodequeima": "20 horas",
-            "peso": "150g"
+            "peso": "150g",
+            "objetivo":"meditacao"
         },
         {
             "id": 3,
@@ -38,7 +40,8 @@
             "fragrancia": "Jasmim",
             "recipiente": "cerâmica",
             "tempodequeima": "20 horas",
-            "peso": "150g"
+            "peso": "150g",
+            "objetivo":"relaxamento"
         },
         {
             "id": 4,
@@ -51,7 +54,8 @@
             "fragrancia": "Canela",
             "recipiente": "vidro",
             "tempodequeima": "15 horas",
-            "peso": "120g"
+            "peso": "120g",
+            "objetivo":"relaxamento"
         },
         {
             "id": 5,
@@ -64,7 +68,8 @@
             "fragrancia": "Capim Limão",
             "recipiente": "vidro",
             "tempodequeima": "35 horas",
-            "peso": "220g"
+            "peso": "220g",
+            "objetivo":"energizacao"
         }, 
         {
             "id": 6,
@@ -77,7 +82,8 @@
             "fragrancia": "Alecrim",
             "recipiente": "vidro",
             "tempodequeima": "22 horas",
-            "peso": "100g"
+            "peso": "100g",
+            "objetivo":"energizacao"
         }, 
         {
             "id": 7,
@@ -90,7 +96,8 @@
             "fragrancia": "Baunilha",
             "recipiente": "cerâmica",
             "tempodequeima": "32 horas",
-            "peso": "180g"
+            "peso": "180g",
+            "objetivo":"relaxamento"
         }, 
         {
             "id": 8,
@@ -103,7 +110,8 @@
             "fragrancia": "Sândalo",
             "recipiente": "cerâmica",
             "tempodequeima": "32 horas",
-            "peso": "180g"
+            "peso": "180g",
+            "objetivo":"relaxamento"
         }, 
         {
             "id": 9,
@@ -116,7 +124,8 @@
             "fragrancia": "Bambu",
             "recipiente": "cerâmica",
             "tempodequeima": "30 horas",
-            "peso": "200g"
+            "peso": "200g",
+            "objetivo":"protecao"
         }, 
         {
             "id": 10,
@@ -129,7 +138,8 @@
             "fragrancia": "Bambu",
             "recipiente": "cerâmica",
             "tempodequeima": "30 horas",
-            "peso": "200g"
+            "peso": "200g",
+            "objetivo":"protecao"
         }, 
         {
             "id": 11,
@@ -142,7 +152,8 @@
             "fragrancia": "Jasmim",
             "recipiente": "vidro",
             "tempodequeima": "20 horas",
-            "peso": "150g"
+            "peso": "150g",
+            "objetivo":"energizacao"
         }, 
         {
             "id": 12,
@@ -155,7 +166,8 @@
             "fragrancia": ["Baunilha, Jasmin, Lavanda, Rosas"],
             "recipiente": "vidro",
             "tempodequeima": "20 horas",
-            "peso": "150g"
+            "peso": "150g",
+            "objetivo":"relaxamento"
         }, 
         {
             "id": 13,
@@ -168,7 +180,8 @@
             "fragrancia":"Baunilha",
             "recipiente": "vidro",
             "tempodequeima": "24 horas",
-            "peso": "200g"
+            "peso": "200g",
+            "objetivo":"meditacao"
         }, 
         {
             "id": 14,
@@ -181,7 +194,8 @@
             "fragrancia":"Jasmim",
             "recipiente": "vidro",
             "tempodequeima": "26 horas",
-            "peso": "180g"
+            "peso": "180g",
+            "objetivo":"energizacao"
         }, 
         {
             "id": 15,
@@ -192,9 +206,10 @@
             "imagem": "../img/multicoloridas.PNG",
             "cor": "Vermelho",
             "fragrancia":"Baunilha",
-            "recipiente": "vidro",
+            "recipiente": "lata",
             "tempodequeima": "24 horas",
-            "peso": "200g"
+            "peso": "200g",
+            "objetivo":"relaxamento"
         },
         {
             "id": 16,
@@ -205,7 +220,9 @@
             "imagem": "../img/lavanda.png",
             "fragrancia":"Lavanda",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "floral",
+            "objetivo": "aromaterapia"
         },
         {
             "id": 17,
@@ -216,18 +233,22 @@
             "imagem": "../img/menta.png",
             "fragrancia":"Menta",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "doce",
+            "objetivo": "concentracao"
         },
         {
             "id": 18, 
             "nome": "Óleo essencial Eucalipto",
             "preco": 18.54,
-            "descricao": " Óleo essencial de Menta puro, com uma variedade de benefícios para o sistema respiratório e tem ação terápeutica.",
+            "descricao": " Óleo essencial de Eucalipto puro, com uma variedade de benefícios para o sistema respiratório e tem ação terápeutica.",
             "categoria": "oleo",
             "imagem": "../img/eucalipto.png",
             "fragrancia":"Eucalipto",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "amadeirado",
+            "objetivo": "relaxamento"
         }, 
         {
             "id": 19, 
@@ -238,7 +259,9 @@
             "imagem": "../img/rosa.png",
             "fragrancia":"Rosas",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "floral",
+            "objetivo": "relaxamento"
         }, 
         {
             "id": 20, 
@@ -249,7 +272,9 @@
             "imagem": "../img/laranja.png",
             "fragrancia":"Laranja",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "doce",
+            "objetivo": "concentracao"
         },
         {
             "id": 21, 
@@ -260,7 +285,9 @@
             "imagem": "../img/alecrim.png",
             "fragrancia":"Alecrim",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "floral",
+            "objetivo": "energizacao"
         }, 
         {
             "id": 22, 
@@ -271,7 +298,9 @@
             "imagem": "../img/limao.png",
             "fragrancia":"Limão Tahiti",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "citrico",
+            "objetivo": "relaxamento"
         }, 
         {
             "id": 23, 
@@ -282,7 +311,9 @@
             "imagem": "../img/capim.png",
             "fragrancia":"Capim Limão",
             "recipiente": "vidro", 
-            "volume": "10ml"
+            "volume": "10ml",
+            "aroma": "citrico",
+            "objetivo": "aromaterapia"
         }, 
         {
             "id": 24, 
@@ -311,7 +342,7 @@
             "descricao": " Difusor de Aromas, com design em oval e pequeno, ideal para decorar ambientes de forma minimalista.",
             "categoria": "difusor",
             "imagem": "../img/difusorMini.png",
-            "recipiente": "plastico",
+            "recipiente": "madeira",
             "capacidade": "125ml"
         }, 
         {
@@ -321,7 +352,7 @@
             "descricao": "Difusor de Aromas, com design inovador e fluido, ideal para decorar ambientes com originalidade e estilo.",
             "categoria": "difusor",
             "imagem": "../img/difusorTulipa.PNG",
-            "recipiente": "plastico",
+            "recipiente": "vidro",
             "capacidade": "225ml"
         }, 
         {
@@ -333,7 +364,8 @@
             "imagem": "../img/incensoLavanda.png",
             "tipo": "lavanda",
             "quantidade": "20 varetas",
-            "aroma": "floral"
+            "aroma": "floral",
+            "objetivo":"meditacao"
         }, 
         {
             "id": 29, 
@@ -344,7 +376,8 @@
             "imagem": "../img/incensoSandalo.png",
             "tipo": "sândalo",
             "quantidade": "20 varetas",
-            "aroma": "amadeirado"
+            "aroma": "amadeirado",
+            "objetivo":"concentracao"
         }, 
         {
             "id": 30, 
@@ -355,7 +388,8 @@
             "imagem": "../img/incensoJasmin.png",
             "tipo": "jasmim",
             "quantidade": "20 varetas",
-            "aroma": "floral"
+            "aroma": "floral",
+            "objetivo":"equilibrio"
         }, 
         {
             "id": 31, 
@@ -366,7 +400,8 @@
             "imagem": "../img/incensoAlecrim.png",
             "tipo": "alecrim",
             "quantidade": "20 varetas",
-            "aroma": "herbal"
+            "aroma": "herbal",
+            "objetivo":"equilibrio"
         }, 
         {
             "id": 32, 
@@ -377,7 +412,8 @@
             "imagem": "../img/incensoCamomila.png",
             "tipo": "camomila",
             "quantidade": "20 varetas",
-            "aroma": "floral"
+            "aroma": "floral",
+            "objetivo":"equilibrio"
         }, 
         {
             "id": 33, 
@@ -388,7 +424,8 @@
             "imagem": "../img/incensoPatchouli.png",
             "tipo": "patchouli",
             "quantidade": "20 varetas",
-            "aroma": "amadeirado"
+            "aroma": "amadeirado",
+            "objetivo":"meditacao"
         },
         {
             "id": 34, 
@@ -397,17 +434,17 @@
             "descricao": "Difusor de Aromas, com design oval e discreto, bom para ambientes de trabalho.",
             "categoria": "difusor",
             "imagem": "../img/difusorDourado.png",
-            "tipo": "madeira",
+            "recipiente": "plastico",
             "quantidade": "250ml"
         },
         {
             "id": 35, 
             "nome": "Difusor Aromático Elegance",
-            "preco": 55.00,
+            "preco": 155.00,
             "descricao": "Difusor de Aromas, com design elegante e sofisticado, ideal para decoração do ambiente.",
             "categoria": "difusor",
             "imagem": "../img/difusorElegance.png",
-            "tipo": "madeira",
+            "recipiente": "vidro",
             "quantidade": "275ml"
         },
         {
@@ -417,7 +454,7 @@
             "descricao": "Difusor de Aromas, com design simples e moderno, ideal para qualquer ambiente.",
             "categoria": "difusor",
             "imagem": "../img/difusorZen.png",
-            "tipo": "madeira",
+            "recipiente": "plastico",
             "quantidade": "125ml"
         },
         {
@@ -427,7 +464,7 @@
             "descricao": "Difusor de Aromas, com design inspirado na natureza, ideal para ambientes relaxantes.",
             "categoria": "difusor",
             "imagem": "../img/difusorNature.png",
-            "tipo": "madeira",
+            "recipiente": "madeira",
             "quantidade": "300ml"
         },
         {
@@ -437,7 +474,7 @@
             "descricao": "Difusor de Aromas, com design sofisticado e funcional, ideal para ambientes elegantes.",
             "categoria": "difusor",
             "imagem": "../img/difusorSerenity.png",
-            "tipo": "madeira",
+            "recipiente": "plastico",
             "quantidade": "400ml"
         },
         {
@@ -447,8 +484,8 @@
             "descricao": "Difusor de Aromas, com design moderno e compacto, ideal para qualquer ambiente.",
             "categoria": "difusor",
             "imagem": "../img/difusorBliss.png",
-            "tipo": "madeira",
-            "quantidade": "150ml"
+            "recipiente": "plastico",
+            "quantidade": "225ml"
         },
         {
             "id": 40, 
@@ -457,7 +494,7 @@
             "descricao": "Difusor de Aromas, com design elegante e funcional, ideal para ambientes sofisticados.",
             "categoria": "difusor",
             "imagem": "../img/difusorHarmony.png",
-            "tipo": "madeira",
+            "recipiente": "plastico",
             "quantidade": "350ml"
         },
         {
@@ -467,7 +504,7 @@
             "descricao": "Difusor de Aromas, com design simples e moderno, ideal para qualquer ambiente.",
             "categoria": "difusor",
             "imagem": "../img/difusorPure.png",
-            "tipo": "madeira",
+            "recipiente": "madeira",
             "quantidade": "275ml"
         },
         {
@@ -478,8 +515,9 @@
             "categoria": "incenso",
             "imagem": "../img/incensoBaunilha.png",
             "tipo": "baunilha",
-            "quantidade": "20 varetas",
-            "aroma": "doce"
+            "quantidade": "40 varetas",
+            "aroma": "doce",
+            "objetivo":"concentracao"
         },
         {
             "id": 43,
@@ -489,8 +527,9 @@
             "categoria": "incenso",
             "imagem": "../img/incensoCanfora.png",
             "tipo": "cânfora",
-            "quantidade": "20 varetas",
-            "aroma": "floral"
+            "quantidade": "40 varetas",
+            "aroma": "floral",
+            "objetivo":"concentracao"
         },
         {
             "id": 44,
@@ -501,7 +540,8 @@
             "imagem": "../img/incensoCapimLimao.png",
             "tipo": "capim limão",
             "quantidade": "20 varetas",
-            "aroma": "citrico"
+            "aroma": "citrico",
+            "objetivo":"meditacao"
         },
         {
             "id": 45,
@@ -511,8 +551,9 @@
             "categoria": "incenso",
             "imagem": "../img/incensoCanela.png",
             "tipo": "canela",
-            "quantidade": "20 varetas",
-            "aroma": "doce"
+            "quantidade": "40 varetas",
+            "aroma": "doce",
+            "objetivo":"equilibrio"
         },
         {
             "id": 46,
@@ -522,8 +563,9 @@
             "categoria": "incenso",
             "imagem": "../img/incensoCravo.png",
             "tipo": "cravo",
-            "quantidade": "20 varetas",
-            "aroma": "amadeirado"
+            "quantidade": "40 varetas",
+            "aroma": "amadeirado",
+            "objetivo":"concentracao"
         },
         {
             "id": 47,
@@ -534,7 +576,8 @@
             "imagem": "../img/incensoVerbena.png",
             "tipo": "verbena",
             "quantidade": "20 varetas",
-            "aroma": "herbal"
+            "aroma": "herbal",
+            "objetivo":"meditacao"
         }
     ]
 }
