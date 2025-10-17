@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="price">R$${product.preco.toFixed(2)}</div>
                     </div>
                     <div class="botao">
-                        <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24"> </button>
+                        <button class="add-carrinho" data-product-id="${product.id}"> <img src="img/carrinho_branco.png" alt="Carrinho" width="24" height="24">Comprar </button>
                         <button class="add-favorito" data-fav-id="${product.id}"> <img src="img/favoritos_branco.png" alt="Favorito" width="24" height="24"> </button>
                     </div>
                 `;
