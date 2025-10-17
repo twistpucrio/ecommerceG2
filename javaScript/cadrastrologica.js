@@ -57,11 +57,11 @@ function cadastrar() {
     //verificacao cpf
     let padraoCpf = new RegExp("[a-zA-Z]");
     if (cpf.length != 11) {
-        alert("número de caracteres inválido");
+        alert("Número de caracteres inválido no CPF, insira 11 caractéres");
         return;
     }
     if (padraoCpf.test(cpf)) {
-        alert("Cpf só contém números");
+        alert("CPF só deve conter números");
         return;
     }
 
@@ -69,7 +69,7 @@ function cadastrar() {
     //verificacao email
     let padraoEmail = new RegExp("[a-z0-9]" + "@" + "[a-z]" + "." + "[a-z0-9_]");
     if (!padraoEmail.test(email)) {
-        alert("O email nao existe");
+        alert("O email não existe");
         return;
     }
 
@@ -99,7 +99,7 @@ function cadastrar() {
         console.log("!");
         let padraoCep = new RegExp("[0-9]");
         if (!padraoCep.test(cep)) {
-            alert("O cep deve apenas conter numeros.");
+            alert("O cep deve apenas conter números.");
             return;
         }
         if (cep.length != 8) {
