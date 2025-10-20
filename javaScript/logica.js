@@ -9,11 +9,12 @@ class EcommerceG2 {
     if (this.products) return this.products;
 
     try {
-      const response = await fetch("json/prod.json");
+      const response = await fetch("http://wei.tecgraf.puc-rio.br:8002/api/products");
       if (!response.ok) throw new Error("Erro ao carregar produtos: " + response.status);
 
       const data = await response.json();
       this.products = data; // salva para próximas chamadas
+      console.log(data); 
       return data;
     } catch (error) {
       console.error("Erro ao listar produtos:", error);
