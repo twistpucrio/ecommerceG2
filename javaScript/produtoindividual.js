@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
       </div>
       <p class="descricao">${product.descricao || "Sem descrição disponível."}</p>
+      <p class="estoque">Estoque disponível: ${product.estoque || 0}</p>
     </div>
   `;
 
