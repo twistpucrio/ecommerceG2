@@ -27,3 +27,54 @@ app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
   console.log(`API disponível em: http://localhost:${PORT}/api`);
 });
+
+/* FORMULARIO*/ 
+
+const contactForm = document.querySelector('.contact-form');
+const nome = document.getElementById('nome').value; 
+const preco = document.getElementById('preco').value;
+const descricao = document.getElementById('descricao').value;
+const categoria = document.getElementById('categoria').value;
+const estoque = document.getElementById('estoque').value;
+
+
+form.addEventListener('submit', function(event) { event.preventDefault();
+}); 
+
+const formData = {
+  nome: nome.value,
+  preco: preco.value,
+  descricao: descricao.value,
+  categoria: categoria.value, 
+  estoque: estoque.value
+};
+
+ fetch('/api/products', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+
+
+    then(response => {
+        // Verifica se a resposta foi bem-sucedida (status 2xx)
+        if (!response.ok) {
+            throw new Error('Erro na rede ou no servidor: ' + response.statusText);
+        }
+        // Tenta ler o corpo da resposta como JSON
+        return response.json(); 
+    })
+    .then(data => {
+        // 5. Trata a resposta (exibe mensagem de sucesso, atualiza a lista, etc.)
+        console.log('Item adicionado com sucesso:', data);
+        alert('Item adicionado com sucesso!');
+        form.reset(); // Limpa o formulário
+    })
+    .catch(error => {
+        // Trata erros (de rede, de JSON, ou do servidor)
+        console.error('Houve um problema com a operação fetch:', error);
+        alert('Erro ao adicionar o item. Verifique o console.');
+    });
